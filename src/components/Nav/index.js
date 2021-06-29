@@ -7,7 +7,9 @@ import {
   NavLogo,
   Module,
   MenuBackGround,
+  Image,
 } from "./style";
+import logo from "../../assets/logo.svg";
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,11 +17,14 @@ const Nav = () => {
   const handleOpen = () => {
     setMenuOpen(!menuOpen);
   };
-
   return (
     <>
       <NavContainer>
-        <NavLogo>logo</NavLogo>
+        <NavLogo>
+          <a href="/#" style={{outline:'none'}}>
+            <Image src={logo} />
+          </a>
+        </NavLogo>
         <NavBurger onClick={handleOpen}>
           <Burger horizontalDash={menuOpen}></Burger>
         </NavBurger>

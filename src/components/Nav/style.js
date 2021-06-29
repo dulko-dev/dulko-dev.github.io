@@ -1,14 +1,39 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
+
+const wave = keyframes`
+from {
+  transform: rotate(15deg);
+}
+to {
+  transform: rotate(-15deg);
+}
+`;
 
 export const NavContainer = styled.div`
+position: relative;
   height: 10vh;
   margin: 0 auto;
   max-width: 1200px;
-  border: 1px solid black;
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
+
+export const Image = styled.img`
+  width: 100px;
+  height: 100px;
+  animation-name: ${wave};
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+`;
+
+export const NavLogo = styled.div`
+z-index: 1;
+
+`;
+
 
 export const NavBurger = styled.div`
   position: relative;
@@ -24,10 +49,10 @@ export const NavBurger = styled.div`
 export const Burger = styled.div`
   width: 50px;
   height: 6px;
-  background-color: black;
+  background-color: rgb(238, 238, 238);
   border-radius: 5px;
   transition: all 0.5s ease-in-out;
-  z-index: 1;
+  z-index: 2;
   ${({ horizontalDash }) =>
     horizontalDash &&
     css`
@@ -41,7 +66,7 @@ export const Burger = styled.div`
     position: absolute;
     width: 50px;
     height: 6px;
-    background-color: black;
+    background-color: rgb(238, 238, 238);
     border-radius: 5px;
     transition: all 0.5s ease-in-out;
   }
@@ -65,17 +90,20 @@ export const Burger = styled.div`
   }
   &:hover:after,
   &:hover:before {
-    background-color: rgba(238, 238, 238, 0.4);
+    ${({ horizontalDash }) =>
+      horizontalDash &&
+      css`
+        background-color: rgba(238, 238, 238, 0.4);
+      `}
   }
 `;
 
-export const NavLogo = styled.div``;
 
 export const Module = styled.div`
   position: fixed;
   top: 50%;
   left: 50%;
-  z-index: 1;
+  z-index: 2;
   transform: translate(-50%, -50%);
   transition: all 0.5s ease-in-out;
   opacity: ${(props) => (props.horizontalDash ? "1" : "0")};
@@ -86,11 +114,12 @@ export const MenuBackGround = styled.div`
   ${({ horizontalDash }) =>
     horizontalDash &&
     css`
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+      z-index: 1;
       background-color: rgba(0, 0, 0, 0.9);
       transition: background-color 0.5s;
     `}
