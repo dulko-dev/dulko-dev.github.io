@@ -13,7 +13,6 @@ import logo from "../../assets/logo.svg";
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-
   const handleOpen = () => {
     setMenuOpen(!menuOpen);
   };

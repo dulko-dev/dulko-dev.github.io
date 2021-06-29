@@ -98,7 +98,6 @@ export const Burger = styled.div`
   }
 `;
 
-
 export const Module = styled.div`
   position: fixed;
   top: 50%;
