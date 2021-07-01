@@ -1,16 +1,7 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import bg from "../../assets/programming.jpg";
 
-const blinking = keyframes`
-from{
-  opacity: 0;
-  transform: scale(0);
-}
-to{
-  opacity: 1;
-  transform: scale(1);
-}
-`;
+
 
 export const HomeComponent = styled.div`
   &:after {
@@ -21,7 +12,7 @@ export const HomeComponent = styled.div`
     top: 0;
     left: 0;
     z-index: -1;
-    /* opacity: 0.9; */
+    opacity: 0.85;
     background-image: url(${bg});
     background-repeat: no-repeat;
     background-size: cover;
@@ -29,7 +20,7 @@ export const HomeComponent = styled.div`
   }
 `;
 
-export const Content = styled.p`
+export const Content = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -38,16 +29,8 @@ export const Content = styled.p`
   font-size: 35px;
 `;
 
-export const Text = styled.p`
+export const Text = styled.div`
   position: relative;
-  &:after {
-    content: "";
-    position: absolute;
-    height: 35px;
-    width: 3px;
-    background-color: black;
-    animation-name: ${blinking};
-    animation-duration: .8s;
-    animation-iteration-count: infinite;
-  }
+  color: rgb(238, 238, 238);
+  font-size: 70px;  
 `;

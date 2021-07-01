@@ -1,17 +1,8 @@
-import styled, { css, keyframes } from "styled-components";
-
-const wave = keyframes`
-from {
-  transform: rotate(15deg);
-}
-to {
-  transform: rotate(-15deg);
-}
-`;
+import styled, { css } from "styled-components";
 
 export const NavContainer = styled.div`
-position: relative;
-  height: 10vh;
+  position: relative;
+  height: 100px;
   margin: 0 auto;
   max-width: 1200px;
   display: flex;
@@ -20,20 +11,18 @@ position: relative;
 `;
 
 export const Image = styled.img`
-  width: 100px;
-  height: 100px;
-  animation-name: ${wave};
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: linear;
+  width: 150px;
+  height: 125px;
+  transition: all 0.5s;
+  &:hover {
+    transition: all 0.5s;
+    opacity: 0.7;
+  }
 `;
 
 export const NavLogo = styled.div`
-z-index: 1;
-
+  z-index: 1;
 `;
-
 
 export const NavBurger = styled.div`
   position: relative;
