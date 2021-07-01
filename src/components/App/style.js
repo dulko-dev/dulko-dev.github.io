@@ -14,15 +14,53 @@ const rotating = keyframes`
     }
 `;
 
+const leftCurtain = keyframes`
+to{
+width: 0%;
+}
+`;
+const rightCurtain = keyframes`
+to{
+width: 0%;
+}
+`;
+
+const hidden = keyframes`
+from{
+opacity: 1;
+}
+to{
+opacity: 0;
+}
+`;
+
 export const AppContainer = styled.div``;
 
-export const LoadingContainer = styled.div`
+export const LoadingContainerLeft = styled.div`
+  background-color: black;
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  animation-name: ${leftCurtain};
+  animation-delay: 2s;
+  animation-duration: 3s;
+`;
+
+export const LoadingContainerRight = styled.div`
   background-color: black;
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  right: 0;
+  width: 50%;
   height: 100%;
+  z-index: 3;
+
+  animation-name: ${rightCurtain};
+  animation-delay: 2s;
+  animation-duration: 3s;
 `;
 
 export const Loading = styled.div`
@@ -33,7 +71,10 @@ export const Loading = styled.div`
   transform: translate(-50%, -50%);
   width: 100px;
   height: 100px;
-  z-index: 1;
+  z-index: 4;
+  animation: ${hidden};
+  animation-duration: 1s;
+  animation-delay: 1s;
   &:after {
     content: " ";
     display: block;

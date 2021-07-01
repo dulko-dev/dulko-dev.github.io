@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Nav from "../Nav";
 import Home from "../Home";
-import { Loading, AppContainer, LoadingContainer } from "./style";
+import {
+  Loading,
+  AppContainer,
+  LoadingContainerLeft,
+  LoadingContainerRight,
+} from "./style";
 
 const App = () => {
   const [visible, setVisible] = useState(true);
@@ -13,7 +18,7 @@ const App = () => {
     }, 2000);
     const idBack = setTimeout(() => {
       setHidden(false);
-    }, 3000);
+    }, 5000);
     return () => {
       clearTimeout(idTime);
       clearTimeout(idBack);
@@ -23,14 +28,14 @@ const App = () => {
   return (
     <AppContainer>
       {visible && <Loading />}
-      {hidden ? (
-        <LoadingContainer />
-      ) : (
+      {hidden && (
         <>
-          <Nav />
-          <Home />
+          <LoadingContainerRight />
+          <LoadingContainerLeft />
         </>
       )}
+      <Nav />
+      <Home />
     </AppContainer>
   );
 };
