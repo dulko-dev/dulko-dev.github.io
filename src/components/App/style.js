@@ -38,7 +38,7 @@ export const AppContainer = styled.div``;
 
 export const LoadingContainerLeft = styled.div`
   background-color: black;
-  position: absolute;
+  position: fixed;
   z-index: 3;
   top: 0;
   left: 0;
@@ -51,7 +51,7 @@ export const LoadingContainerLeft = styled.div`
 
 export const LoadingContainerRight = styled.div`
   background-color: black;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   width: 50%;
@@ -65,7 +65,7 @@ export const LoadingContainerRight = styled.div`
 
 export const Loading = styled.div`
   display: inline-block;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

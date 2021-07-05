@@ -3,12 +3,6 @@ import { HomeComponent, Content, Text } from "./style";
 import Typewriter from "typewriter-effect";
 
 const Home = () => {
-  const sentence = [
-    "Hi! My name is Kamil Duliniec fron-end developer",
-    "My passion is building some excited application",
-    "I am open into collaboration",
-  ];
-
   return (
     <HomeComponent>
       <Content>

@@ -1,16 +1,16 @@
 import styled from "styled-components";
 import bg from "../../assets/programming.jpg";
 
-
-
 export const HomeComponent = styled.div`
+  height: calc(100vh - 100px);
+  width: 100%;
   &:after {
-    position: absolute;
     content: "";
-    height: 100vh;
-    width: 100%;
+    position: absolute;
     top: 0;
     left: 0;
+    height: 100%;
+    width: 100%;
     z-index: -1;
     opacity: 0.85;
     background-image: url(${bg});
@@ -32,5 +32,5 @@ export const Content = styled.div`
 export const Text = styled.div`
   position: relative;
   color: rgb(238, 238, 238);
-  font-size: 70px;  
+  font-size: 70px;
 `;
