@@ -2,7 +2,12 @@ import styled, { css } from "styled-components";
 
 export const AboutContainer = styled.div`
   position: relative;
+`;
+
+export const AboutContent = styled.div`
   display: flex;
+  position: relative;
+  /* height:200vh; */
 `;
 
 export const AboutTag = styled.div`
@@ -10,33 +15,32 @@ export const AboutTag = styled.div`
   font-size: 10em;
   width: 50%;
   background-color: rebeccapurple;
-`;
-
-export const AboutTagP = styled.p`
-  line-height: 937px;
-  margin: 0 auto;
+  height: 100vh;
   ${({ fix }) =>
     fix &&
     css`
       position: fixed;
-      line-height: normal;
-      top: 50%;
-      left: 25%;
-      transform: translateX(-50%) translateY(-50%);
+      top: 0;
+      left: 0;
     `}
-
-  ${({ bottomStash }) =>
-    bottomStash &&
+  ${({ over }) =>
+    over &&
     css`
       position: absolute;
       bottom: 0;
-      left: 25%;
-      transform: translateX(-50%);
+      left: 0;
     `}
+`;
+
+export const AboutTagP = styled.p`
+  margin: auto;
 `;
 
 export const TextTag = styled.div`
   width: 50%;
+  position: relative;
+  margin-left: auto;
+  margin-right: 0;
 `;
 
 export const TextTagTitle = styled.h2`

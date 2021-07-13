@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const ProjectsContainer = styled.div`
-  height: 100vh;
+  position: relative;
+  height: 50vh;
   background-color: red;
 `;
