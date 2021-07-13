@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Nav from "../Nav";
 import Home from "../Home";
 import About from "../About";
-import { ProjectsContainer } from "../Projects/style";
+import Projects from "../Projects";
 import {
   Loading,
   AppContainer,
@@ -39,7 +39,7 @@ const App = () => {
       <Nav />
       <Home />
       <About />
-      <ProjectsContainer />
+      <Projects />
     </AppContainer>
   );
 };

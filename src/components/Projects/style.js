@@ -1,7 +1,52 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const ProjectsContainer = styled.div`
   position: relative;
-  height: 50vh;
-  background-color: red;
+`;
+
+export const ProjectContent = styled.div`
+  display: flex;
+  position: relative;
+`;
+
+export const ProjectTag = styled.div`
+  display: flex;
+  font-size: 10em;
+  width: 50%;
+  background-color: green;
+  height: 100vh;
+  ${({ fix }) =>
+    fix &&
+    css`
+      position: fixed;
+      top: 0;
+      left: 0;
+    `}
+  ${({ over }) =>
+    over &&
+    css`
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    `}
+`;
+
+export const ProjectTagP = styled.p`
+  margin: auto;
+`;
+
+export const TextTag = styled.div`
+  width: 50%;
+  position: relative;
+  margin-left: auto;
+  margin-right: 0;
+`;
+
+export const TextTagTitle = styled.h2`
+  text-align: center;
+  font-size: 3em;
+`;
+export const TextTagP = styled.p`
+  font-size: 1.4em;
+  padding: 5px;
 `;
