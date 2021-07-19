@@ -3,16 +3,14 @@ import styled, { css } from "styled-components";
 export const NavContainer = styled.div`
   position: relative;
   height: 100px;
-  margin: 0 auto;
-  max-width: 1200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
 
 export const Image = styled.img`
-  width: 150px;
-  height: 125px;
+  width: 100px;
+  height: 100px;
   transition: all 0.5s;
   &:hover {
     transition: all 0.5s;
@@ -22,6 +20,7 @@ export const Image = styled.img`
 
 export const NavLogo = styled.div`
   z-index: 1;
+  margin-left: 50px;
 `;
 
 export const NavBurger = styled.div`
@@ -29,10 +28,11 @@ export const NavBurger = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
+  margin-right: 50px;
 `;
 
 export const Burger = styled.div`
@@ -75,14 +75,6 @@ export const Burger = styled.div`
       css`
         transform: rotate(-45deg) translate(35px, 35px);
         background-color: rgb(238, 238, 238);
-      `}
-  }
-  &:hover:after,
-  &:hover:before {
-    ${({ horizontalDash }) =>
-      horizontalDash &&
-      css`
-        background-color: rgba(238, 238, 238, 0.4);
       `}
   }
 `;
