@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import bg from "../../assets/programming.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -85,10 +85,12 @@ export const FontIcon = styled(FontAwesomeIcon)`
   border: 1px solid rgb(238, 238, 238);
   border-radius: 50%;
   padding: 10px;
+  cursor: pointer;
 `;
 
 export const FbIcon = styled(FontIcon)`
   padding: 10px 13px;
+  cursor: pointer;
 `;
 
 export const SocialIcon = styled.div`
@@ -96,10 +98,19 @@ export const SocialIcon = styled.div`
   display: flex;
   position: relative;
   align-items: center;
-  cursor: pointer;
 `;
 
 export const SpanIconName = styled.span`
   font-size: 10px;
   margin-right: 5px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.4s;
+  ${({ social }) =>
+    social &&
+    css`
+      opacity: 1;
+      visibility: visible;
+      transition: 0.4s;
+    `};
 `;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   HomeComponent,
   Content,
@@ -10,7 +10,7 @@ import {
   FontIcon,
   SocialIcon,
   SpanIconName,
-  FbIcon
+  FbIcon,
 } from "./style";
 import Typewriter from "typewriter-effect";
 import {
@@ -20,6 +20,29 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 const Home = () => {
+  const [hidden, setHidden] = useState({
+    fb: false,
+    git: false,
+    link: false,
+  });
+
+  const handleMouse = (e) => {
+    let icon = e.target.dataset.icon;
+    switch (icon) {
+      case "facebook-f":
+        setHidden({ ...hidden, fb: !hidden.fb });
+        break;
+      case "github-alt":
+        setHidden({ ...hidden, git: !hidden.git });
+        break;
+      case "linkedin-in":
+        setHidden({ ...hidden, link: !hidden.link });
+        break;
+      default:
+        setHidden({ ...hidden });
+    }
+  };
+
   return (
     <HomeComponent>
       <Content>
@@ -41,16 +64,28 @@ const Home = () => {
         </Text>
         <Social>
           <SocialIcon>
-            <SpanIconName>Facebook</SpanIconName>
-            <FbIcon icon={faFacebookF} />
+            <SpanIconName social={hidden.fb}>Facebook</SpanIconName>
+            <FbIcon
+              icon={faFacebookF}
+              onMouseEnter={handleMouse}
+              onMouseLeave={handleMouse}
+            />
           </SocialIcon>
           <SocialIcon>
-            <SpanIconName>Github</SpanIconName>
-            <FontIcon icon={faGithubAlt} />
+            <SpanIconName social={hidden.git}>Github</SpanIconName>
+            <FontIcon
+              icon={faGithubAlt}
+              onMouseEnter={handleMouse}
+              onMouseLeave={handleMouse}
+            />
           </SocialIcon>
           <SocialIcon>
-            <SpanIconName>Linkedin</SpanIconName>
-            <FontIcon icon={faLinkedinIn} />
+            <SpanIconName social={hidden.link}>Linkedin</SpanIconName>
+            <FontIcon
+              icon={faLinkedinIn}
+              onMouseEnter={handleMouse}
+              onMouseLeave={handleMouse}
+            />
           </SocialIcon>
         </Social>
         <ButtonSide>
