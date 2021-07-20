@@ -27,7 +27,7 @@ export const Content = styled.div`
   justify-content: space-between;
   margin-left: auto;
   margin-right: 100px;
-  max-width: 1400px;
+  max-width: 1500px;
   padding-top: 140px;
   color: rgb(238, 238, 238);
   font-size: 35px;
@@ -38,7 +38,7 @@ export const Text = styled.div`
   position: relative;
   color: rgb(238, 238, 238);
   font-size: 60px;
-  margin-right: 100px;
+  width: 900px;
 `;
 
 export const TitleText = styled.h3`
@@ -59,7 +59,7 @@ export const Button = styled.button`
   font-family: "Montserrat", sans-serif;
   font-size: 15px;
   display: inline-block;
-  margin-right: 20px;
+  margin-left: 20px;
   padding: 10px 20px;
   border: 2px solid rgb(238, 238, 238);
   background-color: inherit;
@@ -91,6 +91,7 @@ export const FontIcon = styled(FontAwesomeIcon)`
 export const FbIcon = styled(FontIcon)`
   padding: 10px 13px;
   cursor: pointer;
+
 `;
 
 export const SocialIcon = styled.div`
@@ -102,6 +103,7 @@ export const SocialIcon = styled.div`
 
 export const SpanIconName = styled.span`
   font-size: 10px;
+  color:  #39b54a;
   margin-right: 5px;
   visibility: hidden;
   opacity: 0;
@@ -113,4 +115,26 @@ export const SpanIconName = styled.span`
       visibility: visible;
       transition: 0.4s;
     `};
+`;
+
+export const ImageDiv = styled.div`
+  margin: 30px 0;
+  margin-right:auto;
+  margin-left: 0;
+  width: 400px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 50%;
+`;
+export const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transition: all 0.4s;
+  filter: grayscale(100%);
+  &:hover {
+    transform: scale(1.2);
+    transition: all 0.4s;
+    filter: grayscale(0%);
+  }
 `;

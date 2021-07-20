@@ -13,7 +13,8 @@ export const ProjectTag = styled.div`
   display: flex;
   font-size: 10em;
   width: 50%;
-  background-color: green;
+  background-color: #121212;
+  color: rgb(140, 140, 140);
   height: 100vh;
   ${({ fix }) =>
     fix &&
@@ -40,6 +41,8 @@ export const TextTag = styled.div`
   position: relative;
   margin-left: auto;
   margin-right: 0;
+  background-color: #1d1e21;
+  color: rgb(238, 238, 238);
 `;
 
 export const TextTagTitle = styled.h2`

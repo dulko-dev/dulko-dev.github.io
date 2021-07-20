@@ -11,6 +11,8 @@ import {
   SocialIcon,
   SpanIconName,
   FbIcon,
+  ImageDiv,
+  Image,
 } from "./style";
 import Typewriter from "typewriter-effect";
 import {
@@ -18,6 +20,7 @@ import {
   faGithubAlt,
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
+import myPhoto from "../../assets/homePhoto.jpg";
 
 const Home = () => {
   const [hidden, setHidden] = useState({
@@ -26,17 +29,34 @@ const Home = () => {
     link: false,
   });
 
-  const handleMouse = (e) => {
+  const onMouseEnter = (e) => {
     let icon = e.target.dataset.icon;
     switch (icon) {
       case "facebook-f":
-        setHidden({ ...hidden, fb: !hidden.fb });
+        setHidden({ ...hidden, fb: true });
         break;
       case "github-alt":
-        setHidden({ ...hidden, git: !hidden.git });
+        setHidden({ ...hidden, git: true });
         break;
       case "linkedin-in":
-        setHidden({ ...hidden, link: !hidden.link });
+        setHidden({ ...hidden, link: true });
+        break;
+      default:
+        setHidden({ ...hidden });
+    }
+  };
+
+  const onMouseLeave = (e) => {
+    let icon = e.target.dataset.icon;
+    switch (icon) {
+      case "facebook-f":
+        setHidden({ ...hidden, fb: false });
+        break;
+      case "github-alt":
+        setHidden({ ...hidden, git: false });
+        break;
+      case "linkedin-in":
+        setHidden({ ...hidden, link: false });
         break;
       default:
         setHidden({ ...hidden });
@@ -46,14 +66,18 @@ const Home = () => {
   return (
     <HomeComponent>
       <Content>
+        <ImageDiv>
+          <Image src={myPhoto} />
+        </ImageDiv>
         <Text>
           <TitleText>Welcome to my portfolio</TitleText>
           <Typewriter
             options={{
               strings: [
-                "Hi! My name is Kamil Duliniec front-end developer",
-                "My passion is building some excited application",
-                "I am open into collaboration",
+                `Name: Kamil Duliniec,<br/>
+                Occupation: Front-end Developer,<br/>
+                City: Wroclaw
+                `,
               ],
               autoStart: true,
               loop: true,
@@ -65,27 +89,51 @@ const Home = () => {
         <Social>
           <SocialIcon>
             <SpanIconName social={hidden.fb}>Facebook</SpanIconName>
-            <FbIcon
-              icon={faFacebookF}
-              onMouseEnter={handleMouse}
-              onMouseLeave={handleMouse}
-            />
+            <a
+              href="https://www.facebook.com/kamil.duliniec/"
+              target="_blank"
+              rel="noreferrer"
+              style={{ outline: "none", color: "rgb(238, 238, 238)" }}
+            >
+              <FbIcon
+                icon={faFacebookF}
+                onMouseEnter={onMouseEnter}
+                onMouseLeave={onMouseLeave}
+                onClick={onMouseLeave}
+              />
+            </a>
           </SocialIcon>
           <SocialIcon>
             <SpanIconName social={hidden.git}>Github</SpanIconName>
-            <FontIcon
-              icon={faGithubAlt}
-              onMouseEnter={handleMouse}
-              onMouseLeave={handleMouse}
-            />
+            <a
+              href="https://github.com/dulko-dev"
+              target="_blank"
+              rel="noreferrer"
+              style={{ outline: "none", color: "rgb(238, 238, 238)" }}
+            >
+              <FontIcon
+                icon={faGithubAlt}
+                onMouseEnter={onMouseEnter}
+                onMouseLeave={onMouseLeave}
+                onClick={onMouseLeave}
+              />
+            </a>
           </SocialIcon>
           <SocialIcon>
             <SpanIconName social={hidden.link}>Linkedin</SpanIconName>
-            <FontIcon
-              icon={faLinkedinIn}
-              onMouseEnter={handleMouse}
-              onMouseLeave={handleMouse}
-            />
+            <a
+              href="https://www.linkedin.com/in/kamil-duliniec/"
+              target="_blank"
+              rel="noreferrer"
+              style={{ outline: "none", color: "rgb(238, 238, 238)" }}
+            >
+              <FontIcon
+                icon={faLinkedinIn}
+                onMouseEnter={onMouseEnter}
+                onMouseLeave={onMouseLeave}
+                onClick={onMouseLeave}
+              />
+            </a>
           </SocialIcon>
         </Social>
         <ButtonSide>

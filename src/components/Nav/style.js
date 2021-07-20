@@ -115,9 +115,17 @@ export const Li = styled.li`
   color: rgb(238, 238, 238);
   font-family: "Poppins", sans-serif;
   transition: 0.5s;
+  text-align: center;
   &:hover {
     transition: 0.5s;
     color: rgba(238, 238, 238, 0.4);
-    /* rgb() */
   }
+`;
+
+export const TitleMenu = styled.h3`
+  color: #39b54a;
+  margin-bottom: 90px;
+  letter-spacing: 4px;
+  font-size: 40px;
+  text-transform: uppercase;
 `;
