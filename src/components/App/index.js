@@ -38,10 +38,10 @@ const App = () => {
         </>
       )}
       <Nav />
-      <Home />
+      <Home/>
       <About />
       <Projects />
-      <Contact />
+      <Contact/>
     </AppContainer>
   );
 };

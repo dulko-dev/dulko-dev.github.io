@@ -28,11 +28,11 @@ const Contact = () => {
     let el = document.querySelector("#contact");
     const bottomSucks = () => {
       if (el.getBoundingClientRect().bottom <= window.innerHeight)
-      setStackUpper(false);
+        setStackUpper(false);
     };
     window.addEventListener("scroll", bottomSucks);
   }, []);
-  
+
   return (
     <ContactContainer>
       <ContactContent>
@@ -47,5 +47,7 @@ const Contact = () => {
     </ContactContainer>
   );
 };
+
+
 
 export default Contact;

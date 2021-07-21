@@ -29,6 +29,20 @@ const Home = () => {
     link: false,
   });
 
+  const contactId = () => {
+    const contact = document.querySelector("#contact");
+    contact.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+
+  const aboutId = () => {
+    const about = document.querySelector("#cont");
+    about.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+
   const onMouseEnter = (e) => {
     let icon = e.target.dataset.icon;
     switch (icon) {
@@ -137,8 +151,8 @@ const Home = () => {
           </SocialIcon>
         </Social>
         <ButtonSide>
-          <Button>Let's talk</Button>
-          <Button>More About me</Button>
+          <Button onClick={contactId}>Let's talk</Button>
+          <Button onClick={aboutId}>More About me</Button>
         </ButtonSide>
       </Content>
     </HomeComponent>

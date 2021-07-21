@@ -91,7 +91,6 @@ export const FontIcon = styled(FontAwesomeIcon)`
 export const FbIcon = styled(FontIcon)`
   padding: 10px 13px;
   cursor: pointer;
-
 `;
 
 export const SocialIcon = styled.div`
@@ -103,7 +102,7 @@ export const SocialIcon = styled.div`
 
 export const SpanIconName = styled.span`
   font-size: 10px;
-  color:  #39b54a;
+  color: #39b54a;
   margin-right: 5px;
   visibility: hidden;
   opacity: 0;
@@ -119,7 +118,7 @@ export const SpanIconName = styled.span`
 
 export const ImageDiv = styled.div`
   margin: 30px 0;
-  margin-right:auto;
+  margin-right: auto;
   margin-left: 0;
   width: 400px;
   height: 300px;
@@ -127,6 +126,7 @@ export const ImageDiv = styled.div`
   border-radius: 50%;
 `;
 export const Image = styled.img`
+  opacity: 0.7;
   width: 100%;
   height: 100%;
   border-radius: 50%;
@@ -135,6 +135,7 @@ export const Image = styled.img`
   &:hover {
     transform: scale(1.2);
     transition: all 0.4s;
-    filter: grayscale(0%);
+    filter: grayscale(80%);
+    opacity: 1;
   }
 `;

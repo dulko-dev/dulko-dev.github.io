@@ -48,8 +48,6 @@ const About = () => {
           <AboutTagP>About</AboutTagP>
         </AboutTag>
         <TextTag id="cont">
-    
-       
           <TextTagTitle>Title 1</TextTagTitle>
           <TextTagP>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nemo
