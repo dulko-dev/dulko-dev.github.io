@@ -2,14 +2,11 @@ import React, { useEffect, useState } from "react";
 import {
   AboutContainer,
   AboutTag,
-  AboutTagP,
+  AboutTagTitle,
   TextTag,
   TextTagTitle,
   TextTagP,
   AboutContent,
-  Image,
-  ImageDiv,
-
 } from "./style";
 
 const About = () => {
@@ -45,7 +42,9 @@ const About = () => {
     <AboutContainer>
       <AboutContent>
         <AboutTag fix={stackUpper} over={stackBottom}>
-          <AboutTagP>About</AboutTagP>
+          <AboutTagTitle>
+            <span style={{ display: "block" }}>About</span> Me
+          </AboutTagTitle>
         </AboutTag>
         <TextTag id="cont">
           <TextTagTitle>Title 1</TextTagTitle>

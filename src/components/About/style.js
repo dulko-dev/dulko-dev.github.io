@@ -31,9 +31,10 @@ export const AboutTag = styled.div`
     `}
 `;
 
-export const AboutTagP = styled.p`
+export const AboutTagTitle = styled.p`
   margin: auto;
   color: rgb(140, 140, 140);
+  text-align: center;
 `;
 
 export const TextTag = styled.div`
@@ -53,6 +54,3 @@ export const TextTagP = styled.p`
   font-size: 1.4em;
   padding: 5px;
 `;
-
-
-
