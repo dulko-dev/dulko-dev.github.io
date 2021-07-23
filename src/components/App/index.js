@@ -4,6 +4,7 @@ import Home from "../Home";
 import About from "../About";
 import Projects from "../Projects";
 import Contact from "../Contact";
+import Footer from "../Footer";
 import {
   Loading,
   AppContainer,
@@ -38,10 +39,11 @@ const App = () => {
         </>
       )}
       <Nav />
-      <Home hiddenBlock={hiddenBlock}/>
+      <Home hiddenBlock={hiddenBlock} />
       <About />
       <Projects />
-      <Contact/>
+      <Contact />
+      <Footer />
     </AppContainer>
   );
 };

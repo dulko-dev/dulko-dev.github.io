@@ -12,7 +12,7 @@ export const AboutContent = styled.div`
 export const AboutTag = styled.div`
   display: flex;
   flex-direction: column;
-  font-size: 10em;
+  font-size: 7em;
   width: 50%;
   background-color: #1d1e21;
   height: 100vh;
@@ -60,4 +60,18 @@ export const TextTagTitle = styled.h2`
 export const TextTagP = styled.p`
   font-size: 1.4em;
   padding: 5px;
+`;
+
+export const IconContener = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+export const IconDiv = styled.div`
+  margin: 30px;
+`;
+
+export const IconImage = styled.img`
+  width: 64px;
+  height: 64px;
 `;

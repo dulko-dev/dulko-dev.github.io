@@ -12,7 +12,7 @@ export const ProjectContent = styled.div`
 export const ProjectTag = styled.div`
   display: flex;
   flex-direction: column;
-  font-size: 10em;
+  font-size: 8em;
   width: 50%;
   background-color: #121212;
   color: rgb(140, 140, 140);
@@ -36,8 +36,8 @@ export const ProjectTag = styled.div`
 export const Image = styled.img`
   margin: 0 auto;
   display: block;
-  margin-top: 10px;
-  width:300px;
+  margin-top: 20px;
+  width:500px;
   height:200px;
 
 `;
