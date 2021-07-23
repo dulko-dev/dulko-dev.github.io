@@ -1,4 +1,12 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
+
+const textAnimation = keyframes`
+to {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50px);
+}
+`;
 
 export const AboutContainer = styled.div`
   position: relative;
@@ -69,9 +77,30 @@ export const IconContener = styled.div`
 
 export const IconDiv = styled.div`
   margin: 30px;
+  position: relative;
+  transition: all 0.4s;
+  &:hover .iconText {
+    animation-name: ${textAnimation};
+    animation-fill-mode: forwards;
+    animation-duration: 1.5s;
+  }
+  &:hover .iconImg {
+    transition: all 0.4s;
+    opacity: 0.1;
+  }
 `;
 
 export const IconImage = styled.img`
   width: 64px;
   height: 64px;
+`;
+
+export const IconText = styled.p`
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  visibility: hidden;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align:center
 `;

@@ -16,10 +16,10 @@ export const iconsFolder = [
   { id: 3, name: "github", img: github },
   { id: 4, name: "sass", img: sass },
   { id: 5, name: "nextjs", img: next },
-  { id: 6, name: "styled-components", img: styledComp },
+  { id: 6, name: "styled components", img: styledComp },
   { id: 7, name: "expo", img: expo },
   { id: 8, name: "firebase", img: firebase },
-  { id: 9, name: "js", img: js },
-  { id: 10, name: "expo", img: react },
+  { id: 9, name: "javascript", img: js },
+  { id: 10, name: "react", img: react },
   { id: 11, name: "redux", img: redux },
 ];

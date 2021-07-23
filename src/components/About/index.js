@@ -10,7 +10,8 @@ import {
   Image,
   IconImage,
   IconDiv,
-  IconContener
+  IconContener,
+  IconText,
 } from "./style";
 import { iconsFolder } from "./icons";
 
@@ -59,7 +60,8 @@ const About = () => {
           <IconContener>
             {iconsFolder.map((icon) => (
               <IconDiv key={icon.id}>
-                <IconImage src={icon.img} />
+                <IconImage src={icon.img} className={'iconImg'} />
+                <IconText className={'iconText'}>{icon.name}</IconText>
               </IconDiv>
             ))}
           </IconContener>
