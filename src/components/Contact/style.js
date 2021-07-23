@@ -11,6 +11,7 @@ export const ContactContent = styled.div`
 
 export const ContactTag = styled.div`
   display: flex;
+  flex-direction: column;
   font-size: 10em;
   width: 50%;
   background-color: orange;
@@ -24,8 +25,14 @@ export const ContactTag = styled.div`
     `}
 `;
 
+export const Image = styled.img`
+  display: block;
+  margin: 0 auto;
+  width: 500px;
+  height: 250px;
+`;
 export const ContactTagP = styled.p`
-  margin: auto;
+  margin: 0 auto;
 `;
 
 export const TextTag = styled.div`

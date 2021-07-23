@@ -13,14 +13,14 @@ import {
 
 const App = () => {
   const [visible, setVisible] = useState(true);
-  const [hidden, setHidden] = useState(true);
+  const [hiddenBlock, setHiddenBlock] = useState(true);
 
   useEffect(() => {
     const idTime = setTimeout(() => {
       setVisible(false);
     }, 2000);
     const idBack = setTimeout(() => {
-      setHidden(false);
+      setHiddenBlock(false);
     }, 5000);
     return () => {
       clearTimeout(idTime);
@@ -31,14 +31,14 @@ const App = () => {
   return (
     <AppContainer>
       {visible && <Loading />}
-      {hidden && (
+      {hiddenBlock && (
         <>
           <LoadingContainerRight />
           <LoadingContainerLeft />
         </>
       )}
       <Nav />
-      <Home/>
+      <Home hiddenBlock={hiddenBlock}/>
       <About />
       <Projects />
       <Contact/>

@@ -11,6 +11,7 @@ export const ProjectContent = styled.div`
 
 export const ProjectTag = styled.div`
   display: flex;
+  flex-direction: column;
   font-size: 10em;
   width: 50%;
   background-color: #121212;
@@ -32,8 +33,17 @@ export const ProjectTag = styled.div`
     `}
 `;
 
+export const Image = styled.img`
+  margin: 0 auto;
+  display: block;
+  margin-top: 10px;
+  width:300px;
+  height:200px;
+
+`;
+
 export const ProjectTagP = styled.p`
-  margin: auto;
+  margin: 0 auto;
 `;
 
 export const TextTag = styled.div`

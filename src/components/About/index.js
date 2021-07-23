@@ -7,7 +7,10 @@ import {
   TextTagTitle,
   TextTagP,
   AboutContent,
+  Image,
 } from "./style";
+
+import myAvatar from "../../assets/myAvatar.png";
 
 const About = () => {
   const [stackUpper, setStackUpper] = useState(false);
@@ -42,6 +45,7 @@ const About = () => {
     <AboutContainer>
       <AboutContent>
         <AboutTag fix={stackUpper} over={stackBottom}>
+          <Image src={myAvatar} />
           <AboutTagTitle>
             <span style={{ display: "block" }}>About</span> Me
           </AboutTagTitle>

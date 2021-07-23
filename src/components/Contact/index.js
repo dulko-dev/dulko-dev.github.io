@@ -7,7 +7,9 @@ import {
   TextTag,
   TextTagTitle,
   TextTagP,
+  Image,
 } from "./style";
+import contactImage from "../../assets/contact.png";
 
 const Contact = () => {
   const [stackUpper, setStackUpper] = useState(false);
@@ -37,6 +39,7 @@ const Contact = () => {
     <ContactContainer>
       <ContactContent>
         <ContactTag fix={stackUpper}>
+        <Image src={contactImage} />
           <ContactTagP>Contact</ContactTagP>
         </ContactTag>
         <TextTag id="contact">
@@ -47,7 +50,5 @@ const Contact = () => {
     </ContactContainer>
   );
 };
-
-
 
 export default Contact;

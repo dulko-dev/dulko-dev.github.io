@@ -1,5 +1,5 @@
 {
-    "workbench.editor.enablePreview": false,
-    "editor.fontFamily": "'Montserrat-Medium','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback',",
-    "terminal.integrated.fontFamily": "monospace"
+  "workbench.editor.enablePreview": false,
+  "editor.fontFamily": "\"Cascadia Code\"",
+  "terminal.integrated.fontFamily": "\"Cascadia Code\""
 }

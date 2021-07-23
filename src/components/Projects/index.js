@@ -7,7 +7,10 @@ import {
   TextTagTitle,
   TextTagP,
   ProjectContent,
+  Image,
 } from "./style";
+
+import project from "../../assets/projects.png";
 
 const Projects = () => {
   const [stackUpper, setStackUpper] = useState(false);
@@ -42,6 +45,7 @@ const Projects = () => {
     <ProjectsContainer>
       <ProjectContent>
         <ProjectTag fix={stackUpper} over={stackBottom}>
+          <Image src={project} />
           <ProjectTagP>Projects</ProjectTagP>
         </ProjectTag>
         <TextTag id="project">

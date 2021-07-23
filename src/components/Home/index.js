@@ -22,7 +22,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import myPhoto from "../../assets/homePhoto.jpg";
 
-const Home = () => {
+const Home = ({ hiddenBlock }) => {
   const [hidden, setHidden] = useState({
     fb: false,
     git: false,
@@ -87,16 +87,14 @@ const Home = () => {
           <TitleText>Welcome to my portfolio</TitleText>
           <Typewriter
             options={{
+              loop: true,
+              autoStart: hiddenBlock ? false : true,
               strings: [
                 `Name: Kamil Duliniec,<br/>
-                Occupation: Front-end Developer,<br/>
-                City: Wroclaw
-                `,
+                Specialist: FrontEnd Developer,<br/>
+                City: Wroclaw`,
               ],
-              autoStart: true,
-              loop: true,
-              deleteSpeed: 10,
-              pauseFor: 5000,
+              pauseFor: 0,
             }}
           />
         </Text>

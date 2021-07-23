@@ -11,6 +11,7 @@ export const AboutContent = styled.div`
 
 export const AboutTag = styled.div`
   display: flex;
+  flex-direction: column;
   font-size: 10em;
   width: 50%;
   background-color: #1d1e21;
@@ -31,8 +32,14 @@ export const AboutTag = styled.div`
     `}
 `;
 
+export const Image = styled.img`
+  margin: 0 auto;
+  display: block;
+  margin-top: 20px;
+`;
+
 export const AboutTagTitle = styled.p`
-  margin: auto;
+  margin: 0 auto;
   color: rgb(140, 140, 140);
   text-align: center;
 `;
