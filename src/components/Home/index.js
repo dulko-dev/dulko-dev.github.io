@@ -90,9 +90,10 @@ const Home = ({ hiddenBlock }) => {
               loop: true,
               autoStart: hiddenBlock ? false : true,
               strings: [
-                `Name: Kamil Duliniec,<br/>
-                Specialist: FrontEnd Developer,<br/>
-                City: Wroclaw`,
+                `Name: Kamil Duliniec,<br>
+                Occupation: Front-end Developer, <br>
+                Place: Wrocław
+                `,
               ],
               pauseFor: 0,
             }}

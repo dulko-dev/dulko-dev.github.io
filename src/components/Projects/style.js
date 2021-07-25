@@ -37,16 +37,15 @@ export const Image = styled.img`
   margin: 0 auto;
   display: block;
   margin-top: 20px;
-  width:500px;
-  height:200px;
-
+  width: 500px;
+  height: 200px;
 `;
 
 export const ProjectTagP = styled.p`
   margin: 0 auto;
 `;
 
-export const TextTag = styled.div`
+export const TextContainer = styled.div`
   width: 50%;
   position: relative;
   margin-left: auto;
@@ -55,11 +54,47 @@ export const TextTag = styled.div`
   color: rgb(238, 238, 238);
 `;
 
-export const TextTagTitle = styled.h2`
+export const TextTitle = styled.h2`
   text-align: center;
   font-size: 3em;
 `;
-export const TextTagP = styled.p`
-  font-size: 1.4em;
-  padding: 5px;
+export const TextContent = styled.div`
+  overflow: hidden;
+  position:relative;
+  width: 100%;
+  height: 400px;
+  &:after {
+    content: "";
+    position: absolute;
+    top: -110%;
+    left: -210%;
+    width: 200%;
+    height: 200%;
+    opacity: 0;
+    transform: rotate(30deg);
+    background: rgba(255, 255, 255, 0.13);
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.13) 0%,
+      rgba(255, 255, 255, 0.13) 77%,
+      rgba(255, 255, 255, 0.5) 92%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+  &:hover:after {
+    opacity: 1;
+    top: -30%;
+    left: -30%;
+    transition-property: left, top, opacity;
+    transition-duration: 0.7s, 0.7s, 0.15s;
+    transition-timing-function: ease;
+    &:active:after {
+      opacity: 0;
+    }
+  }
+`;
+
+export const ImageProject = styled.img`
+  width: 100%;
+  height: 100%;
 `;
