@@ -69,6 +69,15 @@ export const Text = styled.p`
   bottom: -200px;
 `;
 
+export const EnterIcon = styled.div`
+  display: flex;
+  position: absolute;
+  right: 0;
+  bottom: -200px;
+  transition: all 0.6s;
+  transition-delay: 0.3s;
+`;
+
 export const TextContent = styled.div`
   overflow: hidden;
   position: relative;
@@ -88,6 +97,11 @@ export const TextContent = styled.div`
     transform: translateY(-200px);
     transition: all 1s;
     transition-delay: 1.5s;
+  }
+  &:hover .blockProject ${EnterIcon} {
+    transform: translateY(-200px);
+    transition: all 1s;
+    transition-delay: 2s;
   }
   &:after {
     content: "";
@@ -122,7 +136,6 @@ export const TextContent = styled.div`
 
 export const TextModule = styled.div`
   width: 500px;
-  /* height: 100px; */
   position: absolute;
   bottom: -200px;
   right: 0;
@@ -143,3 +156,9 @@ export const ImageProject = styled.img`
   width: 100%;
   height: 450px;
 `;
+
+export const GitIcon = styled.div`
+  color: rgb(238, 238, 238);
+  padding-right: 10px;
+`;
+export const LiveIcon = styled(GitIcon)``;

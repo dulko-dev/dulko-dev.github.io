@@ -12,10 +12,15 @@ import {
   TextModule,
   TextModuleTech,
   Text,
+  GitIcon,
+  LiveIcon,
+  EnterIcon
 } from "./style";
 
 import project from "../../assets/projects.png";
 import { projectsList } from "./projectsList";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHotjar, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const Projects = () => {
   const [stackUpper, setStackUpper] = useState(false);
@@ -59,6 +64,18 @@ const Projects = () => {
               <TextTitle>{element.title}</TextTitle>
               <TextModule className={"blockProject"}>
                 <Text>{element.description}</Text>
+                <EnterIcon>
+                <a href={element.git} target="_blanket">
+                  <GitIcon>
+                    <FontAwesomeIcon icon={faGithub} />
+                  </GitIcon>
+                </a>
+                <a href={element.live} target="_blanket">
+                  <LiveIcon>
+                    <FontAwesomeIcon icon={faHotjar} />
+                  </LiveIcon>
+                </a>
+                </EnterIcon>
               </TextModule>
               <TextModuleTech className={"blockTech"}></TextModuleTech>
               <ImageProject src={element.img} />
