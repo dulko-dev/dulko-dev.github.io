@@ -9,10 +9,13 @@ import {
   ProjectContent,
   Image,
   ImageProject,
+  TextModule,
+  TextModuleTech,
+  Text,
 } from "./style";
 
 import project from "../../assets/projects.png";
-import imgDashboard from "../../assets/dashboard.png";
+import { projectsList } from "./projectsList";
 
 const Projects = () => {
   const [stackUpper, setStackUpper] = useState(false);
@@ -51,10 +54,16 @@ const Projects = () => {
           <ProjectTagP>Projects</ProjectTagP>
         </ProjectTag>
         <TextContainer id="project">
-          <TextTitle>React dashboard</TextTitle>
-          <TextContent>
-            <ImageProject src={imgDashboard} />
-          </TextContent>
+          {projectsList.map((element) => (
+            <TextContent key={element.id}>
+              <TextTitle>{element.title}</TextTitle>
+              <TextModule className={"blockProject"}>
+                <Text>{element.description}</Text>
+              </TextModule>
+              <TextModuleTech className={"blockTech"}></TextModuleTech>
+              <ImageProject src={element.img} />
+            </TextContent>
+          ))}
         </TextContainer>
       </ProjectContent>
     </ProjectsContainer>

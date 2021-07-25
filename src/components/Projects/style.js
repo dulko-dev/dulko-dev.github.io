@@ -57,21 +57,47 @@ export const TextContainer = styled.div`
 export const TextTitle = styled.h2`
   text-align: center;
   font-size: 3em;
+  height: 50px;
 `;
+
+export const Text = styled.p`
+  transition: all 0.6s;
+  transition-delay: 0.3s;
+  position: relative;
+  padding-top: 5px;
+  padding-left: 5px;
+  bottom: -200px;
+`;
+
 export const TextContent = styled.div`
   overflow: hidden;
-  position:relative;
+  position: relative;
   width: 100%;
-  height: 400px;
+  height: 500px;
+  &:hover .blockProject {
+    transform: translateY(-230px);
+    transition: all 0.7s;
+    transition-delay: 0.3s;
+  }
+  &:hover .blockTech {
+    transform: translateY(-30px);
+    transition: all 0.7s;
+    transition-delay: 1s;
+  }
+  &:hover .blockProject ${Text} {
+    transform: translateY(-200px);
+    transition: all 1s;
+    transition-delay: 1.5s;
+  }
   &:after {
     content: "";
     position: absolute;
-    top: -110%;
+    top: -200%;
     left: -210%;
     width: 200%;
     height: 200%;
     opacity: 0;
-    transform: rotate(30deg);
+    transform: rotate(25deg);
     background: rgba(255, 255, 255, 0.13);
     background: linear-gradient(
       to right,
@@ -86,7 +112,7 @@ export const TextContent = styled.div`
     top: -30%;
     left: -30%;
     transition-property: left, top, opacity;
-    transition-duration: 0.7s, 0.7s, 0.15s;
+    transition-duration: 0.3s, 0.3s, 0.15s;
     transition-timing-function: ease;
     &:active:after {
       opacity: 0;
@@ -94,7 +120,26 @@ export const TextContent = styled.div`
   }
 `;
 
+export const TextModule = styled.div`
+  width: 500px;
+  /* height: 100px; */
+  position: absolute;
+  bottom: -200px;
+  right: 0;
+  background-color: rgba(17, 34, 64, 0.6);
+  transition: all 0.3s;
+  transition-delay: 0.9s;
+  z-index: 1;
+`;
+
+export const TextModuleTech = styled(TextModule)`
+  height: 30px;
+  bottom: -30px;
+  transition-delay: 0.6s;
+  background-color: rgb(35, 53, 84);
+`;
+
 export const ImageProject = styled.img`
   width: 100%;
-  height: 100%;
+  height: 450px;
 `;
