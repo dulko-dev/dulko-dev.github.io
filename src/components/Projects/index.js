@@ -14,7 +14,8 @@ import {
   Text,
   GitIcon,
   LiveIcon,
-  EnterIcon
+  EnterIcon,
+  SingleTech,
 } from "./style";
 
 import project from "../../assets/projects.png";
@@ -64,20 +65,28 @@ const Projects = () => {
               <TextTitle>{element.title}</TextTitle>
               <TextModule className={"blockProject"}>
                 <Text>{element.description}</Text>
-                <EnterIcon>
-                <a href={element.git} target="_blanket">
-                  <GitIcon>
-                    <FontAwesomeIcon icon={faGithub} />
-                  </GitIcon>
-                </a>
-                <a href={element.live} target="_blanket">
-                  <LiveIcon>
-                    <FontAwesomeIcon icon={faHotjar} />
-                  </LiveIcon>
-                </a>
-                </EnterIcon>
               </TextModule>
-              <TextModuleTech className={"blockTech"}></TextModuleTech>
+              <TextModuleTech className={"blockTech"}>
+                <EnterIcon>
+                  <a href={element.git} target="_blanket">
+                    <GitIcon>
+                      <FontAwesomeIcon
+                        icon={faGithub}
+                      />
+                    </GitIcon>
+                  </a>
+                  <a href={element.live} target="_blanket">
+                    <LiveIcon>
+                      <FontAwesomeIcon
+                        icon={faHotjar}
+                      />
+                    </LiveIcon>
+                  </a>
+                </EnterIcon>
+                {element.tech.map((tech, index) => (
+                  <SingleTech key={index}>{tech}</SingleTech>
+                ))}
+              </TextModuleTech>
               <ImageProject src={element.img} />
             </TextContent>
           ))}

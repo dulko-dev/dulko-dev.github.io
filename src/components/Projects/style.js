@@ -58,31 +58,43 @@ export const TextTitle = styled.h2`
   text-align: center;
   font-size: 3em;
   height: 50px;
+  padding: 10px 0;
 `;
 
 export const Text = styled.p`
-  transition: all 0.6s;
-  transition-delay: 0.3s;
+  transition: all 0.7s;
+  transition-delay: 1.3s;
   position: relative;
-  padding-top: 5px;
-  padding-left: 5px;
+  padding: 15px;
   bottom: -200px;
 `;
 
 export const EnterIcon = styled.div`
   display: flex;
   position: absolute;
-  right: 0;
+  left: 0;
   bottom: -200px;
-  transition: all 0.6s;
+  transition: all 0.7s;
+  transition-delay: 0.8s;
+  padding: 0 0 5px 10px;
+  color: rgb(140, 140, 140);
+`;
+
+export const SingleTech = styled(Text)`
+  bottom: -30px;
+  padding: 0 10px 0 0;
+  color: rgb(140, 140, 140);
   transition-delay: 0.3s;
 `;
 
 export const TextContent = styled.div`
   overflow: hidden;
   position: relative;
-  width: 100%;
-  height: 500px;
+  width: 95%;
+  margin: 30px auto 0 auto;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  box-sizing: border-box;
   &:hover .blockProject {
     transform: translateY(-230px);
     transition: all 0.7s;
@@ -91,19 +103,25 @@ export const TextContent = styled.div`
   &:hover .blockTech {
     transform: translateY(-30px);
     transition: all 0.7s;
-    transition-delay: 1s;
+    transition-delay: 0.8s;
   }
   &:hover .blockProject ${Text} {
     transform: translateY(-200px);
-    transition: all 1s;
-    transition-delay: 1.5s;
+    transition: all 0.7s;
+    transition-delay: 1.3s;
   }
-  &:hover .blockProject ${EnterIcon} {
+  &:hover .blockTech ${EnterIcon} {
     transform: translateY(-200px);
-    transition: all 1s;
-    transition-delay: 2s;
+    transition: all 0.7s;
+    transition-delay: 1.8s;
   }
-  &:after {
+  &:hover .blockTech ${SingleTech} {
+    transform: translateY(-30px);
+    transition: all 0.7s;
+    transition-delay: 2.3s;
+  }
+
+  &:before {
     content: "";
     position: absolute;
     top: -200%;
@@ -121,14 +139,14 @@ export const TextContent = styled.div`
       rgba(255, 255, 255, 0) 100%
     );
   }
-  &:hover:after {
+  &:hover:before {
     opacity: 1;
     top: -30%;
     left: -30%;
     transition-property: left, top, opacity;
     transition-duration: 0.3s, 0.3s, 0.15s;
     transition-timing-function: ease;
-    &:active:after {
+    &:active:before {
       opacity: 0;
     }
   }
@@ -140,15 +158,18 @@ export const TextModule = styled.div`
   bottom: -200px;
   right: 0;
   background-color: rgba(17, 34, 64, 0.6);
-  transition: all 0.3s;
-  transition-delay: 0.9s;
+  transition: all 0.7s;
+  transition-delay: 2.3s;
   z-index: 1;
 `;
 
 export const TextModuleTech = styled(TextModule)`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   height: 30px;
   bottom: -30px;
-  transition-delay: 0.6s;
+  transition-delay: 1.9s;
   background-color: rgb(35, 53, 84);
 `;
 
@@ -158,7 +179,13 @@ export const ImageProject = styled.img`
 `;
 
 export const GitIcon = styled.div`
-  color: rgb(238, 238, 238);
+  color: rgb(140, 140, 140);
   padding-right: 10px;
+  transition: all 0.3s;
+  &:hover {
+    color: rgb(238, 238, 238);
+    transition: all 0.3s;
+  }
 `;
+
 export const LiveIcon = styled(GitIcon)``;
