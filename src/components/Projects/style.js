@@ -11,24 +11,20 @@ export const ProjectContent = styled.div`
 
 export const ProjectTag = styled.div`
   display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
   flex-direction: column;
   font-size: 8em;
   width: 50%;
   background-color: #121212;
   color: rgb(140, 140, 140);
-  height: 100vh;
+  height: 100%;
   ${({ fix }) =>
     fix &&
     css`
       position: fixed;
       top: 0;
-      left: 0;
-    `}
-  ${({ over }) =>
-    over &&
-    css`
-      position: absolute;
-      bottom: 0;
       left: 0;
     `}
 `;
@@ -90,7 +86,7 @@ export const SingleTech = styled(Text)`
 export const TextContent = styled.div`
   overflow: hidden;
   position: relative;
-  width: 95%;
+  width: 100%;
   margin: 30px auto 0 auto;
   border-top: 1px solid white;
   border-bottom: 1px solid white;

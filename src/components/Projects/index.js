@@ -25,7 +25,7 @@ import { faHotjar, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const Projects = () => {
   const [stackUpper, setStackUpper] = useState(false);
-  const [stackBottom, setStackBottom] = useState(false);
+ 
 
   useEffect(() => {
     const aboutFixed = () => {
@@ -43,10 +43,9 @@ const Projects = () => {
     let el = document.querySelector("#project");
     const bottomSucks = () => {
       if (el.getBoundingClientRect().bottom <= window.innerHeight) {
-        setStackUpper(false);
-        setStackBottom(true);
+     
       } else {
-        setStackBottom(false);
+        
       }
     };
     window.addEventListener("scroll", bottomSucks);
@@ -55,7 +54,7 @@ const Projects = () => {
   return (
     <ProjectsContainer>
       <ProjectContent>
-        <ProjectTag fix={stackUpper} over={stackBottom}>
+        <ProjectTag fix={stackUpper} >
           <Image src={project} />
           <ProjectTagP>Projects</ProjectTagP>
         </ProjectTag>

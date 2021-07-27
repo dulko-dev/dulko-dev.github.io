@@ -19,23 +19,19 @@ export const AboutContent = styled.div`
 
 export const AboutTag = styled.div`
   display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
   flex-direction: column;
   font-size: 7em;
   width: 50%;
   background-color: #1d1e21;
-  height: 100vh;
+  height: 100%;
   ${({ fix }) =>
     fix &&
     css`
       position: fixed;
       top: 0;
-      left: 0;
-    `}
-  ${({ over }) =>
-    over &&
-    css`
-      position: absolute;
-      bottom: 0;
       left: 0;
     `}
 `;
@@ -102,5 +98,5 @@ export const IconText = styled.p`
   visibility: hidden;
   font-weight: 600;
   text-transform: uppercase;
-  text-align:center
+  text-align: center;
 `;
