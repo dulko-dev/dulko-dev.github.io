@@ -46,11 +46,46 @@ export const TextTag = styled.div`
   color: rgb(140, 140, 140);
 `;
 
-export const TextTagTitle = styled.h2`
+export const FormContact = styled.h2`
+  font-size: 2.5em;
   text-align: center;
-  font-size: 3em;
+  padding: 20px 0;
 `;
-export const TextTagP = styled.p`
-  font-size: 1.4em;
-  padding: 5px;
+
+export const Form = styled.form`
+  max-width: 700px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(5, 1fr);
+  row-gap: 10px;
+`;
+export const Label = styled.label`
+  grid-column: 1/2;
+  grid-row: 1/2 2/3 3/4;
+  place-self: center flex-start;
+`;
+export const InputName = styled.input`
+  grid-column: 2/3;
+  grid-row: 1/2;
+`;
+export const InputEmail = styled.input`
+  grid-column: 2/3;
+  grid-row: 2/3;
+`;
+export const InputNumber = styled.input`
+  grid-column: 2/3;
+  grid-row: 3/4;
+`;
+export const TextArea = styled.textarea`
+  grid-column: 1/3;
+  grid-row: 4/5;
+  border-radius: 4px;
+  resize: none;
+  padding: 10px 5px;
+  outline: none;
+`;
+export const SendButton = styled.button`
+  grid-column: 1/3;
+  grid-row: 5/6;
 `;

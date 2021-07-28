@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import {
   AboutContainer,
   AboutTag,
@@ -38,14 +40,12 @@ const About = () => {
     let title = document.querySelector(".title");
 
     const bottomSucks = () => {
-      let value = window.scrollY;
-      console.log(value);
+      let value = 0;
       if (el.getBoundingClientRect().bottom <= window.innerHeight) {
-        photo.style.opacity = "0";
-        title.style.opacity = ".2";
+        // photo.style.opacity = title.style.opacity = ".5";
       } else {
-        photo.style.opacity = "1";
-        title.style.opacity = "1";
+        // photo.style.opacity = "1";
+        // title.style.opacity = "1";
       }
     };
     window.addEventListener("scroll", bottomSucks);

@@ -9,6 +9,9 @@ import firebase from "../../assets/icons/firebase.png";
 import js from "../../assets/icons/js.png";
 import react from "../../assets/icons/react.png";
 import redux from "../../assets/icons/redux.png";
+import rwd from "../../assets/icons/rwd.png";
+import gsap from "../../assets/icons/gsap.png";
+
 
 export const iconsFolder = [
   { id: 1, name: "html5", img: html5 },
@@ -22,4 +25,6 @@ export const iconsFolder = [
   { id: 9, name: "javascript", img: js },
   { id: 10, name: "react", img: react },
   { id: 11, name: "redux", img: redux },
+  { id: 12, name: "responsive web design", img: rwd },
+  { id: 13, name: "gsap", img: gsap },
 ];

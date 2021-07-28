@@ -5,46 +5,41 @@ import {
   ContactTag,
   ContactTagP,
   TextTag,
-  TextTagTitle,
-  TextTagP,
   Image,
+  Form,
+  Label,
+  InputName,
+  InputEmail,
+  InputNumber,
+  TextArea,
+  SendButton,
+  FormContact,
 } from "./style";
 import contactImage from "../../assets/contact.png";
 
 const Contact = () => {
-  const [stackUpper, setStackUpper] = useState(false);
-
-  useEffect(() => {
-    const aboutFixed = () => {
-      let el = document.querySelector("#contact");
-      if (el.getBoundingClientRect().top <= 0) {
-        setStackUpper(true);
-      } else {
-        setStackUpper(false);
-      }
-    };
-    window.addEventListener("scroll", aboutFixed);
-  }, []);
-
-  useEffect(() => {
-    let el = document.querySelector("#contact");
-    const bottomSucks = () => {
-      if (el.getBoundingClientRect().bottom <= window.innerHeight)
-        setStackUpper(false);
-    };
-    window.addEventListener("scroll", bottomSucks);
-  }, []);
-
   return (
     <ContactContainer>
       <ContactContent>
-        <ContactTag fix={stackUpper}>
-        <Image src={contactImage} />
+        <ContactTag>
+          <Image src={contactImage} />
           <ContactTagP>Contact</ContactTagP>
         </ContactTag>
         <TextTag id="contact">
-          <TextTagTitle>Title 1</TextTagTitle>
-          <TextTagP>blblb</TextTagP>
+          {/* Formularz */}
+          <p>Please send me message</p>
+          <p>or say hello</p>
+          <FormContact>Form Contact</FormContact>
+          <Form>
+            <Label>Name</Label>
+            <InputName />
+            <Label>Email</Label>
+            <InputEmail />
+            <Label>Number(optional)</Label>
+            <InputNumber />
+            <TextArea />
+            <SendButton>Wyślij</SendButton>
+          </Form>
         </TextTag>
       </ContactContent>
     </ContactContainer>
