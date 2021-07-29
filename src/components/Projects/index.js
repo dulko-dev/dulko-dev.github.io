@@ -24,16 +24,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHotjar, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const Projects = () => {
-  const [stackUpper, setStackUpper] = useState(false);
- 
+  const [stack, setStack] = useState(false);
 
   useEffect(() => {
     const aboutFixed = () => {
       let el = document.querySelector("#project");
       if (el.getBoundingClientRect().top <= 0) {
-        setStackUpper(true);
+        setStack(true);
       } else {
-        setStackUpper(false);
+        setStack(false);
       }
     };
     window.addEventListener("scroll", aboutFixed);
@@ -41,11 +40,15 @@ const Projects = () => {
 
   useEffect(() => {
     let el = document.querySelector("#project");
+    let photoAbout = document.querySelector(".photoProject");
+    let titleAbout = document.querySelector(".titleProject");
+
     const bottomSucks = () => {
+      let value = el.getBoundingClientRect().bottom;
       if (el.getBoundingClientRect().bottom <= window.innerHeight) {
-     
+        photoAbout.style.opacity = titleAbout.style.opacity = value * 0.001;
       } else {
-        
+        photoAbout.style.opacity = titleAbout.style.opacity = "1";
       }
     };
     window.addEventListener("scroll", bottomSucks);
@@ -54,9 +57,9 @@ const Projects = () => {
   return (
     <ProjectsContainer>
       <ProjectContent>
-        <ProjectTag fix={stackUpper} >
-          <Image src={project} />
-          <ProjectTagP>Projects</ProjectTagP>
+        <ProjectTag fix={stack}>
+          <Image src={project} className={"photoProject"} />
+          <ProjectTagP className={"titleProject"}>Projects</ProjectTagP>
         </ProjectTag>
         <TextContainer id="project">
           {projectsList.map((element) => (
@@ -69,16 +72,12 @@ const Projects = () => {
                 <EnterIcon>
                   <a href={element.git} target="_blanket">
                     <GitIcon>
-                      <FontAwesomeIcon
-                        icon={faGithub}
-                      />
+                      <FontAwesomeIcon icon={faGithub} />
                     </GitIcon>
                   </a>
                   <a href={element.live} target="_blanket">
                     <LiveIcon>
-                      <FontAwesomeIcon
-                        icon={faHotjar}
-                      />
+                      <FontAwesomeIcon icon={faHotjar} />
                     </LiveIcon>
                   </a>
                 </EnterIcon>

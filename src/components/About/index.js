@@ -36,16 +36,15 @@ const About = () => {
 
   useEffect(() => {
     let el = document.querySelector("#cont");
-    let photo = document.querySelector(".photo");
-    let title = document.querySelector(".title");
+    let photoAbout = document.querySelector(".photoAbout");
+    let titleAbout = document.querySelector(".titleAbout");
 
     const bottomSucks = () => {
-      let value = 0;
+      let value = el.getBoundingClientRect().bottom;
       if (el.getBoundingClientRect().bottom <= window.innerHeight) {
-        // photo.style.opacity = title.style.opacity = ".5";
+        photoAbout.style.opacity = titleAbout.style.opacity = value * 0.001;
       } else {
-        // photo.style.opacity = "1";
-        // title.style.opacity = "1";
+        photoAbout.style.opacity = titleAbout.style.opacity = "1";
       }
     };
     window.addEventListener("scroll", bottomSucks);
@@ -55,8 +54,8 @@ const About = () => {
     <AboutContainer>
       <AboutContent>
         <AboutTag fix={stackUpper}>
-          <Image src={myAvatar} className="photo" />
-          <AboutTagTitle className="title">
+          <Image src={myAvatar} className="photoAbout" />
+          <AboutTagTitle className="titleAbout">
             <span style={{ display: "block" }}>About</span> Me
           </AboutTagTitle>
         </AboutTag>

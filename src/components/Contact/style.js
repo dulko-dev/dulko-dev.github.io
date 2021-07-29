@@ -57,35 +57,38 @@ export const Form = styled.form`
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr) 150px 1fr;
   row-gap: 10px;
 `;
 export const Label = styled.label`
   grid-column: 1/2;
   grid-row: 1/2 2/3 3/4;
   place-self: center flex-start;
+  font-size: 2em;
 `;
-export const InputName = styled.input`
+
+export const Input = styled.input`
   grid-column: 2/3;
-  grid-row: 1/2;
+  grid-row: 1/2 2/3 3/4;
+  padding: 5px 3px;
+  &:nth-child(2),
+  &:nth-child(4),
+  &:nth-child(6) {
+  }
 `;
-export const InputEmail = styled.input`
-  grid-column: 2/3;
-  grid-row: 2/3;
-`;
-export const InputNumber = styled.input`
-  grid-column: 2/3;
-  grid-row: 3/4;
-`;
+
 export const TextArea = styled.textarea`
   grid-column: 1/3;
   grid-row: 4/5;
-  border-radius: 4px;
   resize: none;
-  padding: 10px 5px;
   outline: none;
+  height: 150px;
+  border-radius: 4px;
 `;
 export const SendButton = styled.button`
   grid-column: 1/3;
   grid-row: 5/6;
+  justify-self: center;
+  width: 150px;
+  border-radius: 15px;
 `;
