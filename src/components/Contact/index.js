@@ -22,6 +22,14 @@ const Contact = () => {
     number: "",
     text: "",
   });
+  const [errorName, setErrorName] = useState(false);
+  const [errorEmail, setErrorEmail] = useState(false);
+  const [errorText, setErrorText] = useState(false);
+
+  const regexEmail = (email) => {
+    let re = /\S+@\S+\.\S+/;
+    return re.test(email);
+  };
 
   const handleInput = (e) => {
     const { name, value } = e.target;
@@ -33,6 +41,23 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (state.nick.length === 0 || state.nick.length <= 2) {
+      setErrorName(true);
+    } else {
+      setErrorName(false);
+    }
+    if (regexEmail(state.email) === false) {
+      setErrorEmail(true);
+    } else {
+      setErrorEmail(false);
+    }
+    if (state.text.length === 0 || state.text.length < 5) {
+      setErrorText(true);
+    } else {
+      setErrorText(false);
+    }
+    return;
   };
 
   return (
@@ -48,6 +73,9 @@ const Contact = () => {
           <Form onSubmit={handleSubmit}>
             <Label htmlFor="name">Name</Label>
             <Input
+              style={{
+                border: errorName ? "1px solid red" : "1px solid black",
+              }}
               type="text"
               onChange={handleInput}
               value={state.nick}
@@ -56,6 +84,9 @@ const Contact = () => {
             />
             <Label htmlFor="email">Email</Label>
             <Input
+              style={{
+                border: errorEmail ? "1px solid red" : "1px solid black",
+              }}
               type="email"
               onChange={handleInput}
               value={state.email}
@@ -76,13 +107,21 @@ const Contact = () => {
               id="number"
             />
             <TextArea
+              style={{
+                border: errorText ? "1px solid red" : "1px solid black",
+              }}
               type="text"
               onChange={handleInput}
               value={state.text}
               name="text"
               placeholder="place for your message"
             />
-            <SendButton>Wyślij</SendButton>
+            <SendButton type="submit">Wyślij</SendButton>
+            {errorName ? (
+              <p style={{ color: "red" }}>
+                Please fill empty space or check is correctly fill in
+              </p>
+            ) : null}
           </Form>
         </TextTag>
       </ContactContent>
