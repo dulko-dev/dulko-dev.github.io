@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { send } from "emailjs-com";
 import {
   ContactContainer,
   ContactContent,
@@ -22,6 +23,8 @@ const Contact = () => {
     number: "",
     text: "",
   });
+
+  console.log("name", state.nick, "email", state.email, "text", state.text);
   const [errorName, setErrorName] = useState(false);
   const [errorEmail, setErrorEmail] = useState(false);
   const [errorText, setErrorText] = useState(false);
@@ -38,27 +41,52 @@ const Contact = () => {
       [name]: value,
     }));
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (state.nick.length === 0 || state.nick.length <= 2) {
+    if (
+      state.nick.trim().length <= 2 ||
+      regexEmail(state.email) === false ||
+      state.text.trim().length < 5
+    ) {
       setErrorName(true);
-    } else {
+      return;
+    }
+
+    send(
+      "service_s61x6sg",
+      "template_nnmsj32",
+      state,
+      "user_tkro5BbWGAiTWmR58DLTb"
+    )
+      .then((response) => {
+        if (response.status === 200) {
+          console.log("supa good");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    setState({
+      nick: "",
+      email: "",
+      number: "",
+      text: "",
+    });
+  };
+
+  useEffect(() => {
+    if (!state.nick.trim().length >= 2) {
       setErrorName(false);
     }
-    if (regexEmail(state.email) === false) {
-      setErrorEmail(true);
-    } else {
+    if (regexEmail(state.email) === true) {
       setErrorEmail(false);
     }
-    if (state.text.length === 0 || state.text.length < 5) {
-      setErrorText(true);
-    } else {
+    if (!state.text.trim().length > 5) {
       setErrorText(false);
     }
-    return;
-  };
+  }, [state.nick, state.email, state.text]);
 
   return (
     <ContactContainer>
@@ -74,7 +102,7 @@ const Contact = () => {
             <Label htmlFor="name">Name</Label>
             <Input
               style={{
-                border: errorName ? "1px solid red" : "1px solid black",
+                border: errorName ? "3px solid red" : "1px solid black",
               }}
               type="text"
               onChange={handleInput}
@@ -85,7 +113,7 @@ const Contact = () => {
             <Label htmlFor="email">Email</Label>
             <Input
               style={{
-                border: errorEmail ? "1px solid red" : "1px solid black",
+                border: errorEmail ? "3px solid red" : "1px solid black",
               }}
               type="email"
               onChange={handleInput}
@@ -108,7 +136,7 @@ const Contact = () => {
             />
             <TextArea
               style={{
-                border: errorText ? "1px solid red" : "1px solid black",
+                border: errorText ? "3px solid red" : "1px solid black",
               }}
               type="text"
               onChange={handleInput}
