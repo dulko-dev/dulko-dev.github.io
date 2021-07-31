@@ -34,7 +34,8 @@ opacity: 0;
 }
 `;
 
-export const AppContainer = styled.div``;
+export const AppContainer = styled.div`
+`;
 
 export const LoadingContainerLeft = styled.div`
   background-color: black;

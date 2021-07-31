@@ -25,7 +25,7 @@ export const AboutTag = styled.div`
   flex-direction: column;
   font-size: 7em;
   width: 50%;
-  background-color: #1d1e21;
+  background-color: ${({ theme }) => theme.lightBackground};
   height: 100%;
   ${({ fix }) =>
     fix &&
@@ -44,7 +44,7 @@ export const Image = styled.img`
 
 export const AboutTagTitle = styled.p`
   margin: 0 auto;
-  color: rgb(140, 140, 140);
+  color: ${({ theme }) => theme.title};
   text-align: center;
 `;
 
@@ -53,8 +53,8 @@ export const TextTag = styled.div`
   position: relative;
   margin-left: auto;
   margin-right: 0;
-  background-color: #121212;
-  color: rgb(238, 238, 238);
+  background-color: ${({ theme }) => theme.darkBackground};
+  color: ${({ theme }) => theme.text};
 `;
 
 export const TextTagTitle = styled.h2`

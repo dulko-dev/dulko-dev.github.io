@@ -11,7 +11,7 @@ import {
 } from "./style";
 import logo from "../../assets/logo.svg";
 
-const Nav = () => {
+const Nav = ({toggleMode, mode}) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const handleOpen = () => {
     setMenuOpen(!menuOpen);
@@ -24,6 +24,7 @@ const Nav = () => {
             <Image src={logo} />
           </a>
         </NavLogo>
+        <button onClick={toggleMode}>{mode === 'dark' ? 'Light Mode' : 'Dark Mode'}</button>
         <NavBurger onClick={handleOpen}>
           <Burger horizontalDash={menuOpen}></Burger>
         </NavBurger>

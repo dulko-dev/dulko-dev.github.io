@@ -12,18 +12,12 @@ export const ContactContent = styled.div`
 export const ContactTag = styled.div`
   display: flex;
   flex-direction: column;
+  position: relative;
   font-size: 7em;
   width: 50%;
   background-color: #1d1e21;
   color: rgb(140, 140, 140);
-  height: 50vh;
-  ${({ fix }) =>
-    fix &&
-    css`
-      position: fixed;
-      top: 0;
-      left: 0;
-    `}
+  padding-bottom:20px;
 `;
 
 export const Image = styled.img`
