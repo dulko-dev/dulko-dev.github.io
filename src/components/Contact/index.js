@@ -12,7 +12,8 @@ import {
   Input,
   TextArea,
   SendButton,
-  FormContact,
+  FormTitle,
+  SpanError,
 } from "./style";
 import contactImage from "../../assets/contact.png";
 
@@ -24,7 +25,7 @@ const Contact = () => {
     text: "",
   });
 
-  console.log("name", state.nick, "email", state.email, "text", state.text);
+  const [errorInfo, setErrorInfo] = useState(false);
   const [errorName, setErrorName] = useState(false);
   const [errorEmail, setErrorEmail] = useState(false);
   const [errorText, setErrorText] = useState(false);
@@ -44,12 +45,16 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    if (state.nick.trim().length <= 2) setErrorName(true);
+    if (regexEmail(state.email) === false) setErrorEmail(true);
+    if (state.text.trim().length < 5) setErrorText(true);
+
     if (
       state.nick.trim().length <= 2 ||
       regexEmail(state.email) === false ||
       state.text.trim().length < 5
     ) {
-      setErrorName(true);
+      setErrorInfo(true);
       return;
     }
 
@@ -62,6 +67,7 @@ const Contact = () => {
       .then((response) => {
         if (response.status === 200) {
           console.log("supa good");
+          setErrorInfo(false);
         }
       })
       .catch((err) => {
@@ -77,13 +83,13 @@ const Contact = () => {
   };
 
   useEffect(() => {
-    if (!state.nick.trim().length >= 2) {
+    if (state.nick.trim().length >= 2) {
       setErrorName(false);
     }
     if (regexEmail(state.email) === true) {
       setErrorEmail(false);
     }
-    if (!state.text.trim().length > 5) {
+    if (state.text.trim().length >= 5) {
       setErrorText(false);
     }
   }, [state.nick, state.email, state.text]);
@@ -97,7 +103,11 @@ const Contact = () => {
         </ContactTag>
         <TextTag id="contact">
           {/* Formularz */}
-          <FormContact>Form Contact</FormContact>
+          {errorInfo ? (
+            <SpanError>Please fill required places</SpanError>
+          ) : null}
+          <FormTitle>Form Contact</FormTitle>
+
           <Form onSubmit={handleSubmit}>
             <Label htmlFor="name">Name</Label>
             <Input
@@ -142,14 +152,9 @@ const Contact = () => {
               onChange={handleInput}
               value={state.text}
               name="text"
-              placeholder="place for your message"
+              placeholder="enter your message"
             />
             <SendButton type="submit">Wyślij</SendButton>
-            {errorName ? (
-              <p style={{ color: "red" }}>
-                Please fill empty space or check is correctly fill in
-              </p>
-            ) : null}
           </Form>
         </TextTag>
       </ContactContent>

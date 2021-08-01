@@ -62,6 +62,7 @@ const App = () => {
         <About />
         <Projects />
         <Contact />
+        <Footer />
       </AppContainer>
     </ThemeProvider>
   );

@@ -17,8 +17,8 @@ export const ProjectTag = styled.div`
   flex-direction: column;
   font-size: 8em;
   width: 50%;
-  background-color: #121212;
-  color: rgb(140, 140, 140);
+  background-color: ${({ theme }) => theme.darkBackground};
+  color: ${({ theme }) => theme.title};
   height: 100%;
   ${({ fix }) =>
     fix &&
@@ -46,8 +46,8 @@ export const TextContainer = styled.div`
   position: relative;
   margin-left: auto;
   margin-right: 0;
-  background-color: #1d1e21;
-  color: rgb(238, 238, 238);
+  background-color: ${({ theme }) => theme.lightBackground};
+  color: ${({ theme }) => theme.text};
 `;
 
 export const TextTitle = styled.h2`
@@ -55,14 +55,16 @@ export const TextTitle = styled.h2`
   font-size: 3em;
   height: 50px;
   padding: 10px 0;
+  font-weight: 600;
 `;
 
 export const Text = styled.p`
-  transition: all 0.7s;
-  transition-delay: 1.3s;
+  transition: all 0.3s;
+  transition-delay: 0.6s;
   position: relative;
   padding: 15px;
   bottom: -200px;
+  color: rgb(238, 238, 238);
 `;
 
 export const EnterIcon = styled.div`
@@ -70,8 +72,8 @@ export const EnterIcon = styled.div`
   position: absolute;
   left: 0;
   bottom: -200px;
-  transition: all 0.7s;
-  transition-delay: 0.8s;
+  transition: all 0.3s;
+  transition-delay: 0.3s;
   padding: 0 0 5px 10px;
   color: rgb(140, 140, 140);
 `;
@@ -80,7 +82,7 @@ export const SingleTech = styled(Text)`
   bottom: -30px;
   padding: 0 10px 0 0;
   color: rgb(140, 140, 140);
-  transition-delay: 0.3s;
+  transition-delay: 0s;
 `;
 
 export const TextContent = styled.div`
@@ -88,33 +90,32 @@ export const TextContent = styled.div`
   position: relative;
   width: 100%;
   margin: 30px auto 0 auto;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
+  border-top: 1px solid ${({ theme }) => theme.line};
+  border-bottom: 1px solid ${({ theme }) => theme.line};
   box-sizing: border-box;
   &:hover .blockProject {
     transform: translateY(-230px);
-    transition: all 0.7s;
-    transition-delay: 0.3s;
+    transition: all 0.3s;
   }
   &:hover .blockTech {
     transform: translateY(-30px);
-    transition: all 0.7s;
-    transition-delay: 0.8s;
+    transition: all 0.3s;
+    transition-delay: 0.3s;
   }
   &:hover .blockProject ${Text} {
     transform: translateY(-200px);
-    transition: all 0.7s;
-    transition-delay: 1.3s;
+    transition: all 0.3s;
+    transition-delay: 0.6s;
   }
   &:hover .blockTech ${EnterIcon} {
     transform: translateY(-200px);
-    transition: all 0.7s;
-    transition-delay: 1.8s;
+    transition: all 0.3s;
+    transition-delay: 0.9s;
   }
   &:hover .blockTech ${SingleTech} {
     transform: translateY(-30px);
-    transition: all 0.7s;
-    transition-delay: 2.3s;
+    transition: all 0.3s;
+    transition-delay: 1.2s;
   }
 
   &:before {
@@ -146,6 +147,10 @@ export const TextContent = styled.div`
       opacity: 0;
     }
   }
+  &:first-child {
+    margin-top: 0;
+    border-top: none;
+  }
 `;
 
 export const TextModule = styled.div`
@@ -154,8 +159,8 @@ export const TextModule = styled.div`
   bottom: -200px;
   right: 0;
   background-color: rgba(17, 34, 64, 0.6);
-  transition: all 0.7s;
-  transition-delay: 2.3s;
+  transition: all 0.3s;
+  transition-delay: 1.2s;
   z-index: 1;
 `;
 
@@ -165,7 +170,7 @@ export const TextModuleTech = styled(TextModule)`
   justify-content: flex-end;
   height: 30px;
   bottom: -30px;
-  transition-delay: 1.9s;
+  transition-delay: 0.9s;
   background-color: rgb(35, 53, 84);
 `;
 

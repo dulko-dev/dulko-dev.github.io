@@ -88,6 +88,7 @@ const Projects = () => {
               <ImageProject src={element.img} />
             </TextContent>
           ))}
+       
         </TextContainer>
       </ProjectContent>
     </ProjectsContainer>

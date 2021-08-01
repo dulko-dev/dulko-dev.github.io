@@ -15,9 +15,9 @@ export const ContactTag = styled.div`
   position: relative;
   font-size: 7em;
   width: 50%;
-  background-color: #1d1e21;
-  color: rgb(140, 140, 140);
-  padding-bottom:20px;
+  background-color: ${({ theme }) => theme.lightBackground};
+  color: ${({ theme }) => theme.title};
+  padding-bottom: 20px;
 `;
 
 export const Image = styled.img`
@@ -36,11 +36,12 @@ export const TextTag = styled.div`
   position: relative;
   margin-left: auto;
   margin-right: 0;
-  background-color: #121212;
-  color: rgb(140, 140, 140);
+  background-color: ${({ theme }) => theme.darkBackground};
+  color: ${({ theme }) => theme.text};
+  padding-top: 20px;
 `;
 
-export const FormContact = styled.h2`
+export const FormTitle = styled.h2`
   font-size: 2.5em;
   text-align: center;
   padding: 20px 0;
@@ -51,7 +52,7 @@ export const Form = styled.form`
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(3, 1fr) 150px 1fr;
+  grid-template-rows: repeat(3, 1fr) 150px auto;
   row-gap: 10px;
 `;
 export const Label = styled.label`
@@ -65,10 +66,6 @@ export const Input = styled.input`
   grid-column: 2/3;
   grid-row: 1/2 2/3 3/4;
   padding: 5px 3px;
-  &:nth-child(2),
-  &:nth-child(4),
-  &:nth-child(6) {
-  }
 `;
 
 export const TextArea = styled.textarea`
@@ -82,7 +79,26 @@ export const TextArea = styled.textarea`
 export const SendButton = styled.button`
   grid-column: 1/3;
   grid-row: 5/6;
+  margin-top:10px;
+  height:35px;
   justify-self: center;
   width: 150px;
   border-radius: 15px;
+  background-color: ${({ theme }) => theme.button};
+  color: ${({ theme }) => theme.buttonColor};
+  transition: all 0.4s;
+  border: none;
+  &:hover {
+    transition: all 0.4s;
+    background-color: ${({ theme }) => theme.lightBackground};
+    color: ${({ theme }) => theme.text};
+  }
+`;
+
+export const SpanError = styled.p`
+  color: red;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
 `;

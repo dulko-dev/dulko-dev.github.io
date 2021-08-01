@@ -35,6 +35,7 @@ opacity: 0;
 `;
 
 export const AppContainer = styled.div`
+  font-family: "STIX Two Text", serif;
 `;
 
 export const LoadingContainerLeft = styled.div`
