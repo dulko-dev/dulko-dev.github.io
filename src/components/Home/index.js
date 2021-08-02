@@ -78,7 +78,7 @@ const Home = ({ hiddenBlock }) => {
   };
 
   return (
-    <HomeComponent>
+    <HomeComponent id='home'>
       <Content>
         <ImageDiv>
           <Image src={myPhoto} />

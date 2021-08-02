@@ -1,16 +1,17 @@
 import styled, { css } from "styled-components";
 
 export const NavContainer = styled.div`
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index:2;
   height: 100px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 `;
 
 export const Image = styled.img`
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   transition: all 0.5s;
   &:hover {
     transition: all 0.5s;
@@ -19,8 +20,12 @@ export const Image = styled.img`
 `;
 
 export const NavLogo = styled.div`
-  z-index: 1;
   margin-left: 50px;
+  text-align: center;
+`;
+
+export const ButtonMode = styled.button`
+  display: block;
 `;
 
 export const NavBurger = styled.div`
@@ -28,6 +33,7 @@ export const NavBurger = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  align-self: center;
   width: 60px;
   height: 60px;
   cursor: pointer;
