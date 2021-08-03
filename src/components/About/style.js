@@ -57,18 +57,24 @@ export const TextTag = styled.div`
   color: ${({ theme }) => theme.text};
 `;
 
-export const TextTagTitle = styled.h2`
-  text-align: center;
-  font-size: 3em;
-`;
 export const TextTagP = styled.p`
   font-size: 1.4em;
   padding: 5px;
 `;
 
 export const IconContener = styled.div`
+  position: relative;
   display: flex;
   flex-wrap: wrap;
+`;
+
+export const TextTagTitle = styled.h2`
+  font-size: 2.5em;
+  position: absolute;
+  right: 90%;
+  bottom: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s;
 `;
 
 export const IconDiv = styled.div`
@@ -99,4 +105,8 @@ export const IconText = styled.p`
   font-weight: 600;
   text-transform: uppercase;
   text-align: center;
+`;
+
+export const HistoryContener = styled.div`
+  position: relative;
 `;
