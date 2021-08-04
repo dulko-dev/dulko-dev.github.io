@@ -22,6 +22,7 @@ const About = () => {
   const [titleVisible, setTitleVisible] = useState(false);
   const [historyVisible, setHistoryVisible] = useState(false);
 
+
   useEffect(() => {
     const aboutFixed = () => {
       let el = document.querySelector("#cont");

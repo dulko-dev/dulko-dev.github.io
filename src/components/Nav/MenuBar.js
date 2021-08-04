@@ -80,7 +80,6 @@ const MenuBar = () => {
 
   return (
     <>
-      <TitleMenu>Navigation</TitleMenu>
       <Ul>
         <Li
           onClick={handleHome}

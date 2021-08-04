@@ -3,20 +3,16 @@ import styled, { css } from "styled-components";
 export const NavContainer = styled.div`
   position: sticky;
   top: 0;
-  z-index:2;
-  height: 100px;
+  z-index: 2;
+  height: 150px;
   display: flex;
   justify-content: space-between;
 `;
 
 export const Image = styled.img`
+  -webkit-box-reflect: below -30% linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
   width: 80px;
   height: 80px;
-  transition: all 0.5s;
-  &:hover {
-    transition: all 0.5s;
-    opacity: 0.7;
-  }
 `;
 
 export const NavLogo = styled.div`
@@ -26,6 +22,14 @@ export const NavLogo = styled.div`
 
 export const ButtonMode = styled.button`
   display: block;
+
+`;
+
+export const RightContent = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
 `;
 
 export const NavBurger = styled.div`
@@ -38,7 +42,6 @@ export const NavBurger = styled.div`
   height: 60px;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
-  margin-right: 50px;
 `;
 
 export const Burger = styled.div`
@@ -86,46 +89,51 @@ export const Burger = styled.div`
 `;
 
 export const Module = styled.div`
-  position: fixed;
-  top: 50%;
+  position: absolute;
   left: 50%;
+  top: 0;
   z-index: 2;
-  transform: translate(-50%, -50%);
-  transition: all 0.5s ease-in-out;
-  opacity: ${(props) => (props.horizontalDash ? "1" : "0")};
-  visibility: ${(props) => (props.horizontalDash ? "visibility" : "hidden")};
-`;
-
-export const MenuBackGround = styled.div`
+  transition: all 1s;
+  transform: translateY(-100px) translateX(-50%);
   ${({ horizontalDash }) =>
     horizontalDash &&
     css`
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      transition: all 1s;
+      transform: translateY(50px) translateX(-50%);
+      transition-delay: 0.5s;
+    `}
+`;
+
+export const MenuBackGround = styled.div`
+  position: fixed;
+  transform: translateY(-100px);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  transition: all 1s;
+
+  ${({ horizontalDash }) =>
+    horizontalDash &&
+    css`
+      transition: all 1s;
+      transform: translateY(0);
       z-index: 1;
       background-color: rgba(0, 0, 0, 0.9);
-      transition: background-color 0.5s;
     `}
 `;
 
 // MenuBar
 
-export const Ul = styled.ul``;
+export const Ul = styled.ul`
+  display: flex;
+`;
 export const Li = styled.li`
+  margin: 0 50px;
   font-size: 30px;
-  margin-bottom: 30px;
   cursor: pointer;
   color: rgb(238, 238, 238);
   font-family: "Poppins", sans-serif;
-  transition: 0.5s;
-  text-align: center;
-  &:hover {
-    transition: 0.5s;
-    color: rgba(238, 238, 238, 0.4);
-  }
 `;
 
 export const TitleMenu = styled.h3`

@@ -9,6 +9,7 @@ import {
   MenuBackGround,
   Image,
   ButtonMode,
+  RightContent,
 } from "./style";
 import logo from "../../assets/logo.svg";
 
@@ -38,16 +39,18 @@ const Nav = ({ toggleMode, mode }) => {
           <a href="/#" style={{ outline: "none" }}>
             <Image src={logo} />
           </a>
+        </NavLogo>
+        <RightContent>
+          <NavBurger onClick={handleOpen}>
+            <Burger horizontalDash={menuOpen}></Burger>
+          </NavBurger>
+          <Module horizontalDash={menuOpen}>
+            <MenuBar />
+          </Module>
           <ButtonMode onClick={toggleMode}>
             {mode === "dark" ? "Light Mode" : "Dark Mode"}
           </ButtonMode>
-        </NavLogo>
-        <NavBurger onClick={handleOpen}>
-          <Burger horizontalDash={menuOpen}></Burger>
-        </NavBurger>
-        <Module horizontalDash={menuOpen}>
-          <MenuBar />
-        </Module>
+        </RightContent>
       </NavContainer>
       <MenuBackGround horizontalDash={menuOpen}></MenuBackGround>
     </>
