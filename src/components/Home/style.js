@@ -3,7 +3,7 @@ import bg from "../../assets/programming.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const HomeComponent = styled.div`
-  height: calc(100vh - 100px);
+  height: calc(100vh - 150px);
   width: 100%;
   &:after {
     content: "";

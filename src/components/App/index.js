@@ -16,15 +16,21 @@ import {
 
 const App = () => {
   const [visible, setVisible] = useState(true);
+  const [sunrise, setSunrise] = useState(false);
+  const [sunset, setSunset] = useState(false);
   const [hiddenBlock, setHiddenBlock] = useState(true);
   const [mode, setMode] = useState("dark");
 
   const toggleMode = () => {
     if (mode === "dark") {
       window.localStorage.setItem("mode", "light");
+      setSunrise(true);
+      setSunset(false);
       setMode("light");
     } else {
       window.localStorage.setItem("mode", "dark");
+      setSunset(true);
+      setSunrise(false);
       setMode("dark");
     }
   };
@@ -57,7 +63,12 @@ const App = () => {
             <LoadingContainerLeft />
           </>
         )}
-        <Nav toggleMode={toggleMode} mode={mode} />
+        <Nav
+          toggleMode={toggleMode}
+          mode={mode}
+          sunrise={sunrise}
+          sunset={sunset}
+        />
         <Home hiddenBlock={hiddenBlock} />
         <About />
         <Projects />

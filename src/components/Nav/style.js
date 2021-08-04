@@ -21,14 +21,32 @@ export const NavLogo = styled.div`
 `;
 
 export const ButtonMode = styled.button`
+  position: relative;
+  padding: 10px 30px;
   display: block;
+  border: none;
+  border-radius: 20px;
+`;
 
+export const ImageSun = styled.img`
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+`;
+
+export const ImageNight = styled.img`
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  opacity: ${(props) => (props.night ? "opacity:1" : "opacity:0")};
 `;
 
 export const RightContent = styled.div`
   display: flex;
   flex-direction: column;
-
+  margin-right: 50px;
   align-items: center;
 `;
 

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import MenuBar from "./MenuBar";
+import sun from "../../assets/sun.png";
+import night from "../../assets/night.png";
 import {
   NavContainer,
   NavBurger,
@@ -10,10 +12,12 @@ import {
   Image,
   ButtonMode,
   RightContent,
+  ImageSun,
+  ImageNight,
 } from "./style";
 import logo from "../../assets/logo.svg";
 
-const Nav = ({ toggleMode, mode }) => {
+const Nav = ({ toggleMode, mode, sunrise, sunset }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [changeColor, setChangeColor] = useState(false);
   const handleOpen = () => {
@@ -48,7 +52,11 @@ const Nav = ({ toggleMode, mode }) => {
             <MenuBar />
           </Module>
           <ButtonMode onClick={toggleMode}>
-            {mode === "dark" ? "Light Mode" : "Dark Mode"}
+            {mode === "dark" ? (
+              <ImageSun src={sun} day={sunrise} />
+            ) : (
+              <ImageNight src={night} night={sunset} />
+            )}
           </ButtonMode>
         </RightContent>
       </NavContainer>
