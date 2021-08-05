@@ -35,7 +35,7 @@ export const Content = styled.div`
 
 export const Text = styled.div`
   position: relative;
-  margin-left:100px;
+  margin-left: 100px;
   color: rgb(238, 238, 238);
   font-size: 50px;
   width: 800px;
@@ -57,6 +57,8 @@ export const Social = styled.div`
 `;
 
 export const Button = styled.button`
+  border-radius: 5px;
+  position: relative;
   font-family: "Montserrat", sans-serif;
   font-size: 15px;
   display: inline-block;
@@ -64,17 +66,33 @@ export const Button = styled.button`
   padding: 10px 20px;
   border: 2px solid rgb(238, 238, 238);
   background-color: inherit;
-  color: rgb(238, 238, 238);
-  transition: all 0.4s ease-in-out;
+  color: #eeeeee;
   text-transform: uppercase;
   font-weight: 600;
-  &:hover {
-    background-color: rgb(238, 238, 238);
-    color: black;
-    transition: all 0.4s ease-in-out;
-  }
+  z-index: 1;
+  transition: color 0.4s ease-in-out;
   &:first-child {
     margin-left: 0;
+  }
+  &:hover,
+  &:focus {
+    color: #0a0a0a;
+  }
+  &:hover:before {
+    transform: scaleX(1);
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #eeeeee;
+    transform: scaleX(0);
+    transform-origin: left;
+    z-index: -1;
+    transition: transform 0.4s ease-in-out;
   }
 `;
 

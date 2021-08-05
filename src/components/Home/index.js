@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import VanillaTilt from "vanilla-tilt";
+import { useTypewriter, Cursor } from "react-simple-typewriter";
 import {
   HomeComponent,
   Content,
@@ -15,7 +16,6 @@ import {
   ImageDiv,
   Image,
 } from "./style";
-import Typewriter from "typewriter-effect";
 import {
   faFacebookF,
   faGithubAlt,
@@ -23,11 +23,16 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import myPhoto from "../../assets/homePhoto.jpg";
 
-const Home = ({ hiddenBlock }) => {
+const Home = () => {
   const [hidden, setHidden] = useState({
     fb: false,
     git: false,
     link: false,
+  });
+
+  const typewriterOptions = useTypewriter({
+    words: ["Hi, my name is Kamil Duliniec Front-end Developer from Wroclaw"],
+    loop: false,
   });
 
   const imageRef = useRef();
@@ -109,19 +114,8 @@ const Home = ({ hiddenBlock }) => {
 
         <Text>
           <TitleText>Welcome to my portfolio</TitleText>
-          <Typewriter
-            options={{
-              loop: true,
-              autoStart: hiddenBlock ? false : true,
-              strings: [
-                `Kamil Duliniec, <br>
-                Front-end Developer, <br>
-                Wrocław
-                `,
-              ],
-              pauseFor: 0,
-            }}
-          />
+          {typewriterOptions}
+          <Cursor />
         </Text>
         <Social>
           <SocialIcon>
@@ -174,9 +168,9 @@ const Home = ({ hiddenBlock }) => {
           </SocialIcon>
         </Social>
         <ButtonSide>
-          <Button onClick={contactId}>Let's talk</Button>
           <Button onClick={aboutId}>More About me</Button>
           <Button onClick={projectId}>My Projects</Button>
+          <Button onClick={contactId}>Let's talk</Button>
         </ButtonSide>
       </Content>
     </HomeComponent>

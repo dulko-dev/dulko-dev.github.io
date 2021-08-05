@@ -75,7 +75,7 @@ const App = () => {
           sunrise={sunrise}
           sunset={sunset}
         />
-        <Home hiddenBlock={hiddenBlock} />
+        <Home/>
         <About />
         <Projects />
         <Contact />

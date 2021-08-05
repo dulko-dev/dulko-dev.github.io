@@ -22,8 +22,8 @@ export const NavLogo = styled.div`
 
 export const ButtonMode = styled.button`
   position: relative;
-  overflow: hidden;
-  padding: 10px 30px;
+  padding: 13px 30px;
+  margin-top: 15px;
   display: block;
   border: none;
   border-radius: 20px;
@@ -34,15 +34,13 @@ export const ImageSun = styled.img`
   left: 0;
   top: 0;
   height: 100%;
-  transition: transform 1s;
+  transition: transform .4s;
   transform: translateX(40px);
-  visibility: hidden;
   ${({ day }) =>
     day &&
     css`
       transform: translateX(0px);
-      transition: transform 1s;
-      visibility: visible;
+      transition: transform .4s;
     `};
 `;
 
@@ -52,7 +50,7 @@ export const ImageNight = styled.img`
   top: 0;
   height: 100%;
   transform: translateX(-40px);
-  transition: transform 1s;
+  transition: transform .4s;
   ${({ nightImg }) =>
     nightImg &&
     css`
@@ -62,6 +60,7 @@ export const ImageNight = styled.img`
 
 export const RightContent = styled.div`
   display: flex;
+  justify-content: center;
   flex-direction: column;
   margin-right: 50px;
   align-items: center;
@@ -76,7 +75,7 @@ export const NavBurger = styled.div`
   width: 60px;
   height: 60px;
   cursor: pointer;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.4s ease-in-out;
 `;
 
 export const Burger = styled.div`
@@ -84,7 +83,7 @@ export const Burger = styled.div`
   height: 6px;
   background-color: rgb(238, 238, 238);
   border-radius: 5px;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.4s ease-in-out;
   z-index: 2;
   ${({ horizontalDash }) =>
     horizontalDash &&
@@ -101,7 +100,7 @@ export const Burger = styled.div`
     height: 6px;
     background-color: rgb(238, 238, 238);
     border-radius: 5px;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.4s ease-in-out;
   }
   &:before {
     transform: translateY(-16px);
@@ -128,14 +127,14 @@ export const Module = styled.div`
   left: 50%;
   top: 0;
   z-index: 2;
-  transition: all 1s;
+  transition: all .4s;
   transform: translateY(-100px) translateX(-50%);
   ${({ horizontalDash }) =>
     horizontalDash &&
     css`
       transition: all 1s;
       transform: translateY(50px) translateX(-50%);
-      transition-delay: 0.5s;
+      transition-delay: 0.4s;
     `}
 `;
 
@@ -151,7 +150,7 @@ export const MenuBackGround = styled.div`
   ${({ horizontalDash }) =>
     horizontalDash &&
     css`
-      transition: all 1s;
+      transition: all .4s;
       transform: translateY(0);
       z-index: 1;
       background-color: rgba(0, 0, 0, 0.9);
