@@ -24,7 +24,6 @@ export const HomeComponent = styled.div`
 export const Content = styled.div`
   position: relative;
   display: flex;
-  justify-content: space-between;
   margin-left: auto;
   margin-right: 100px;
   max-width: 1500px;
@@ -36,14 +35,16 @@ export const Content = styled.div`
 
 export const Text = styled.div`
   position: relative;
+
   color: rgb(238, 238, 238);
-  font-size: 60px;
-  width: 900px;
+  font-size: 50px;
+  width: 800px;
 `;
 
 export const TitleText = styled.h3`
   font-size: 30px;
-  color: rgb(140, 140, 140);
+  margin-bottom: 40px;
+  color: #bfbfbf;
   padding-bottom: 20px;
   text-align: left;
 `;
@@ -72,12 +73,15 @@ export const Button = styled.button`
     color: black;
     transition: all 0.4s ease-in-out;
   }
+  &:first-child {
+    margin-left: 0;
+  }
 `;
 
 export const ButtonSide = styled.div`
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 4%;
 `;
 
 export const FontIcon = styled(FontAwesomeIcon)`
@@ -117,9 +121,8 @@ export const SpanIconName = styled.span`
 `;
 
 export const ImageDiv = styled.div`
-  margin: 30px 0;
-  margin-right: auto;
-  margin-left: 0;
+  position: relative;
+  margin: 30px auto;
   width: 400px;
   height: 300px;
   overflow: hidden;

@@ -69,12 +69,9 @@ export const IconContener = styled.div`
 `;
 
 export const TextTagTitle = styled.h2`
-  font-size: 2.5em;
-  position: absolute;
-  right: 90%;
-  bottom: 50%;
-  transform: translateY(-50%);
-  transition: all 0.3s;
+  font-size: 3em;
+  position: relative;
+  text-align: center;
 `;
 
 export const IconDiv = styled.div`
@@ -107,6 +104,4 @@ export const IconText = styled.p`
   text-align: center;
 `;
 
-export const HistoryContener = styled.div`
-  position: relative;
-`;
+

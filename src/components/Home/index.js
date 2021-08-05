@@ -43,6 +43,13 @@ const Home = ({ hiddenBlock }) => {
     });
   };
 
+  const projectId = () => {
+    const project = document.querySelector("#project");
+    project.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+
   const onMouseEnter = (e) => {
     let icon = e.target.dataset.icon;
     switch (icon) {
@@ -78,7 +85,7 @@ const Home = ({ hiddenBlock }) => {
   };
 
   return (
-    <HomeComponent id='home'>
+    <HomeComponent id="home">
       <Content>
         <ImageDiv>
           <Image src={myPhoto} />
@@ -90,9 +97,9 @@ const Home = ({ hiddenBlock }) => {
               loop: true,
               autoStart: hiddenBlock ? false : true,
               strings: [
-                `Name: Kamil Duliniec, <br>
-                Occupation: Front-end Developer, <br>
-                Place: Wrocław
+                `Kamil Duliniec, <br>
+                Front-end Developer, <br>
+                Wrocław
                 `,
               ],
               pauseFor: 0,
@@ -152,6 +159,7 @@ const Home = ({ hiddenBlock }) => {
         <ButtonSide>
           <Button onClick={contactId}>Let's talk</Button>
           <Button onClick={aboutId}>More About me</Button>
+          <Button onClick={projectId}>My Projects</Button>
         </ButtonSide>
       </Content>
     </HomeComponent>
