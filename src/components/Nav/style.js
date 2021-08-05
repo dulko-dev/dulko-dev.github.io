@@ -22,6 +22,7 @@ export const NavLogo = styled.div`
 
 export const ButtonMode = styled.button`
   position: relative;
+  overflow: hidden;
   padding: 10px 30px;
   display: block;
   border: none;
@@ -33,6 +34,16 @@ export const ImageSun = styled.img`
   left: 0;
   top: 0;
   height: 100%;
+  transition: transform 1s;
+  transform: translateX(40px);
+  visibility: hidden;
+  ${({ day }) =>
+    day &&
+    css`
+      transform: translateX(0px);
+      transition: transform 1s;
+      visibility: visible;
+    `};
 `;
 
 export const ImageNight = styled.img`
@@ -40,7 +51,13 @@ export const ImageNight = styled.img`
   right: 0;
   top: 0;
   height: 100%;
-  opacity: ${(props) => (props.night ? "opacity:1" : "opacity:0")};
+  transform: translateX(-40px);
+  transition: transform 1s;
+  ${({ nightImg }) =>
+    nightImg &&
+    css`
+      transform: translateX(0px);
+    `}
 `;
 
 export const RightContent = styled.div`

@@ -55,7 +55,7 @@ const Nav = ({ toggleMode, mode, sunrise, sunset }) => {
             {mode === "dark" ? (
               <ImageSun src={sun} day={sunrise} />
             ) : (
-              <ImageNight src={night} night={sunset} />
+              <ImageNight src={night} nightImg={sunset} />
             )}
           </ButtonMode>
         </RightContent>

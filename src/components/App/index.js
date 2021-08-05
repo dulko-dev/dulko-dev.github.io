@@ -16,24 +16,30 @@ import {
 
 const App = () => {
   const [visible, setVisible] = useState(true);
-  const [sunrise, setSunrise] = useState(false);
-  const [sunset, setSunset] = useState(false);
+  const [sunrise, setSunrise] = useState(null);
+  const [sunset, setSunset] = useState(null);
   const [hiddenBlock, setHiddenBlock] = useState(true);
   const [mode, setMode] = useState("dark");
 
   const toggleMode = () => {
     if (mode === "dark") {
       window.localStorage.setItem("mode", "light");
-      setSunrise(true);
-      setSunset(false);
       setMode("light");
     } else {
       window.localStorage.setItem("mode", "dark");
-      setSunset(true);
-      setSunrise(false);
       setMode("dark");
     }
   };
+
+  useEffect(() => {
+    if (mode === "dark") {
+      setSunset(false);
+      setSunrise(true);
+    } else {
+      setSunset(true);
+      setSunrise(false);
+    }
+  }, [mode]);
 
   useEffect(() => {
     const localMode = window.localStorage.getItem("mode");
