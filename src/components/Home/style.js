@@ -35,7 +35,7 @@ export const Content = styled.div`
 
 export const Text = styled.div`
   position: relative;
-
+  margin-left:100px;
   color: rgb(238, 238, 238);
   font-size: 50px;
   width: 800px;
@@ -81,7 +81,7 @@ export const Button = styled.button`
 export const ButtonSide = styled.div`
   position: absolute;
   bottom: 0;
-  left: 4%;
+  left: 50%;
 `;
 
 export const FontIcon = styled(FontAwesomeIcon)`
@@ -125,20 +125,21 @@ export const ImageDiv = styled.div`
   margin: 30px auto;
   width: 400px;
   height: 300px;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
   overflow: hidden;
-  border-radius: 50%;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
 `;
 export const Image = styled.img`
   opacity: 0.7;
   width: 100%;
   height: 100%;
-  border-radius: 50%;
   transition: all 0.4s;
-  filter: grayscale(100%);
+  filter: grayscale(80%);
   &:hover {
-    transform: scale(1.2);
-    transition: all 0.4s;
-    filter: grayscale(80%);
+    filter: grayscale(60%);
     opacity: 1;
   }
 `;

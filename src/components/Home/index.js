@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import VanillaTilt from "vanilla-tilt";
 import {
   HomeComponent,
   Content,
@@ -28,6 +29,21 @@ const Home = ({ hiddenBlock }) => {
     git: false,
     link: false,
   });
+
+  const imageRef = useRef();
+
+  const vanillaOptions = {
+    scale: 1.1,
+    speed: 400,
+    transition: true,
+    max: 15,
+    glare: true,
+    "max-glare": 0.7,
+  };
+
+  useEffect(() => {
+    VanillaTilt.init(imageRef.current, vanillaOptions);
+  }, [vanillaOptions]);
 
   const contactId = () => {
     const contact = document.querySelector("#contact");
@@ -87,9 +103,10 @@ const Home = ({ hiddenBlock }) => {
   return (
     <HomeComponent id="home">
       <Content>
-        <ImageDiv>
+        <ImageDiv ref={imageRef}>
           <Image src={myPhoto} />
         </ImageDiv>
+
         <Text>
           <TitleText>Welcome to my portfolio</TitleText>
           <Typewriter
