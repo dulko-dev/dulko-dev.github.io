@@ -14,6 +14,7 @@ import {
   SendButton,
   FormTitle,
   SpanError,
+  SpanSuccess,
 } from "./style";
 import contactImage from "../../assets/contact.png";
 
@@ -29,6 +30,7 @@ const Contact = () => {
   const [errorName, setErrorName] = useState(false);
   const [errorEmail, setErrorEmail] = useState(false);
   const [errorText, setErrorText] = useState(false);
+  const [successSend, setSuccessSend] = useState(false);
 
   const regexEmail = (email) => {
     let re = /\S+@\S+\.\S+/;
@@ -66,8 +68,13 @@ const Contact = () => {
     )
       .then((response) => {
         if (response.status === 200) {
-          console.log("supa good");
           setErrorInfo(false);
+          setSuccessSend(true);
+          const idTime = setTimeout(() => {
+            setSuccessSend(false);
+          }, 3000);
+
+          return () => clearTimeout(idTime);
         }
       })
       .catch((err) => {
@@ -105,6 +112,9 @@ const Contact = () => {
           {/* Formularz */}
           {errorInfo ? (
             <SpanError>Please fill required places</SpanError>
+          ) : null}
+          {successSend ? (
+            <SpanSuccess>Your message has been sent</SpanSuccess>
           ) : null}
           <FormTitle>Form Contact</FormTitle>
 

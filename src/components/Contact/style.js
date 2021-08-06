@@ -79,8 +79,8 @@ export const TextArea = styled.textarea`
 export const SendButton = styled.button`
   grid-column: 1/3;
   grid-row: 5/6;
-  margin-top:10px;
-  height:35px;
+  margin-top: 10px;
+  height: 35px;
   justify-self: center;
   width: 150px;
   border-radius: 15px;
@@ -96,9 +96,13 @@ export const SendButton = styled.button`
 `;
 
 export const SpanError = styled.p`
-  color: red;
+  color: #ff0000;
   position: absolute;
   top: 10px;
   left: 50%;
   transform: translateX(-50%);
+`;
+
+export const SpanSuccess = styled(SpanError)`
+  color: #00b300;
 `;
