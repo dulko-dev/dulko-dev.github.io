@@ -27,12 +27,31 @@ export const Content = styled.div`
   margin-left: auto;
   margin-right: 100px;
   max-width: 1500px;
-  padding-top: 140px;
+  padding-top: 100px;
   color: rgb(238, 238, 238);
   font-size: 35px;
   height: 400px;
 `;
 
+export const ProgressBar = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 2%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 400px;
+  border-radius: 100px;
+  box-shadow: 0 0 3px #ffffff;
+  background-color: #c0c0c0;
+  overflow: hidden;
+  z-index: 1;
+`;
+export const Progress = styled.div`
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 100px;
+  background-color: #0093d9;
+`;
 export const Text = styled.div`
   position: relative;
   margin-left: 100px;

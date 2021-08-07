@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import VanillaTilt from "vanilla-tilt";
-import { useTypewriter, Cursor } from "react-simple-typewriter";
 import {
   HomeComponent,
   Content,
@@ -15,6 +14,8 @@ import {
   FbIcon,
   ImageDiv,
   Image,
+  ProgressBar,
+  Progress,
 } from "./style";
 import {
   faFacebookF,
@@ -30,12 +31,11 @@ const Home = () => {
     link: false,
   });
 
-  const typewriterOptions = useTypewriter({
-    words: ["Hi, my name is Kamil Duliniec Front-end Developer from Wroclaw"],
-    loop: false,
-  });
+  const [changeBar, setChangeBar] = useState(0);
 
   const imageRef = useRef();
+  const progressRef = useRef();
+  const barRef = useRef();
 
   const vanillaOptions = {
     scale: 1.1,
@@ -49,6 +49,20 @@ const Home = () => {
   useEffect(() => {
     VanillaTilt.init(imageRef.current, vanillaOptions);
   }, [vanillaOptions]);
+
+  useEffect(() => {
+    const progressBar = () => {
+      const wScroll = document.documentElement.scrollTop;
+      const hSroll =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+      const result = (wScroll / hSroll) * 100;
+      setChangeBar(result);
+    };
+
+    window.addEventListener("scroll", progressBar);
+  }, [changeBar]);
 
   const contactId = () => {
     const contact = document.querySelector("#contact");
@@ -108,14 +122,17 @@ const Home = () => {
   return (
     <HomeComponent id="home">
       <Content>
+        <ProgressBar ref={barRef}>
+          <Progress
+            red={progressRef}
+            style={{ height: `${changeBar}%` }}
+          ></Progress>
+        </ProgressBar>
         <ImageDiv ref={imageRef}>
           <Image src={myPhoto} />
         </ImageDiv>
-
         <Text>
           <TitleText>Welcome to my portfolio</TitleText>
-          {typewriterOptions}
-          <Cursor />
         </Text>
         <Social>
           <SocialIcon>
