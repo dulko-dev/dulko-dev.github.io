@@ -25,6 +25,8 @@ const About = () => {
   const [stackUpper, setStackUpper] = useState(false);
   const [showArrow, setShowArrow] = useState(false);
 
+  console.log(showArrow)
+
   useEffect(() => {
     const aboutFixed = () => {
       let el = document.querySelector("#cont");

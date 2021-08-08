@@ -110,7 +110,6 @@ export const Arrow = styled(FontAwesomeIcon)`
   &.fade-enter-done {
     pointer-events: all;
     opacity: 1;
-    transition: color 0.4s ease-in-out;
   }
   &:hover {
     color: #ffffff;

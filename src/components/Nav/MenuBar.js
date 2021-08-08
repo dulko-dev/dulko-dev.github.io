@@ -38,7 +38,7 @@ const MenuBar = () => {
           projects: true,
           contact: false,
         });
-      if (contentContact.getBoundingClientRect().top <= 0)
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight)
         setChangeColor({
           home: false,
           about: false,
@@ -49,10 +49,10 @@ const MenuBar = () => {
   }, []);
 
   const handleHome = (e) => {
-    const contentAbout = document.querySelector("#home");
-    contentAbout.scrollIntoView({
+    window.scrollTo({
       behavior: "smooth",
-      block: "start",
+      top: 0,
+      left: 0,
     });
   };
   const handleAbout = (e) => {
@@ -83,25 +83,31 @@ const MenuBar = () => {
       <Ul>
         <Li
           onClick={handleHome}
-          style={changeColor.home ? { color: "red" } : { color: "white" }}
+          style={changeColor.home ? { color: "#0093d9" } : { color: "#ffffff" }}
         >
           Home
         </Li>
         <Li
           onClick={handleAbout}
-          style={changeColor.about ? { color: "red" } : { color: "white" }}
+          style={
+            changeColor.about ? { color: "#0093d9" } : { color: "#ffffff" }
+          }
         >
           About
         </Li>
         <Li
           onClick={handleProjects}
-          style={changeColor.projects ? { color: "red" } : { color: "white" }}
+          style={
+            changeColor.projects ? { color: "#0093d9" } : { color: "#ffffff" }
+          }
         >
           Projects
         </Li>
         <Li
           onClick={handleContact}
-          style={changeColor.contact ? { color: "red" } : { color: "white" }}
+          style={
+            changeColor.contact ? { color: "#0093d9" } : { color: "white" }
+          }
         >
           Contact
         </Li>
