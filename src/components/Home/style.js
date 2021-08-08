@@ -35,16 +35,13 @@ export const Content = styled.div`
 
 export const ProgressBar = styled.div`
   position: fixed;
-  top: 50%;
-  left: 2%;
-  transform: translateY(-50%);
-  width: 15px;
-  height: 400px;
-  border-radius: 100px;
-  box-shadow: 0 0 3px #ffffff;
-  background-color: #c0c0c0;
-  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100vh;
+  background-color: #a6a6a6;
   z-index: 1;
+  border: none;
 `;
 export const Progress = styled.div`
   width: 100%;

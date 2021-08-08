@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { CSSTransition } from "react-transition-group";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { faArrowAltCircleUp } from "@fortawesome/free-regular-svg-icons";
 import {
   AboutContainer,
   AboutTag,
@@ -14,13 +16,14 @@ import {
   IconDiv,
   IconContener,
   IconText,
-  HistoryContener,
+  Arrow,
 } from "./style";
 import { iconsFolder } from "./icons";
 import myAvatar from "../../assets/myAvatar.png";
 
 const About = () => {
   const [stackUpper, setStackUpper] = useState(false);
+  const [showArrow, setShowArrow] = useState(false);
 
   useEffect(() => {
     const aboutFixed = () => {
@@ -32,6 +35,19 @@ const About = () => {
       }
     };
     window.addEventListener("scroll", aboutFixed);
+  }, []);
+
+  useEffect(() => {
+    const arrow = document.querySelector("#cont");
+    const handleArrow = () => {
+      const check = arrow.getBoundingClientRect().top;
+      if (check <= 0) {
+        setShowArrow(true);
+      } else {
+        setShowArrow(false);
+      }
+    };
+    window.addEventListener("scroll", handleArrow);
   }, []);
 
   useEffect(() => {
@@ -54,6 +70,14 @@ const About = () => {
     AOS.init({});
   }, []);
 
+  const handleUp = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <AboutContainer>
       <AboutContent>
@@ -68,7 +92,7 @@ const About = () => {
             data-aos="fade-right"
             data-aos-offset="300"
             data-aos-easing="ease-in-sine"
-           data-aos-offset='400'
+            data-aos-offset="400"
           >
             Technology
           </TextTagTitle>
@@ -84,8 +108,10 @@ const About = () => {
             data-aos="fade-right"
             data-aos-offset="300"
             data-aos-easing="ease-in-sine"
-           data-aos-offset='400'
-          >Historia</TextTagTitle>
+            data-aos-offset="400"
+          >
+            Historia
+          </TextTagTitle>
           <TextTagP>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nemo
             dubitet, eorum omnia officia quo spectare, quid sequi, quid fugere
@@ -134,6 +160,9 @@ const About = () => {
           </TextTagP>
         </TextTag>
       </AboutContent>
+      <CSSTransition in={showArrow} timeout={1000} classNames="fade">
+        <Arrow icon={faArrowAltCircleUp} size="3x" onClick={handleUp} />
+      </CSSTransition>
     </AboutContainer>
   );
 };

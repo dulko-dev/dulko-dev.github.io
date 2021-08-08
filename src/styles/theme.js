@@ -6,6 +6,7 @@ export const lightMode = {
   line: "#4C4C4C",
   button: "#1d1e21",
   buttonColor: "rgb(238, 238, 238)",
+
 };
 
 export const darkMode = {
@@ -16,4 +17,5 @@ export const darkMode = {
   line: "rgb(140,140,140)",
   button: "#E2E2E2",
   buttonColor: "#0A0A0A",
+
 };

@@ -1,4 +1,5 @@
 import styled, { css, keyframes } from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const textAnimation = keyframes`
 to {
@@ -94,6 +95,29 @@ export const IconImage = styled.img`
   height: 64px;
 `;
 
+export const Arrow = styled(FontAwesomeIcon)`
+  position: fixed;
+  cursor: pointer;
+  bottom: 3%;
+  left: 2%;
+  color: #0093d9;
+  transition: opacity 1s;
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+
+  &.fade-enter,
+  &.fade-enter-done {
+    pointer-events: all;
+    opacity: 1;
+    transition: color 0.4s ease-in-out;
+  }
+  &:hover {
+    color: #ffffff;
+    transition: color 0.4s ease-in-out;
+  }
+`;
+
 export const IconText = styled.p`
   position: absolute;
   left: 50%;
@@ -103,5 +127,3 @@ export const IconText = styled.p`
   text-transform: uppercase;
   text-align: center;
 `;
-
-
