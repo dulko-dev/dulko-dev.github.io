@@ -16,6 +16,7 @@ import {
   Image,
   ProgressBar,
   Progress,
+  Letter,
 } from "./style";
 import {
   faFacebookF,
@@ -32,6 +33,7 @@ const Home = () => {
   });
 
   const [changeBar, setChangeBar] = useState(0);
+  const [moveLetter, setMoveLetter] = useState(false);
 
   const imageRef = useRef();
   const progressRef = useRef();
@@ -119,6 +121,16 @@ const Home = () => {
     }
   };
 
+  const showLetter = (e) => {
+    e.target.classList.add("letter");
+    setMoveLetter(true);
+
+    window.addEventListener("animationend", (e) => {
+      setMoveLetter(false);
+      e.target.classList.remove("letter");
+    });
+  };
+
   return (
     <HomeComponent id="home">
       <Content>
@@ -133,6 +145,25 @@ const Home = () => {
         </ImageDiv>
         <Text>
           <TitleText>Welcome to my portfolio</TitleText>
+          <Letter onMouseEnter={showLetter}>h</Letter>
+          <Letter onMouseEnter={showLetter}>i</Letter>
+          <Letter onMouseEnter={showLetter}>g</Letter>
+          <Letter onMouseEnter={showLetter}>u</Letter>
+          <Letter onMouseEnter={showLetter}>y</Letter>
+          <Letter onMouseEnter={showLetter}>s</Letter>
+          <Letter onMouseEnter={showLetter}>m</Letter>
+          <Letter onMouseEnter={showLetter}>y</Letter>
+          <Letter onMouseEnter={showLetter}>n</Letter>
+          <Letter onMouseEnter={showLetter}>a</Letter>
+          <Letter onMouseEnter={showLetter}>m</Letter>
+          <Letter onMouseEnter={showLetter}>e</Letter>
+          <Letter onMouseEnter={showLetter}>i</Letter>
+          <Letter onMouseEnter={showLetter}>s</Letter>
+          <Letter onMouseEnter={showLetter}>k</Letter>
+          <Letter onMouseEnter={showLetter}>a</Letter>
+          <Letter onMouseEnter={showLetter}>m</Letter>
+          <Letter onMouseEnter={showLetter}>i</Letter>
+          <Letter onMouseEnter={showLetter}>l</Letter>
         </Text>
         <Social>
           <SocialIcon>

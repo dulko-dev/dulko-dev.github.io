@@ -1,6 +1,36 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import bg from "../../assets/programming.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+const rubber = keyframes`
+0%{
+  transform: scale3d(1,1,1);
+}
+
+30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+
+  85% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+
+100% {
+  transform: scale3d(1,1,1);
+}
+`;
 
 export const HomeComponent = styled.div`
   height: calc(100vh - 150px);
@@ -63,6 +93,30 @@ export const TitleText = styled.h3`
   color: #bfbfbf;
   padding-bottom: 20px;
   text-align: left;
+`;
+
+export const Letter = styled.p`
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 2em;
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+  transition: color 0.8s;
+  &.letter {
+    animation-name: ${rubber};
+  }
+  &:nth-of-type(3),
+  &:nth-of-type(7),
+  &:nth-of-type(9),
+  &:nth-of-type(13),
+  &:nth-of-type(15) {
+    margin-left: .4em;
+  }
+  &:hover {
+    color: #0093d9;
+    transition: color 0.8s;
+  }
 `;
 
 export const Social = styled.div`
@@ -163,8 +217,7 @@ export const ImageDiv = styled.div`
   border-radius: 15px;
   background: rgba(255, 255, 255, 0.1);
   overflow: hidden;
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
-  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  border: 5px solid rgba(255, 255, 255, 0.5);
 `;
 export const Image = styled.img`
   opacity: 0.7;
