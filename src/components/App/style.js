@@ -1,17 +1,13 @@
 import styled, { keyframes } from "styled-components";
 
-const rotating = keyframes`
-   0% {
-      transform: rotate(0);
-      animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    }
-    50% {
-      transform: rotate(900deg);
-      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    }
-    100% {
-      transform: rotate(1800deg);
-    }
+const light = keyframes`
+0%{
+  background-position-x:-500%;
+}
+100%{
+  background-position-x:500%;
+  opacity:0;
+}
 `;
 
 const leftCurtain = keyframes`
@@ -66,27 +62,23 @@ export const LoadingContainerRight = styled.div`
 `;
 
 export const Loading = styled.div`
-  display: inline-block;
-  position: fixed;
+  color: #ffffff;
+  opacity: 1;
+  font-size: 4em;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100px;
-  height: 100px;
   z-index: 4;
-  animation: ${hidden};
-  animation-duration: 1s;
-  animation-delay: 1s;
-  &:after {
-    content: " ";
-    display: block;
-    border-radius: 50%;
-    width: 0;
-    height: 0;
-    margin: 8px;
-    box-sizing: border-box;
-    border: 60px solid #fff;
-    border-color: #fff transparent #fff transparent;
-    animation: ${rotating} 1.2s infinite;
-  }
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #000, #fff, #000);
+  background-size: 75%;
+  background-repeat: no-repeat;
+  background-clip: padding-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* animation-name: ${light}; */
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
 `;

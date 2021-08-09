@@ -62,7 +62,7 @@ const App = () => {
   return (
     <ThemeProvider theme={mode === "dark" ? darkMode : lightMode}>
       <AppContainer>
-        {visible && <Loading />}
+        {visible && <Loading>Welcome to my portfolio</Loading>}
         {hiddenBlock && (
           <>
             <LoadingContainerRight />
