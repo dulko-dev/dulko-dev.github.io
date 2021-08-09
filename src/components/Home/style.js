@@ -85,11 +85,13 @@ export const Text = styled.div`
   color: rgb(238, 238, 238);
   font-size: 50px;
   width: 800px;
+  align-self: center;
 `;
 
 export const TitleText = styled.h3`
-  font-size: 30px;
-  margin-bottom: 40px;
+  margin-left: -55px;
+  font-family: "Merienda", cursive;
+  font-size: 25px;
   color: #bfbfbf;
   padding-bottom: 20px;
   text-align: left;
@@ -97,8 +99,10 @@ export const TitleText = styled.h3`
 
 export const Letter = styled.p`
   display: inline-block;
+  margin-bottom: 7px;
   text-transform: uppercase;
-  font-size: 2em;
+  font-family: "Aclonica", sans-serif;
+  font-size: 1.2em;
   animation-duration: 0.8s;
   animation-fill-mode: both;
   animation-iteration-count: 1;
@@ -106,12 +110,14 @@ export const Letter = styled.p`
   &.letter {
     animation-name: ${rubber};
   }
-  &:nth-of-type(3),
-  &:nth-of-type(7),
+  &:nth-of-type(5),
+  &:nth-of-type(14),
+  &:nth-of-type(29) {
+    margin-left: 0.4em;
+  }
   &:nth-of-type(9),
-  &:nth-of-type(13),
-  &:nth-of-type(15) {
-    margin-left: .4em;
+  &:nth-of-type(19) {
+    display: block;
   }
   &:hover {
     color: #0093d9;
@@ -169,7 +175,7 @@ export const Button = styled.button`
 export const ButtonSide = styled.div`
   position: absolute;
   bottom: 0;
-  left: 50%;
+  right: 0;
 `;
 
 export const FontIcon = styled(FontAwesomeIcon)`
@@ -218,6 +224,7 @@ export const ImageDiv = styled.div`
   background: rgba(255, 255, 255, 0.1);
   overflow: hidden;
   border: 5px solid rgba(255, 255, 255, 0.5);
+  align-self: center;
 `;
 export const Image = styled.img`
   opacity: 0.7;

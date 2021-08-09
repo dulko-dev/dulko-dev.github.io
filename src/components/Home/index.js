@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import VanillaTilt from "vanilla-tilt";
+import { letter } from "./letter";
 import {
   HomeComponent,
   Content,
@@ -144,26 +145,13 @@ const Home = () => {
           <Image src={myPhoto} />
         </ImageDiv>
         <Text>
-          <TitleText>Welcome to my portfolio</TitleText>
-          <Letter onMouseEnter={showLetter}>h</Letter>
-          <Letter onMouseEnter={showLetter}>i</Letter>
-          <Letter onMouseEnter={showLetter}>g</Letter>
-          <Letter onMouseEnter={showLetter}>u</Letter>
-          <Letter onMouseEnter={showLetter}>y</Letter>
-          <Letter onMouseEnter={showLetter}>s</Letter>
-          <Letter onMouseEnter={showLetter}>m</Letter>
-          <Letter onMouseEnter={showLetter}>y</Letter>
-          <Letter onMouseEnter={showLetter}>n</Letter>
-          <Letter onMouseEnter={showLetter}>a</Letter>
-          <Letter onMouseEnter={showLetter}>m</Letter>
-          <Letter onMouseEnter={showLetter}>e</Letter>
-          <Letter onMouseEnter={showLetter}>i</Letter>
-          <Letter onMouseEnter={showLetter}>s</Letter>
-          <Letter onMouseEnter={showLetter}>k</Letter>
-          <Letter onMouseEnter={showLetter}>a</Letter>
-          <Letter onMouseEnter={showLetter}>m</Letter>
-          <Letter onMouseEnter={showLetter}>i</Letter>
-          <Letter onMouseEnter={showLetter}>l</Letter>
+          <TitleText>&lt;h1&gt;</TitleText>
+          {Array.from(letter).map((element, index) => (
+            <Letter onMouseEnter={showLetter} key={index}>
+              {element}
+            </Letter>
+          ))}
+          <TitleText>&lt;/h1&gt;</TitleText>
         </Text>
         <Social>
           <SocialIcon>

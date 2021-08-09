@@ -1,1 +1,1 @@
-export const letter = ["hi my name is kamil frontend developer"];
+export const letter = "hi, guys i'm kamil frontend developer";
