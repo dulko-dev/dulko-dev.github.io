@@ -23,6 +23,7 @@ width: 0%;
 
 export const AppContainer = styled.div`
   font-family: "STIX Two Text", serif;
+  width: 100%;
 `;
 
 export const LoadingContainerLeft = styled.div`

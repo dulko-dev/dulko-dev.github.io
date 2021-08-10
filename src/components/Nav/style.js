@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 export const NavContainer = styled.div`
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 3;
   height: 150px;
   display: flex;
   justify-content: space-between;
@@ -146,14 +146,14 @@ export const MenuBackGround = styled.div`
   width: 100%;
   height: 150px;
   transition: all 1s;
-
+  
   ${({ horizontalDash }) =>
     horizontalDash &&
     css`
       transition: all .4s;
       transform: translateY(0);
-      z-index: 1;
-      background-color: rgba(0, 0, 0, 0.9);
+      z-index: 2;
+      background-color: rgba(0, 0, 0, 0.75);
     `}
 `;
 
