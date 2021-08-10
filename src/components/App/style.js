@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 
 const light = keyframes`
 0%{
@@ -21,15 +21,6 @@ width: 0%;
 }
 `;
 
-const hidden = keyframes`
-from{
-opacity: 1;
-}
-to{
-opacity: 0;
-}
-`;
-
 export const AppContainer = styled.div`
   font-family: "STIX Two Text", serif;
 `;
@@ -42,9 +33,14 @@ export const LoadingContainerLeft = styled.div`
   left: 0;
   width: 50%;
   height: 100%;
-  animation-name: ${leftCurtain};
-  animation-delay: 2s;
-  animation-duration: 3s;
+  ${({ left }) =>
+    left &&
+    css`
+      animation-name: ${leftCurtain};
+      animation-delay: 2s;
+      animation-duration: 3s;
+      animation-fill-mode: forwards;
+    `}
 `;
 
 export const LoadingContainerRight = styled.div`
@@ -55,30 +51,32 @@ export const LoadingContainerRight = styled.div`
   width: 50%;
   height: 100%;
   z-index: 3;
-
-  animation-name: ${rightCurtain};
-  animation-delay: 2s;
-  animation-duration: 3s;
+  ${({ right }) =>
+    right &&
+    css`
+      animation-name: ${rightCurtain};
+      animation-delay: 2s;
+      animation-duration: 3s;
+      animation-fill-mode: forwards;
+    `}
 `;
 
 export const Loading = styled.div`
-  color: #ffffff;
   opacity: 1;
   font-size: 4em;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 4;
   text-transform: uppercase;
   background: linear-gradient(90deg, #000, #fff, #000);
-  background-size: 75%;
+  background-size: 75% 100%;
   background-repeat: no-repeat;
-  background-clip: padding-box;
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
-  /* animation-name: ${light}; */
+  -webkit-background-clip: text;
+  animation-name: ${light};
   animation-duration: 2s;
   animation-timing-function: linear;
-  animation-fill-mode: forwards;
 `;

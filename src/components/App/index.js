@@ -15,7 +15,8 @@ import {
 } from "./style";
 
 const App = () => {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
+  const [openCurtains, setOpenCurtains] = useState(false);
   const [sunrise, setSunrise] = useState(null);
   const [sunset, setSunset] = useState(null);
   const [hiddenBlock, setHiddenBlock] = useState(true);
@@ -52,12 +53,18 @@ const App = () => {
     }, 2000);
     const idBack = setTimeout(() => {
       setHiddenBlock(false);
+      setOpenCurtains(false);
     }, 5000);
     return () => {
       clearTimeout(idTime);
       clearTimeout(idBack);
     };
-  }, []);
+  }, [visible]);
+
+  window.addEventListener("load", () => {
+    setVisible(true);
+    setOpenCurtains(true);
+  });
 
   return (
     <ThemeProvider theme={mode === "dark" ? darkMode : lightMode}>
@@ -65,8 +72,8 @@ const App = () => {
         {visible && <Loading>Welcome to my portfolio</Loading>}
         {hiddenBlock && (
           <>
-            <LoadingContainerRight />
-            <LoadingContainerLeft />
+            <LoadingContainerRight right={openCurtains} />
+            <LoadingContainerLeft left={openCurtains} />
           </>
         )}
         <Nav
@@ -75,7 +82,7 @@ const App = () => {
           sunrise={sunrise}
           sunset={sunset}
         />
-        <Home/>
+        <Home />
         <About />
         <Projects />
         <Contact />
