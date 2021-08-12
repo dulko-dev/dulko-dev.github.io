@@ -25,7 +25,7 @@ export const Image = styled.img`
   margin: 0 auto;
   margin-top: 20px;
   width: 500px;
-  height: 300px;
+  height: 275px;
 `;
 export const ContactTagP = styled.p`
   margin: 0 auto;

@@ -34,13 +34,13 @@ export const ImageSun = styled.img`
   left: 0;
   top: 0;
   height: 100%;
-  transition: transform .4s;
+  transition: transform 0.4s;
   transform: translateX(40px);
   ${({ day }) =>
     day &&
     css`
       transform: translateX(0px);
-      transition: transform .4s;
+      transition: transform 0.4s;
     `};
 `;
 
@@ -50,7 +50,7 @@ export const ImageNight = styled.img`
   top: 0;
   height: 100%;
   transform: translateX(-40px);
-  transition: transform .4s;
+  transition: transform 0.4s;
   ${({ nightImg }) =>
     nightImg &&
     css`
@@ -127,7 +127,7 @@ export const Module = styled.div`
   left: 50%;
   top: 0;
   z-index: 2;
-  transition: all .4s;
+  transition: all 0.4s;
   transform: translateY(-100px) translateX(-50%);
   ${({ horizontalDash }) =>
     horizontalDash &&
@@ -146,11 +146,11 @@ export const MenuBackGround = styled.div`
   width: 100%;
   height: 150px;
   transition: all 1s;
-  
+
   ${({ horizontalDash }) =>
     horizontalDash &&
     css`
-      transition: all .4s;
+      transition: all 0.4s;
       transform: translateY(0);
       z-index: 2;
       background-color: rgba(0, 0, 0, 0.75);

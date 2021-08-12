@@ -170,6 +170,9 @@ export const Button = styled.button`
     z-index: -1;
     transition: transform 0.4s ease-in-out;
   }
+  &:focus {
+    color: #eeeeee;
+  }
 `;
 
 export const ButtonSide = styled.div`

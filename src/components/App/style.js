@@ -29,7 +29,7 @@ export const AppContainer = styled.div`
 export const LoadingContainerLeft = styled.div`
   background-color: black;
   position: fixed;
-  z-index: 3;
+  z-index: 4;
   top: 0;
   left: 0;
   width: 50%;
@@ -51,7 +51,7 @@ export const LoadingContainerRight = styled.div`
   right: 0;
   width: 50%;
   height: 100%;
-  z-index: 3;
+  z-index: 4;
   ${({ right }) =>
     right &&
     css`
@@ -69,7 +69,7 @@ export const Loading = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 4;
+  z-index: 5;
   text-transform: uppercase;
   background: linear-gradient(90deg, #000, #fff, #000);
   background-size: 75% 100%;

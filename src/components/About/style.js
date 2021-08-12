@@ -44,7 +44,9 @@ export const Image = styled.img`
 `;
 
 export const AboutTagTitle = styled.p`
-  margin: 0 auto;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
   color: ${({ theme }) => theme.title};
   text-align: center;
 `;

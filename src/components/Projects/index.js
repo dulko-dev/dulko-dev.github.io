@@ -16,6 +16,7 @@ import {
   LiveIcon,
   EnterIcon,
   SingleTech,
+  GroupImage,
 } from "./style";
 
 import project from "../../assets/projects.png";
@@ -25,11 +26,16 @@ import { faHotjar, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const Projects = () => {
   const [stack, setStack] = useState(false);
+  const [bottomStack, setBottomStack] = useState(false);
 
   useEffect(() => {
     const aboutFixed = () => {
       let el = document.querySelector("#project");
-      if (el.getBoundingClientRect().top <= 0) {
+      let contact = document.querySelector("#contact");
+      if (
+        el.getBoundingClientRect().top <= 0 &&
+        contact.getBoundingClientRect().top / 2 >= window.innerHeight / 3
+      ) {
         setStack(true);
       } else {
         setStack(false);
@@ -40,15 +46,13 @@ const Projects = () => {
 
   useEffect(() => {
     let el = document.querySelector("#project");
-    let photoAbout = document.querySelector(".photoProject");
-    let titleAbout = document.querySelector(".titleProject");
+    let contact = document.querySelector("#contact");
 
     const bottomSucks = () => {
-      let value = el.getBoundingClientRect().bottom;
-      if (el.getBoundingClientRect().bottom <= window.innerHeight) {
-        photoAbout.style.opacity = titleAbout.style.opacity = value * 0.001;
+      if (contact.getBoundingClientRect().top / 2 <= window.innerHeight / 3) {
+        setBottomStack(true);
       } else {
-        photoAbout.style.opacity = titleAbout.style.opacity = "1";
+        setBottomStack(false);
       }
     };
     window.addEventListener("scroll", bottomSucks);
@@ -57,9 +61,11 @@ const Projects = () => {
   return (
     <ProjectsContainer>
       <ProjectContent>
-        <ProjectTag fix={stack}>
-          <Image src={project} className={"photoProject"} />
-          <ProjectTagP className={"titleProject"}>Projects</ProjectTagP>
+        <ProjectTag>
+          <GroupImage fix={stack} abs={bottomStack}>
+            <Image src={project} className={"photoProject"} />
+            <ProjectTagP className={"titleProject"}>Projects</ProjectTagP>
+          </GroupImage>
         </ProjectTag>
         <TextContainer id="project">
           {projectsList.map((element) => (
@@ -88,7 +94,6 @@ const Projects = () => {
               <ImageProject src={element.img} />
             </TextContent>
           ))}
-       
         </TextContainer>
       </ProjectContent>
     </ProjectsContainer>
