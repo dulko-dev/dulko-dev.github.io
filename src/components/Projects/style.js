@@ -15,30 +15,46 @@ export const ProjectTag = styled.div`
   top: 0;
   left: 0;
   flex-direction: column;
-  font-size: 8em;
+  font-size: 7em;
   width: 50%;
   background-color: ${({ theme }) => theme.darkBackground};
   color: ${({ theme }) => theme.title};
   height: 100%;
+`;
+
+export const GroupImage = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   ${({ fix }) =>
     fix &&
     css`
       position: fixed;
       top: 0;
-      left: 0;
+      align-self: center;
+    `}
+  ${({ abs }) =>
+    abs &&
+    css`
+      position: absolute;
+      bottom: 158px;
+      /* transform: translateY(-80%); */
+      align-self: center;
     `}
 `;
 
 export const Image = styled.img`
   margin: 0 auto;
-  display: block;
   margin-top: 20px;
   width: 500px;
   height: 200px;
 `;
 
 export const ProjectTagP = styled.p`
-  margin: 0 auto;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  color: ${({ theme }) => theme.title};
 `;
 
 export const TextContainer = styled.div`
