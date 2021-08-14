@@ -38,7 +38,6 @@ export const GroupImage = styled.div`
     css`
       position: absolute;
       bottom: 158px;
-      /* transform: translateY(-80%); */
       align-self: center;
     `}
 `;

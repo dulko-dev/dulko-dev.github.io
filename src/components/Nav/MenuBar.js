@@ -13,7 +13,6 @@ const MenuBar = () => {
     const contentHome = document.querySelector("#home");
     const contentAbout = document.querySelector("#cont");
     const contentProjects = document.querySelector("#project");
-    const contentContact = document.querySelector("#contact");
 
     document.addEventListener("scroll", () => {
       if (contentHome.getBoundingClientRect().top <= 0)
@@ -106,11 +105,17 @@ const MenuBar = () => {
         <Li
           onClick={handleContact}
           style={
-            changeColor.contact ? { color: "#0093d9" } : { color: "white" }
+            changeColor.contact ? { color: "#0093d9" } : { color: "#ffffff" }
           }
         >
           Contact
         </Li>
+        <a
+          style={{ outline: "none", textDecoration: "none" }}
+          href="https://drive.google.com/u/0/uc?id=1bD6Q0oryW8rrJslGpdWmmbl0uovgD6IY&export=download"
+        >
+          <Li>Resume</Li>
+        </a>
       </Ul>
     </>
   );

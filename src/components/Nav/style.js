@@ -124,16 +124,16 @@ export const Burger = styled.div`
 
 export const Module = styled.div`
   position: absolute;
-  left: 50%;
+  left: 20%;
   top: 0;
   z-index: 2;
   transition: all 0.4s;
-  transform: translateY(-100px) translateX(-50%);
+  transform: translateY(-100px) translateX(-20%);
   ${({ horizontalDash }) =>
     horizontalDash &&
     css`
       transition: all 1s;
-      transform: translateY(50px) translateX(-50%);
+      transform: translateY(50px) translateX(-20%);
       transition-delay: 0.4s;
     `}
 `;
@@ -168,6 +168,11 @@ export const Li = styled.li`
   cursor: pointer;
   color: rgb(238, 238, 238);
   font-family: "Poppins", sans-serif;
+  transition: opacity 0.4s ease-in-out;
+  &:hover {
+    transition: opacity 0.4s ease-in-out;
+    opacity: 0.6;
+  }
 `;
 
 export const TitleMenu = styled.h3`
