@@ -32,8 +32,7 @@ const Projects = () => {
     const aboutFixed = () => {
       let el = document.querySelector("#project");
       let contact = document.querySelector("#contact");
-      console.log("bottom", el.getBoundingClientRect().bottom);
-      console.log("top", el.getBoundingClientRect().top);
+
       if (
         el.getBoundingClientRect().top <= 0 &&
         el.getBoundingClientRect().bottom >= 500
