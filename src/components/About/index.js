@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import gsap from "gsap";
 import { faArrowAltCircleUp } from "@fortawesome/free-regular-svg-icons";
 import {
   AboutContainer,
@@ -67,6 +68,18 @@ const About = () => {
   }, []);
 
   useEffect(() => {
+    const iconDiv = document.querySelector("#cont");
+    const scrollToIcon = () => {
+      if (iconDiv.getBoundingClientRect().bottom <= window.innerHeight) {
+        gsap.to(".textTag", {
+          duration: 0.5,
+          stagger: 0.5,
+          y: 0,
+          opacity: 1,
+        });
+      }
+    };
+    window.addEventListener("scroll", scrollToIcon);
     AOS.init({});
   }, []);
 
@@ -88,37 +101,80 @@ const About = () => {
           </AboutTagTitle>
         </AboutTag>
         <TextTag id="cont">
-          <TextTagTitle
-            data-aos="fade-right"
-            data-aos-offset="300"
-            data-aos-easing="ease-in-sine"
-            data-aos-offset="400"
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-offset="200"
+            data-aos-once="true"
           >
-            Who I am
-          </TextTagTitle>
-          <TextTagP>
-            z tej strony front-end developer z Wrocławia, Swoją pasję do
-            tworzenia stron oraz aplikacji odkryłem jeszcze, gdy pracowałem jako
-            sprzedawca z 12 latnim doświadczeniem. Od tamtej pory koncentruję
-            się na nieustannym podnoszeniu swoich umiejętności i utrwalaniu ich
-            poprzez ciągłą praktykę. Jestem dobrze z organizowaną osobą, mającą
-            za każdym razem plan na siebie, lubiącą rozwiązywać zadania I
-            doprowadzać rozpoczęte sprawy do końca. Na codzień fan angielskich
-            seriali oraz premiere league, gier przygodowych typu “click and
-            point”, sudoku oraz ligi NBA. W przyszłości, również trener
-            personalny kulturystki oraz zdrowego odżywiania.
-          </TextTagP>
+            <TextTagTitle>Who am I?</TextTagTitle>
+            <TextTagP>
+              z tej strony front-end developer z Wrocławia, Swoją pasję do
+              tworzenia stron oraz aplikacji odkryłem jeszcze, gdy pracowałem
+              jako sprzedawca z 12 latnim doświadczeniem. Od tamtej pory
+              koncentruję się na nieustannym podnoszeniu swoich umiejętności i
+              utrwalaniu ich poprzez ciągłą praktykę. Jestem dobrze z
+              organizowaną osobą, mającą za każdym razem plan na siebie, lubiącą
+              rozwiązywać zadania I doprowadzać rozpoczęte sprawy do końca. Na
+              codzień fan angielskich seriali oraz premiere league, gier
+              przygodowych typu “click and point”, sudoku oraz ligi NBA. W
+              przyszłości, również trener personalny kulturystki oraz zdrowego
+              odżywiania.
+            </TextTagP>
+          </div>
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-offset="200"
+            data-aos-once="true"
+          >
+            <TextTagTitle>What am I like?</TextTagTitle>
+            <TextTagP>
+              z tej strony front-end developer z Wrocławia, Swoją pasję do
+              tworzenia stron oraz aplikacji odkryłem jeszcze, gdy pracowałem
+              jako sprzedawca z 12 latnim doświadczeniem. Od tamtej pory
+              koncentruję się na nieustannym podnoszeniu swoich umiejętności i
+              utrwalaniu ich poprzez ciągłą praktykę. Jestem dobrze z
+              organizowaną osobą, mającą za każdym razem plan na siebie, lubiącą
+              rozwiązywać zadania I doprowadzać rozpoczęte sprawy do końca. Na
+              codzień fan angielskich seriali oraz premiere league, gier
+              przygodowych typu “click and point”, sudoku oraz ligi NBA. W
+              przyszłości, również trener personalny kulturystki oraz zdrowego
+              odżywiania.
+            </TextTagP>
+          </div>
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-offset="200"
+            data-aos-once="true"
+          >
+            <TextTagTitle>What am I?</TextTagTitle>
+            <TextTagP>
+              z tej strony front-end developer z Wrocławia, Swoją pasję do
+              tworzenia stron oraz aplikacji odkryłem jeszcze, gdy pracowałem
+              jako sprzedawca z 12 latnim doświadczeniem. Od tamtej pory
+              koncentruję się na nieustannym podnoszeniu swoich umiejętności i
+              utrwalaniu ich poprzez ciągłą praktykę. Jestem dobrze z
+              organizowaną osobą, mającą za każdym razem plan na siebie, lubiącą
+              rozwiązywać zadania I doprowadzać rozpoczęte sprawy do końca. Na
+              codzień fan angielskich seriali oraz premiere league, gier
+              przygodowych typu “click and point”, sudoku oraz ligi NBA. W
+              przyszłości, również trener personalny kulturystki oraz zdrowego
+              odżywiania.
+            </TextTagP>
+          </div>
           <TextTagTitle
-            data-aos="fade-right"
-            data-aos-offset="300"
-            data-aos-easing="ease-in-sine"
-            data-aos-offset="400"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-once="true"
+            data-aos-offset="200"
           >
             Technology
           </TextTagTitle>
-          <IconContener id="textTag">
+          <IconContener>
             {iconsFolder.map((icon) => (
-              <IconDiv key={icon.id}>
+              <IconDiv key={icon.id} className="textTag">
                 <IconImage src={icon.img} className={"iconImg"} />
                 <IconText className={"iconText"}>{icon.name}</IconText>
               </IconDiv>

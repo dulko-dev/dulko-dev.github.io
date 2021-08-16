@@ -80,4 +80,5 @@ export const Loading = styled.div`
   animation-name: ${light};
   animation-duration: 2s;
   animation-timing-function: linear;
+  animation-fill-mode: forwards;
 `;

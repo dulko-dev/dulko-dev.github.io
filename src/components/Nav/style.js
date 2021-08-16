@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const NavContainer = styled.div`
   position: sticky;
@@ -7,6 +8,7 @@ export const NavContainer = styled.div`
   height: 150px;
   display: flex;
   justify-content: space-between;
+  width: 100%;
 `;
 
 export const Image = styled.img`
@@ -124,16 +126,16 @@ export const Burger = styled.div`
 
 export const Module = styled.div`
   position: absolute;
-  left: 20%;
+  left: 50%;
   top: 0;
   z-index: 2;
   transition: all 0.4s;
-  transform: translateY(-100px) translateX(-20%);
+  transform: translateY(-100px) translateX(-50%);
   ${({ horizontalDash }) =>
     horizontalDash &&
     css`
       transition: all 1s;
-      transform: translateY(50px) translateX(-20%);
+      transform: translateY(50px) translateX(-50%);
       transition-delay: 0.4s;
     `}
 `;
@@ -146,7 +148,6 @@ export const MenuBackGround = styled.div`
   width: 100%;
   height: 150px;
   transition: all 1s;
-
   ${({ horizontalDash }) =>
     horizontalDash &&
     css`
@@ -161,7 +162,10 @@ export const MenuBackGround = styled.div`
 
 export const Ul = styled.ul`
   display: flex;
+  position: relative;
+  height: 150px;
 `;
+
 export const Li = styled.li`
   margin: 0 50px;
   font-size: 30px;
@@ -173,12 +177,34 @@ export const Li = styled.li`
     transition: opacity 0.4s ease-in-out;
     opacity: 0.6;
   }
+  &:nth-child(4){
+    margin-right:200px;
+  }
 `;
 
-export const TitleMenu = styled.h3`
-  color: #39b54a;
-  margin-bottom: 90px;
-  letter-spacing: 4px;
-  font-size: 40px;
-  text-transform: uppercase;
+export const LiSociety = styled.li`
+  margin: 0 30px;
+  font-size: 30px;
+  cursor: pointer;
+  color: rgb(238, 238, 238);
+  font-family: "Poppins", sans-serif;
+  transition: opacity 0.4s ease-in-out;
+  &:hover {
+    transition: opacity 0.4s ease-in-out;
+    opacity: 0.6;
+  }
+  &:nth-of-type(5) {
+    margin-left:200px;
+  }
 `;
+
+export const BreakLine = styled.div`
+  height: 100%;
+  width: 5px;
+  background-color: #ffffff;
+  transform: translateY(-50px);
+`;
+
+export const Society = styled(FontAwesomeIcon)``;
+
+export const ImageCV = styled.img``;

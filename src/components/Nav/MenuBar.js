@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Ul, Li, TitleMenu } from "./style";
+import { Ul, Li, BreakLine, Society, ImageCV, LiSociety } from "./style";
+import {
+  faFacebookF,
+  faLinkedinIn,
+  faGithubAlt,
+} from "@fortawesome/free-brands-svg-icons";
+import cv from "../../assets/cv.png";
 
 const MenuBar = () => {
   const [changeColor, setChangeColor] = useState({
@@ -110,12 +116,45 @@ const MenuBar = () => {
         >
           Contact
         </Li>
-        <a
-          style={{ outline: "none", textDecoration: "none" }}
-          href="https://drive.google.com/u/0/uc?id=1bD6Q0oryW8rrJslGpdWmmbl0uovgD6IY&export=download"
-        >
-          <Li>Resume</Li>
-        </a>
+        <BreakLine></BreakLine>
+        <LiSociety>
+          <a
+            href="https://www.facebook.com/kamil.duliniec/"
+            target="_blank"
+            rel="noreferrer"
+            style={{ outline: "none", color: "rgb(238, 238, 238)" }}
+          >
+            <Society icon={faFacebookF} />
+          </a>
+        </LiSociety>
+        <LiSociety>
+          <a
+            href="https://www.linkedin.com/in/kamil-duliniec/"
+            target="_blank"
+            rel="noreferrer"
+            style={{ outline: "none", color: "rgb(238, 238, 238)" }}
+          >
+            <Society icon={faLinkedinIn} />
+          </a>
+        </LiSociety>
+        <LiSociety>
+          <a
+            href="https://github.com/dulko-dev"
+            target="_blank"
+            rel="noreferrer"
+            style={{ outline: "none", color: "rgb(238, 238, 238)" }}
+          >
+            <Society icon={faGithubAlt} />
+          </a>
+        </LiSociety>
+        <LiSociety>
+          <a
+            href="https://drive.google.com/u/0/uc?id=1bD6Q0oryW8rrJslGpdWmmbl0uovgD6IY&export=download"
+            style={{ outline: "none" }}
+          >
+            <ImageCV src={cv} />
+          </a>
+        </LiSociety>
       </Ul>
     </>
   );

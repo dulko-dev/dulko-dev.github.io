@@ -81,6 +81,8 @@ export const IconDiv = styled.div`
   margin: 30px;
   position: relative;
   transition: all 0.4s;
+  transform: translateY(50px);
+  opacity: 0;
   &:hover .iconText {
     animation-name: ${textAnimation};
     animation-fill-mode: forwards;
