@@ -27,7 +27,11 @@ import myAvatar from "../../assets/myAvatar.png";
 const About = () => {
   const [stackUpper, setStackUpper] = useState(false);
   const [showArrow, setShowArrow] = useState(false);
-  const [changeSign, setChangeSign] = useState(true);
+  const [changeSign, setChangeSign] = useState({
+    who: true,
+    what: true,
+    do: true,
+  });
 
   useEffect(() => {
     const aboutFixed = () => {
@@ -95,7 +99,17 @@ const About = () => {
   };
 
   const handleInfo = (e) => {
-    setChangeSign(!changeSign);
+    if (e.target.textContent.startsWith("Who")) {
+      setChangeSign((prev) => ({ ...prev, who: !changeSign["who"] }));
+    }
+
+    if (e.target.textContent.startsWith("What")) {
+      setChangeSign((prev) => ({ ...prev, what: !changeSign["what"] }));
+    }
+
+    if (e.target.textContent.startsWith("Why")) {
+      setChangeSign((prev) => ({ ...prev, do: !changeSign["do"] }));
+    }
   };
 
   return (
@@ -115,22 +129,24 @@ const About = () => {
             data-aos-once="true"
           >
             <TextTagTitle onClick={handleInfo}>
-              Who am I?
-              <PlusIcon icon={changeSign ? faPlus : faMinus} />
+              Who does he ?
+              <PlusIcon icon={changeSign.who ? faPlus : faMinus} />
             </TextTagTitle>
-            <TextTagP>
-              z tej strony front-end developer z Wrocławia, Swoją pasję do
-              tworzenia stron oraz aplikacji odkryłem jeszcze, gdy pracowałem
-              jako sprzedawca z 12 latnim doświadczeniem. Od tamtej pory
-              koncentruję się na nieustannym podnoszeniu swoich umiejętności i
-              utrwalaniu ich poprzez ciągłą praktykę. Jestem dobrze z
-              organizowaną osobą, mającą za każdym razem plan na siebie, lubiącą
-              rozwiązywać zadania I doprowadzać rozpoczęte sprawy do końca. Na
-              codzień fan angielskich seriali oraz premiere league, gier
-              przygodowych typu “click and point”, sudoku oraz ligi NBA. W
-              przyszłości, również trener personalny kulturystki oraz zdrowego
-              odżywiania.
-            </TextTagP>
+            {!changeSign.who && (
+              <TextTagP>
+                z tej strony front-end developer z Wrocławia, Swoją pasję do
+                tworzenia stron oraz aplikacji odkryłem jeszcze, gdy pracowałem
+                jako sprzedawca z 12 latnim doświadczeniem. Od tamtej pory
+                koncentruję się na nieustannym podnoszeniu swoich umiejętności i
+                utrwalaniu ich poprzez ciągłą praktykę. Jestem dobrze z
+                organizowaną osobą, mającą za każdym razem plan na siebie,
+                lubiącą rozwiązywać zadania I doprowadzać rozpoczęte sprawy do
+                końca. Na codzień fan angielskich seriali oraz premiere league,
+                gier przygodowych typu “click and point”, sudoku oraz ligi NBA.
+                W przyszłości, również trener personalny kulturystki oraz
+                zdrowego odżywiania.
+              </TextTagP>
+            )}
           </div>
           <div
             data-aos="fade-up"
@@ -139,21 +155,24 @@ const About = () => {
             data-aos-once="true"
           >
             <TextTagTitle onClick={handleInfo}>
-              What am I like? <PlusIcon icon={changeSign ? faPlus : faMinus} />
+              What does he like?
+              <PlusIcon icon={changeSign.what ? faPlus : faMinus} />
             </TextTagTitle>
-            <TextTagP>
-              z tej strony front-end developer z Wrocławia, Swoją pasję do
-              tworzenia stron oraz aplikacji odkryłem jeszcze, gdy pracowałem
-              jako sprzedawca z 12 latnim doświadczeniem. Od tamtej pory
-              koncentruję się na nieustannym podnoszeniu swoich umiejętności i
-              utrwalaniu ich poprzez ciągłą praktykę. Jestem dobrze z
-              organizowaną osobą, mającą za każdym razem plan na siebie, lubiącą
-              rozwiązywać zadania I doprowadzać rozpoczęte sprawy do końca. Na
-              codzień fan angielskich seriali oraz premiere league, gier
-              przygodowych typu “click and point”, sudoku oraz ligi NBA. W
-              przyszłości, również trener personalny kulturystki oraz zdrowego
-              odżywiania.
-            </TextTagP>
+            {!changeSign.what && (
+              <TextTagP>
+                z tej strony front-end developer z Wrocławia, Swoją pasję do
+                tworzenia stron oraz aplikacji odkryłem jeszcze, gdy pracowałem
+                jako sprzedawca z 12 latnim doświadczeniem. Od tamtej pory
+                koncentruję się na nieustannym podnoszeniu swoich umiejętności i
+                utrwalaniu ich poprzez ciągłą praktykę. Jestem dobrze z
+                organizowaną osobą, mającą za każdym razem plan na siebie,
+                lubiącą rozwiązywać zadania I doprowadzać rozpoczęte sprawy do
+                końca. Na codzień fan angielskich seriali oraz premiere league,
+                gier przygodowych typu “click and point”, sudoku oraz ligi NBA.
+                W przyszłości, również trener personalny kulturystki oraz
+                zdrowego odżywiania.
+              </TextTagP>
+            )}
           </div>
           <div
             data-aos="fade-up"
@@ -162,21 +181,24 @@ const About = () => {
             data-aos-once="true"
           >
             <TextTagTitle onClick={handleInfo}>
-              What am I do? <PlusIcon icon={changeSign ? faPlus : faMinus} />
+              Why does he do this?
+              <PlusIcon icon={changeSign.do ? faPlus : faMinus} />
             </TextTagTitle>
-            <TextTagP>
-              z tej strony front-end developer z Wrocławia, Swoją pasję do
-              tworzenia stron oraz aplikacji odkryłem jeszcze, gdy pracowałem
-              jako sprzedawca z 12 latnim doświadczeniem. Od tamtej pory
-              koncentruję się na nieustannym podnoszeniu swoich umiejętności i
-              utrwalaniu ich poprzez ciągłą praktykę. Jestem dobrze z
-              organizowaną osobą, mającą za każdym razem plan na siebie, lubiącą
-              rozwiązywać zadania I doprowadzać rozpoczęte sprawy do końca. Na
-              codzień fan angielskich seriali oraz premiere league, gier
-              przygodowych typu “click and point”, sudoku oraz ligi NBA. W
-              przyszłości, również trener personalny kulturystki oraz zdrowego
-              odżywiania.
-            </TextTagP>
+            {!changeSign.do && (
+              <TextTagP>
+                z tej strony front-end developer z Wrocławia, Swoją pasję do
+                tworzenia stron oraz aplikacji odkryłem jeszcze, gdy pracowałem
+                jako sprzedawca z 12 latnim doświadczeniem. Od tamtej pory
+                koncentruję się na nieustannym podnoszeniu swoich umiejętności i
+                utrwalaniu ich poprzez ciągłą praktykę. Jestem dobrze z
+                organizowaną osobą, mającą za każdym razem plan na siebie,
+                lubiącą rozwiązywać zadania I doprowadzać rozpoczęte sprawy do
+                końca. Na codzień fan angielskich seriali oraz premiere league,
+                gier przygodowych typu “click and point”, sudoku oraz ligi NBA.
+                W przyszłości, również trener personalny kulturystki oraz
+                zdrowego odżywiania.
+              </TextTagP>
+            )}
           </div>
           <TextTagTitle
             data-aos="fade-up"
