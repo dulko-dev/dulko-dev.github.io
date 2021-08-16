@@ -4,6 +4,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import gsap from "gsap";
 import { faArrowAltCircleUp } from "@fortawesome/free-regular-svg-icons";
+import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 import {
   AboutContainer,
   AboutTag,
@@ -18,6 +19,7 @@ import {
   IconContener,
   IconText,
   Arrow,
+  PlusIcon,
 } from "./style";
 import { iconsFolder } from "./icons";
 import myAvatar from "../../assets/myAvatar.png";
@@ -25,6 +27,7 @@ import myAvatar from "../../assets/myAvatar.png";
 const About = () => {
   const [stackUpper, setStackUpper] = useState(false);
   const [showArrow, setShowArrow] = useState(false);
+  const [changeSign, setChangeSign] = useState(true);
 
   useEffect(() => {
     const aboutFixed = () => {
@@ -72,8 +75,8 @@ const About = () => {
     const scrollToIcon = () => {
       if (iconDiv.getBoundingClientRect().bottom <= window.innerHeight) {
         gsap.to(".textTag", {
-          duration: 0.5,
-          stagger: 0.5,
+          duration: 0.3,
+          stagger: 0.1,
           y: 0,
           opacity: 1,
         });
@@ -89,6 +92,10 @@ const About = () => {
       left: 0,
       behavior: "smooth",
     });
+  };
+
+  const handleInfo = (e) => {
+    setChangeSign(!changeSign);
   };
 
   return (
@@ -107,7 +114,10 @@ const About = () => {
             data-aos-offset="200"
             data-aos-once="true"
           >
-            <TextTagTitle>Who am I?</TextTagTitle>
+            <TextTagTitle onClick={handleInfo}>
+              Who am I?
+              <PlusIcon icon={changeSign ? faPlus : faMinus} />
+            </TextTagTitle>
             <TextTagP>
               z tej strony front-end developer z Wrocławia, Swoją pasję do
               tworzenia stron oraz aplikacji odkryłem jeszcze, gdy pracowałem
@@ -128,7 +138,9 @@ const About = () => {
             data-aos-offset="200"
             data-aos-once="true"
           >
-            <TextTagTitle>What am I like?</TextTagTitle>
+            <TextTagTitle onClick={handleInfo}>
+              What am I like? <PlusIcon icon={changeSign ? faPlus : faMinus} />
+            </TextTagTitle>
             <TextTagP>
               z tej strony front-end developer z Wrocławia, Swoją pasję do
               tworzenia stron oraz aplikacji odkryłem jeszcze, gdy pracowałem
@@ -149,7 +161,9 @@ const About = () => {
             data-aos-offset="200"
             data-aos-once="true"
           >
-            <TextTagTitle>What am I?</TextTagTitle>
+            <TextTagTitle onClick={handleInfo}>
+              What am I do? <PlusIcon icon={changeSign ? faPlus : faMinus} />
+            </TextTagTitle>
             <TextTagP>
               z tej strony front-end developer z Wrocławia, Swoją pasję do
               tworzenia stron oraz aplikacji odkryłem jeszcze, gdy pracowałem

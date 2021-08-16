@@ -74,14 +74,23 @@ export const IconContener = styled.div`
 export const TextTagTitle = styled.h2`
   font-size: 3em;
   position: relative;
-  text-align: center;
+  cursor: pointer;
+`;
+
+export const PlusIcon = styled(FontAwesomeIcon)`
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
 `;
 
 export const IconDiv = styled.div`
   margin: 30px;
   position: relative;
   transition: all 0.4s;
-  transform: translateY(50px);
+  transform: translateY(30px);
   opacity: 0;
   &:hover .iconText {
     animation-name: ${textAnimation};
