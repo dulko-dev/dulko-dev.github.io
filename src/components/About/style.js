@@ -69,7 +69,7 @@ export const TextTagP = styled.p`
   ${({ open }) =>
     open &&
     css`
-      height: 200px;
+      height: 160px;
       transition: height 1s;
     `}
 `;
@@ -77,7 +77,16 @@ export const TextTagP = styled.p`
 export const IconContener = styled.div`
   position: relative;
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
+  height: 0;
+  transition: height 1s;
+  ${({ open }) =>
+    open &&
+    css`
+      height: 200px;
+      transition: height 1s;
+    `}
 `;
 
 export const TextTagTitle = styled.h2`
@@ -94,10 +103,6 @@ export const TextTagTitle = styled.h2`
     `}
 `;
 
-export const TechnologyTitle = styled(TextTagTitle)`
-  cursor: default;
-`;
-
 export const PlusIcon = styled(FontAwesomeIcon)`
   width: 20px;
   height: 20px;
@@ -109,7 +114,7 @@ export const PlusIcon = styled(FontAwesomeIcon)`
 `;
 
 export const IconDiv = styled.div`
-  margin: 30px;
+  margin: 5px 25px 0 25px;
   position: relative;
   transition: all 0.4s;
   transform: translateY(30px);

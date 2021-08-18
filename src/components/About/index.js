@@ -20,7 +20,6 @@ import {
   IconText,
   Arrow,
   PlusIcon,
-  TechnologyTitle,
 } from "./style";
 import { iconsFolder } from "./icons";
 import myAvatar from "../../assets/myAvatar.png";
@@ -28,10 +27,12 @@ import myAvatar from "../../assets/myAvatar.png";
 const About = () => {
   const [stackUpper, setStackUpper] = useState(false);
   const [showArrow, setShowArrow] = useState(false);
+  const [icon, setIcon] = useState(false);
   const [changeSign, setChangeSign] = useState({
     who: true,
     what: true,
     do: true,
+    tech: true,
   });
 
   useEffect(() => {
@@ -76,18 +77,18 @@ const About = () => {
   }, []);
 
   useEffect(() => {
-    const iconDiv = document.querySelector("#cont");
-    const scrollToIcon = () => {
-      if (iconDiv.getBoundingClientRect().bottom <= window.innerHeight) {
-        gsap.to(".textTag", {
-          duration: 0.3,
-          stagger: 0.1,
-          y: 0,
-          opacity: 1,
-        });
-      }
-    };
-    window.addEventListener("scroll", scrollToIcon);
+    if (icon === true) {
+      gsap.to(".textTag", {
+        duration: 1,
+        delay: 1,
+        stagger: 0.2,
+        y: 0,
+        opacity: 1,
+      });
+    }
+  }, [icon]);
+
+  useEffect(() => {
     AOS.init({});
   }, []);
 
@@ -112,6 +113,14 @@ const About = () => {
       setChangeSign((prev) => ({ ...prev, do: !changeSign["do"] }));
     }
   };
+
+  const handleTech = (e) => {
+    if (e.target.textContent.includes("Technology")) {
+      setChangeSign((prev) => ({ ...prev, tech: !changeSign["tech"] }));
+    }
+    setIcon(true);
+  };
+
   return (
     <AboutContainer>
       <AboutContent>
@@ -132,20 +141,19 @@ const About = () => {
               Who does he ?
               <PlusIcon icon={changeSign.who ? faPlus : faMinus} />
             </TextTagTitle>
-            <TextTagP open={!changeSign.who}>
-              z tej strony front-end developer z Wrocławia, Swoją pasję do
-              tworzenia stron oraz aplikacji odkryłem jeszcze, gdy pracowałem
-              jako sprzedawca z 12 latnim doświadczeniem. Od tamtej pory
-              koncentruję się na nieustannym podnoszeniu swoich umiejętności i
-              utrwalaniu ich poprzez ciągłą praktykę. Jestem dobrze z
-              organizowaną osobą, mającą za każdym razem plan na siebie, lubiącą
-              rozwiązywać zadania I doprowadzać rozpoczęte sprawy do końca. Na
-              codzień fan angielskich seriali oraz premiere league, gier
-              przygodowych typu “click and point”, sudoku oraz ligi NBA. W
-              przyszłości, również trener personalny kulturystki oraz zdrowego
-              odżywiania.
-            </TextTagP>
           </div>
+          <TextTagP open={!changeSign.who}>
+            z tej strony front-end developer z Wrocławia, Swoją pasję do
+            tworzenia stron oraz aplikacji odkryłem jeszcze, gdy pracowałem jako
+            sprzedawca z 12 latnim doświadczeniem. Od tamtej pory koncentruję
+            się na nieustannym podnoszeniu swoich umiejętności i utrwalaniu ich
+            poprzez ciągłą praktykę. Jestem dobrze z organizowaną osobą, mającą
+            za każdym razem plan na siebie, lubiącą rozwiązywać zadania I
+            doprowadzać rozpoczęte sprawy do końca. Na codzień fan angielskich
+            seriali oraz premiere league, gier przygodowych typu “click and
+            point”, sudoku oraz ligi NBA. W przyszłości, również trener
+            personalny kulturystki oraz zdrowego odżywiania.
+          </TextTagP>
           <div
             data-aos="fade-up"
             data-aos-duration="1000"
@@ -156,20 +164,20 @@ const About = () => {
               What does he like?
               <PlusIcon icon={changeSign.what ? faPlus : faMinus} />
             </TextTagTitle>
-            <TextTagP open={!changeSign.what}>
-              z tej strony front-end developer z Wrocławia, Swoją pasję do
-              tworzenia stron oraz aplikacji odkryłem jeszcze, gdy pracowałem
-              jako sprzedawca z 12 latnim doświadczeniem. Od tamtej pory
-              koncentruję się na nieustannym podnoszeniu swoich umiejętności i
-              utrwalaniu ich poprzez ciągłą praktykę. Jestem dobrze z
-              organizowaną osobą, mającą za każdym razem plan na siebie, lubiącą
-              rozwiązywać zadania I doprowadzać rozpoczęte sprawy do końca. Na
-              codzień fan angielskich seriali oraz premiere league, gier
-              przygodowych typu “click and point”, sudoku oraz ligi NBA. W
-              przyszłości, również trener personalny kulturystki oraz zdrowego
-              odżywiania.
-            </TextTagP>
           </div>
+          <TextTagP open={!changeSign.what}>
+            z tej strony front-end developer z Wrocławia, Swoją pasję do
+            tworzenia stron oraz aplikacji odkryłem jeszcze, gdy pracowałem jako
+            sprzedawca z 12 latnim doświadczeniem. Od tamtej pory koncentruję
+            się na nieustannym podnoszeniu swoich umiejętności i utrwalaniu ich
+            poprzez ciągłą praktykę. Jestem dobrze z organizowaną osobą, mającą
+            za każdym razem plan na siebie, lubiącą rozwiązywać zadania I
+            doprowadzać rozpoczęte sprawy do końca. Na codzień fan angielskich
+            seriali oraz premiere league, gier przygodowych typu “click and
+            point”, sudoku oraz ligi NBA. W przyszłości, również trener
+            personalny kulturystki oraz zdrowego odżywiania.
+          </TextTagP>
+
           <div
             data-aos="fade-up"
             data-aos-duration="1000"
@@ -180,29 +188,31 @@ const About = () => {
               Why does he do this?
               <PlusIcon icon={changeSign.do ? faPlus : faMinus} />
             </TextTagTitle>
-            <TextTagP open={!changeSign.do}>
-              z tej strony front-end developer z Wrocławia, Swoją pasję do
-              tworzenia stron oraz aplikacji odkryłem jeszcze, gdy pracowałem
-              jako sprzedawca z 12 latnim doświadczeniem. Od tamtej pory
-              koncentruję się na nieustannym podnoszeniu swoich umiejętności i
-              utrwalaniu ich poprzez ciągłą praktykę. Jestem dobrze z
-              organizowaną osobą, mającą za każdym razem plan na siebie, lubiącą
-              rozwiązywać zadania I doprowadzać rozpoczęte sprawy do końca. Na
-              codzień fan angielskich seriali oraz premiere league, gier
-              przygodowych typu “click and point”, sudoku oraz ligi NBA. W
-              przyszłości, również trener personalny kulturystki oraz zdrowego
-              odżywiania.
-            </TextTagP>
           </div>
-          <TechnologyTitle
+          <TextTagP open={!changeSign.do}>
+            z tej strony front-end developer z Wrocławia, Swoją pasję do
+            tworzenia stron oraz aplikacji odkryłem jeszcze, gdy pracowałem jako
+            sprzedawca z 12 latnim doświadczeniem. Od tamtej pory koncentruję
+            się na nieustannym podnoszeniu swoich umiejętności i utrwalaniu ich
+            poprzez ciągłą praktykę. Jestem dobrze z organizowaną osobą, mającą
+            za każdym razem plan na siebie, lubiącą rozwiązywać zadania I
+            doprowadzać rozpoczęte sprawy do końca. Na codzień fan angielskich
+            seriali oraz premiere league, gier przygodowych typu “click and
+            point”, sudoku oraz ligi NBA. W przyszłości, również trener
+            personalny kulturystki oraz zdrowego odżywiania.
+          </TextTagP>
+          <div
             data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-once="true"
             data-aos-offset="200"
           >
-            Technology
-          </TechnologyTitle>
-          <IconContener>
+            <TextTagTitle onClick={handleTech} open={!changeSign.tech}>
+              Technology
+              <PlusIcon icon={changeSign.tech ? faPlus : faMinus} />
+            </TextTagTitle>
+          </div>
+          <IconContener open={!changeSign.tech}>
             {iconsFolder.map((icon) => (
               <IconDiv key={icon.id} className="textTag">
                 <IconImage src={icon.img} className={"iconImg"} />
