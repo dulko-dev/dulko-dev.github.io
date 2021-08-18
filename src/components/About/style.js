@@ -62,7 +62,16 @@ export const TextTag = styled.div`
 
 export const TextTagP = styled.p`
   font-size: 1.4em;
-  padding: 5px;
+  overflow: hidden;
+  margin: 10px;
+  height: 0;
+  transition: height 1s;
+  ${({ open }) =>
+    open &&
+    css`
+      height: 200px;
+      transition: height 1s;
+    `}
 `;
 
 export const IconContener = styled.div`
@@ -75,6 +84,18 @@ export const TextTagTitle = styled.h2`
   font-size: 3em;
   position: relative;
   cursor: pointer;
+  padding: 20px;
+  transition: background-color 0.4s;
+  ${({ open }) =>
+    open &&
+    css`
+      background-color: #b2b2b2;
+      transition: background-color 0.4s;
+    `}
+`;
+
+export const TechnologyTitle = styled(TextTagTitle)`
+  cursor: default;
 `;
 
 export const PlusIcon = styled(FontAwesomeIcon)`
@@ -84,6 +105,7 @@ export const PlusIcon = styled(FontAwesomeIcon)`
   top: 50%;
   right: 10%;
   transform: translateY(-50%);
+  pointer-events: none;
 `;
 
 export const IconDiv = styled.div`
