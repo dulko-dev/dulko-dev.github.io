@@ -6,9 +6,9 @@ export const NavContainer = styled.div`
   top: 0;
   z-index: 3;
   height: 150px;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-template-rows: 1fr;
 `;
 
 export const Image = styled.img`
@@ -20,6 +20,8 @@ export const Image = styled.img`
 export const NavLogo = styled.div`
   margin-left: 50px;
   text-align: center;
+  grid-column: 1/2;
+  grid-row: 1/2;
 `;
 
 export const ButtonMode = styled.button`
@@ -62,9 +64,16 @@ export const ImageNight = styled.img`
 
 export const RightContent = styled.div`
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  position: relative;
+  grid-column: 2/3;
+  grid-row: 1/2;
+  justify-content: space-between;
   margin-right: 50px;
+`;
+
+export const MenuButtons = styled.div`
+  display: flex;
+  flex-direction: column;
   align-items: center;
 `;
 
@@ -125,26 +134,16 @@ export const Burger = styled.div`
 `;
 
 export const Module = styled.div`
-  position: absolute;
-  left: 50%;
-  top: 0;
+  position: relative;
+  width: 100%;
   z-index: 2;
   transition: all 0.4s;
-  transform: translateY(-100px) translateX(-50%);
-  ${({ horizontalDash }) =>
-    horizontalDash &&
-    css`
-      transition: all 1s;
-      transform: translateY(50px) translateX(-50%);
-      transition-delay: 0.4s;
-    `}
 `;
 
 export const MenuBackGround = styled.div`
   position: fixed;
   transform: translateY(-100px);
   top: 0;
-  left: 0;
   width: 100%;
   height: 150px;
   transition: all 1s;
@@ -161,13 +160,29 @@ export const MenuBackGround = styled.div`
 // MenuBar
 
 export const Ul = styled.ul`
+  position: absolute;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
   display: flex;
-  position: relative;
   height: 150px;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-160px);
+  transition: all 1s;
+  ${({ horizontalDash }) =>
+    horizontalDash &&
+    css`
+      transition: all 1s;
+      transform: translateY(0);
+      transition-delay: 0.4s;
+    `}
 `;
 
 export const Li = styled.li`
-  margin: 0 50px;
+  position: relative;
+  margin-right: 20px;
   font-size: 30px;
   cursor: pointer;
   color: rgb(238, 238, 238);
@@ -177,12 +192,10 @@ export const Li = styled.li`
     transition: opacity 0.4s ease-in-out;
     opacity: 0.6;
   }
-  &:nth-child(4){
-    margin-right:200px;
-  }
 `;
 
 export const LiSociety = styled.li`
+  position: relative;
   margin: 0 30px;
   font-size: 30px;
   cursor: pointer;
@@ -193,16 +206,12 @@ export const LiSociety = styled.li`
     transition: opacity 0.4s ease-in-out;
     opacity: 0.6;
   }
-  &:nth-of-type(5) {
-    margin-left:200px;
-  }
 `;
 
 export const BreakLine = styled.div`
   height: 100%;
   width: 5px;
   background-color: #ffffff;
-  transform: translateY(-50px);
 `;
 
 export const Society = styled(FontAwesomeIcon)``;

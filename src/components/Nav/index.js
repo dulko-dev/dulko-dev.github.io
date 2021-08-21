@@ -14,27 +14,15 @@ import {
   RightContent,
   ImageSun,
   ImageNight,
+  MenuButtons
 } from "./style";
 import logo from "../../assets/logo.svg";
 
 const Nav = ({ toggleMode, mode, sunrise, sunset }) => {
   const [menuOpen, setMenuOpen] = useState(false);
-  // const [changeColor, setChangeColor] = useState(false);
   const handleOpen = () => {
     setMenuOpen(!menuOpen);
   };
-
-  // useEffect(() => {
-  //   const scroller = () => {
-  //     if (window.scrollY > 100) {
-  //       setChangeColor(true);
-  //     } else {
-  //       setChangeColor(false);
-  //     }
-  //   };
-
-  //   window.addEventListener("scroll", scroller);
-  // }, []);
 
   return (
     <>
@@ -45,19 +33,21 @@ const Nav = ({ toggleMode, mode, sunrise, sunset }) => {
           </a>
         </NavLogo>
         <RightContent>
-          <NavBurger onClick={handleOpen}>
-            <Burger horizontalDash={menuOpen}></Burger>
-          </NavBurger>
-          <Module horizontalDash={menuOpen}>
-            <MenuBar />
+          <Module>
+            <MenuBar menuOpen={menuOpen} />
           </Module>
-          <ButtonMode onClick={toggleMode}>
-            {mode === "dark" ? (
-              <ImageSun src={sun} day={sunrise} />
-            ) : (
-              <ImageNight src={night} nightImg={sunset} />
-            )}
-          </ButtonMode>
+          <MenuButtons>
+            <NavBurger onClick={handleOpen}>
+              <Burger horizontalDash={menuOpen}></Burger>
+            </NavBurger>
+            <ButtonMode onClick={toggleMode}>
+              {mode === "dark" ? (
+                <ImageSun src={sun} day={sunrise} />
+              ) : (
+                <ImageNight src={night} nightImg={sunset} />
+              )}
+            </ButtonMode>
+          </MenuButtons>
         </RightContent>
       </NavContainer>
       <MenuBackGround horizontalDash={menuOpen}></MenuBackGround>
