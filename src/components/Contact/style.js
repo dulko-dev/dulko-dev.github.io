@@ -27,14 +27,21 @@ export const ContactTag = styled.div`
     width: 100%;
     height: 100%;
   }
+
+  @media (max-width:430px){
+    font-size:5em;
+  }
 `;
 
 export const Image = styled.img`
   display: block;
-  margin: 0 auto;
+  margin: 20px auto 0 auto;
   margin-top: 20px;
   max-width: 500px;
   height: 275px;
+  @media (max-width: 430px) {
+    margin: 20px 0 0 0;
+  }
 `;
 export const ContactTagP = styled.p`
   margin: 10px auto 0 auto;
@@ -96,7 +103,7 @@ export const SendButton = styled.button`
   margin-top: 10px;
   height: 35px;
   justify-self: center;
-  width: 150px;
+  max-width: 150px;
   border-radius: 15px;
   background-color: ${({ theme }) => theme.button};
   color: ${({ theme }) => theme.buttonColor};

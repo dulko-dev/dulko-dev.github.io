@@ -191,7 +191,7 @@ export const TextContent = styled.div`
 `;
 
 export const TextModule = styled.div`
-  width: 500px;
+  max-width: 500px;
   position: absolute;
   bottom: -200px;
   right: 0;

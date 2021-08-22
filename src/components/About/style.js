@@ -39,28 +39,27 @@ export const AboutTag = styled.div`
       left: 0;
     `}
   @media (max-width:1000px) {
-    height:100%;
+    height: 100%;
     width: 100%;
     position: relative;
   }
 `;
 
 export const Image = styled.img`
-  margin: 0 auto;
+  margin: 20px auto 0 auto;
   display: block;
-  margin-top: 20px;
-  width: 200px;
-
+  max-width: 200px;
+  @media (max-width: 980px) {
+    margin: 20px 0;
+  }
 `;
 
 export const AboutTagTitle = styled.p`
   margin-top: 10px;
-  margin-left: auto;
-  margin-right: auto;
   color: ${({ theme }) => theme.title};
   text-align: center;
   @media (max-width: 1000px) {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
 `;
 

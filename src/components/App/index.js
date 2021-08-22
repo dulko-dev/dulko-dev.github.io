@@ -76,12 +76,12 @@ const App = () => {
             <LoadingContainerLeft left={openCurtains} />
           </>
         )}
-        <Nav
+        {/* <Nav
           toggleMode={toggleMode}
           mode={mode}
           sunrise={sunrise}
           sunset={sunset}
-        />
+        /> */}
         <Home />
         <About />
         <Projects />

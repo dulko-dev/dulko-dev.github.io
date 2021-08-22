@@ -1,5 +1,6 @@
 import styled, { css, keyframes } from "styled-components";
 import bg from "../../assets/programming.jpg";
+import small from "../../assets/smallBg.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const rubber = keyframes`
@@ -33,7 +34,7 @@ const rubber = keyframes`
 `;
 
 export const HomeComponent = styled.div`
-  height: calc(100vh - 150px);
+  height: calc(100vh);
   width: 100%;
   &:after {
     content: "";
@@ -44,14 +45,31 @@ export const HomeComponent = styled.div`
     width: 100%;
     z-index: -1;
     opacity: 0.85;
+    transition: all .5s ease-in-out;
     background-image: url(${bg});
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: center;
   }
 
-  @media (max-width: 1000px) {
-   
+  @media (max-width: 1100px) {
+    height: calc(100vh);
+    width: 100%;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+      opacity: 0.85;
+      transition: all .5s ease-in-out;
+      background-image: url(${small});
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-position: center;
+    }
   }
 `;
 
@@ -65,6 +83,12 @@ export const Content = styled.div`
   color: rgb(238, 238, 238);
   font-size: 35px;
   height: 400px;
+
+  @media (max-width: 1100px) {
+    height: 700px;
+    display: block;
+    margin: 0;
+  }
 `;
 
 export const ProgressBar = styled.div`
@@ -77,6 +101,7 @@ export const ProgressBar = styled.div`
   z-index: 1;
   border: none;
 `;
+
 export const Progress = styled.div`
   width: 100%;
   margin: 0 auto;
@@ -88,8 +113,13 @@ export const Text = styled.div`
   margin-left: 100px;
   color: rgb(238, 238, 238);
   font-size: 50px;
-  width: 800px;
+  max-width: 800px;
   align-self: center;
+
+  @media (max-width: 1100px) {
+    margin: 0 auto;
+    text-align: center;
+  }
 `;
 
 export const TitleText = styled.h3`
@@ -99,6 +129,14 @@ export const TitleText = styled.h3`
   color: #bfbfbf;
   padding-bottom: 20px;
   text-align: left;
+
+  @media (max-width: 1370px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 1100px) {
+    visibility: hidden;
+  }
 `;
 
 export const Letter = styled.p`
@@ -130,11 +168,14 @@ export const Letter = styled.p`
   @media (max-width: 1540px) {
     font-size: 1em;
   }
-  @media (max-width: 1300px) {
+  @media (max-width: 1370px) {
     font-size: 0.8em;
   }
-  @media (max-width: 1120px) {
+  @media (max-width: 1250px) {
     font-size: 0.6em;
+  }
+  @media (max-width: 1100px) {
+    font-size: 1em;
   }
 `;
 
@@ -143,6 +184,13 @@ export const Social = styled.div`
   flex-direction: column;
   padding-top: 75px;
   align-items: flex-end;
+
+  @media (max-width: 1100px) {
+    position: absolute;
+    bottom: 13%;
+    right: 20px;
+    padding-top: 0;
+  }
 `;
 
 export const Button = styled.button`
@@ -187,15 +235,20 @@ export const Button = styled.button`
     color: #eeeeee;
   }
 
-  @media (max-width: 1120px) {
+  @media (max-width: 1250px) {
     font-size: 10px;
+  }
+
+  @media (max-width: 1100px) {
+    font-size: 15px;
   }
 `;
 
 export const ButtonSide = styled.div`
   position: absolute;
   bottom: 0;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
 `;
 
 export const FontIcon = styled(FontAwesomeIcon)`
@@ -204,7 +257,7 @@ export const FontIcon = styled(FontAwesomeIcon)`
   border-radius: 50%;
   padding: 10px;
   cursor: pointer;
-  @media (max-width: 1120px) {
+  @media (max-width: 1250px) {
     padding: 7px;
   }
 `;
@@ -212,7 +265,7 @@ export const FontIcon = styled(FontAwesomeIcon)`
 export const FbIcon = styled(FontIcon)`
   padding: 10px 13px;
   cursor: pointer;
-  @media (max-width: 1120px) {
+  @media (max-width: 1250px) {
     padding: 7px 10px;
   }
 `;
@@ -243,7 +296,7 @@ export const SpanIconName = styled.span`
 export const ImageDiv = styled.div`
   position: relative;
   margin: 30px auto;
-  width: 400px;
+  max-width: 400px;
   height: 300px;
   box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
@@ -255,9 +308,14 @@ export const ImageDiv = styled.div`
     width: 350px;
     height: 250px;
   }
-  @media (max-width: 1120px) {
-    width: 300px;
-    height: 200px;
+  @media (max-width: 1250px) {
+    width: 325px;
+    height: 225px;
+  }
+
+  @media (max-width: 1100px) {
+    width: 400px;
+    height: 300px;
   }
 `;
 export const Image = styled.img`
