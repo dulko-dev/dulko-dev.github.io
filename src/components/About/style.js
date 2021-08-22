@@ -16,6 +16,9 @@ export const AboutContainer = styled.div`
 export const AboutContent = styled.div`
   display: flex;
   position: relative;
+  @media (max-width: 1000px) {
+    display: block;
+  }
 `;
 
 export const AboutTag = styled.div`
@@ -35,12 +38,19 @@ export const AboutTag = styled.div`
       top: 0;
       left: 0;
     `}
+  @media (max-width:1000px) {
+    height:100%;
+    width: 100%;
+    position: relative;
+  }
 `;
 
 export const Image = styled.img`
   margin: 0 auto;
   display: block;
   margin-top: 20px;
+  width: 200px;
+
 `;
 
 export const AboutTagTitle = styled.p`
@@ -49,6 +59,9 @@ export const AboutTagTitle = styled.p`
   margin-right: auto;
   color: ${({ theme }) => theme.title};
   text-align: center;
+  @media (max-width: 1000px) {
+    margin-bottom: 10px;
+  }
 `;
 
 export const TextTag = styled.div`
@@ -58,6 +71,12 @@ export const TextTag = styled.div`
   margin-right: 0;
   background-color: ${({ theme }) => theme.darkBackground};
   color: ${({ theme }) => theme.text};
+
+  @media (max-width: 1000px) {
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
 `;
 
 export const TextTagP = styled.p`

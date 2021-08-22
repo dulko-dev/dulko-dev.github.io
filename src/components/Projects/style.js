@@ -7,6 +7,9 @@ export const ProjectsContainer = styled.div`
 export const ProjectContent = styled.div`
   display: flex;
   position: relative;
+  @media (max-width: 1000px) {
+    display: block;
+  }
 `;
 
 export const ProjectTag = styled.div`
@@ -20,6 +23,13 @@ export const ProjectTag = styled.div`
   background-color: ${({ theme }) => theme.darkBackground};
   color: ${({ theme }) => theme.title};
   height: 100%;
+
+  @media (max-width: 1000px) {
+    position: relative;
+    width: 100%;
+    background-color: ${({ theme }) => theme.lightBackground};
+    color: ${({ theme }) => theme.title};
+  }
 `;
 
 export const GroupImage = styled.div`
@@ -40,13 +50,16 @@ export const GroupImage = styled.div`
       bottom: 158px;
       align-self: center;
     `}
+    @media (max-width:1000px) {
+    position: relative;
+  }
 `;
 
 export const Image = styled.img`
   margin: 0 auto;
   margin-top: 20px;
-  width: 500px;
-  height: 200px;
+  max-width: 500px;
+  max-height: 200px;
 `;
 
 export const ProjectTagP = styled.p`
@@ -54,6 +67,9 @@ export const ProjectTagP = styled.p`
   margin-left: auto;
   margin-right: auto;
   color: ${({ theme }) => theme.title};
+  @media (max-width: 1000px) {
+    margin-bottom: 20px;
+  }
 `;
 
 export const TextContainer = styled.div`
@@ -63,6 +79,12 @@ export const TextContainer = styled.div`
   margin-right: 0;
   background-color: ${({ theme }) => theme.lightBackground};
   color: ${({ theme }) => theme.text};
+  @media (max-width: 1000px) {
+    position: relative;
+    width: 100%;
+    background-color: ${({ theme }) => theme.darkBackground};
+    color: ${({ theme }) => theme.text};
+  }
 `;
 
 export const TextTitle = styled.h2`

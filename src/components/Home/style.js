@@ -49,15 +49,19 @@ export const HomeComponent = styled.div`
     background-size: 100% 100%;
     background-position: center;
   }
+
+  @media (max-width: 1000px) {
+   
+  }
 `;
 
 export const Content = styled.div`
   position: relative;
   display: flex;
-  margin-left: auto;
+  margin-left: 100px;
   margin-right: 100px;
   max-width: 1500px;
-  padding-top: 100px;
+  padding-top: 50px;
   color: rgb(238, 238, 238);
   font-size: 35px;
   height: 400px;
@@ -123,6 +127,15 @@ export const Letter = styled.p`
     color: #0093d9;
     transition: color 0.8s;
   }
+  @media (max-width: 1540px) {
+    font-size: 1em;
+  }
+  @media (max-width: 1300px) {
+    font-size: 0.8em;
+  }
+  @media (max-width: 1120px) {
+    font-size: 0.6em;
+  }
 `;
 
 export const Social = styled.div`
@@ -173,6 +186,10 @@ export const Button = styled.button`
   &:focus {
     color: #eeeeee;
   }
+
+  @media (max-width: 1120px) {
+    font-size: 10px;
+  }
 `;
 
 export const ButtonSide = styled.div`
@@ -187,11 +204,17 @@ export const FontIcon = styled(FontAwesomeIcon)`
   border-radius: 50%;
   padding: 10px;
   cursor: pointer;
+  @media (max-width: 1120px) {
+    padding: 7px;
+  }
 `;
 
 export const FbIcon = styled(FontIcon)`
   padding: 10px 13px;
   cursor: pointer;
+  @media (max-width: 1120px) {
+    padding: 7px 10px;
+  }
 `;
 
 export const SocialIcon = styled.div`
@@ -228,6 +251,14 @@ export const ImageDiv = styled.div`
   overflow: hidden;
   border: 5px solid rgba(255, 255, 255, 0.5);
   align-self: center;
+  @media (max-width: 1540px) {
+    width: 350px;
+    height: 250px;
+  }
+  @media (max-width: 1120px) {
+    width: 300px;
+    height: 200px;
+  }
 `;
 export const Image = styled.img`
   opacity: 0.7;

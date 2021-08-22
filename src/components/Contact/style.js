@@ -7,6 +7,10 @@ export const ContactContainer = styled.div`
 export const ContactContent = styled.div`
   position: relative;
   display: flex;
+
+  @media (max-width: 1000px) {
+    display: block;
+  }
 `;
 
 export const ContactTag = styled.div`
@@ -18,17 +22,22 @@ export const ContactTag = styled.div`
   background-color: ${({ theme }) => theme.lightBackground};
   color: ${({ theme }) => theme.title};
   padding-bottom: 20px;
+
+  @media (max-width: 1000px) {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 export const Image = styled.img`
   display: block;
   margin: 0 auto;
   margin-top: 20px;
-  width: 500px;
+  max-width: 500px;
   height: 275px;
 `;
 export const ContactTagP = styled.p`
-  margin: 0 auto;
+  margin: 10px auto 0 auto;
 `;
 
 export const TextTag = styled.div`
@@ -39,6 +48,11 @@ export const TextTag = styled.div`
   background-color: ${({ theme }) => theme.darkBackground};
   color: ${({ theme }) => theme.text};
   padding-top: 20px;
+
+  @media (max-width: 1000px) {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 export const FormTitle = styled.h2`
