@@ -45,7 +45,7 @@ export const HomeComponent = styled.div`
     width: 100%;
     z-index: -1;
     opacity: 0.85;
-    transition: all .5s ease-in-out;
+    transition: all 0.5s ease-in-out;
     background-image: url(${bg});
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -53,7 +53,7 @@ export const HomeComponent = styled.div`
   }
 
   @media (max-width: 1100px) {
-    height: calc(100vh);
+    height: calc(100vh - 150px);
     width: 100%;
     &:after {
       content: "";
@@ -64,7 +64,7 @@ export const HomeComponent = styled.div`
       width: 100%;
       z-index: -1;
       opacity: 0.85;
-      transition: all .5s ease-in-out;
+      transition: all 0.5s ease-in-out;
       background-image: url(${small});
       background-repeat: no-repeat;
       background-size: 100% 100%;
@@ -76,18 +76,24 @@ export const HomeComponent = styled.div`
 export const Content = styled.div`
   position: relative;
   display: flex;
-  margin-left: 100px;
+  margin-left: 200px;
   margin-right: 100px;
   max-width: 1500px;
   padding-top: 50px;
   color: rgb(238, 238, 238);
   font-size: 35px;
-  height: 400px;
+  height: 450px;
+
+@media (max-width:1475px){
+  margin-left:90px;
+}
 
   @media (max-width: 1100px) {
-    height: 700px;
-    display: block;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
     margin: 0;
+    padding-top: 0;
   }
 `;
 
@@ -111,14 +117,23 @@ export const Progress = styled.div`
 export const Text = styled.div`
   position: relative;
   margin-left: 100px;
+  margin-right: 50px;
   color: rgb(238, 238, 238);
   font-size: 50px;
-  max-width: 800px;
   align-self: center;
+  margin-bottom: 20px;
+
+@media (max-width:1170px){
+  margin-left:75px;
+  margin-right:20px;
+}
+
 
   @media (max-width: 1100px) {
     margin: 0 auto;
     text-align: center;
+    color: #e87400;
+    order: 1;
   }
 `;
 
@@ -130,12 +145,12 @@ export const TitleText = styled.h3`
   padding-bottom: 20px;
   text-align: left;
 
-  @media (max-width: 1370px) {
+  @media (max-width: 1385px) {
     font-size: 20px;
   }
 
   @media (max-width: 1100px) {
-    visibility: hidden;
+    display: none;
   }
 `;
 
@@ -165,15 +180,19 @@ export const Letter = styled.p`
     color: #0093d9;
     transition: color 0.8s;
   }
-  @media (max-width: 1540px) {
+  @media (max-width: 1630px) {
+    font-size: 1.1em;
+  }
+  @media (max-width: 1600px) {
     font-size: 1em;
   }
-  @media (max-width: 1370px) {
+  @media (max-width: 1475px) {
+    font-size: 0.9em;
+  }
+  @media (max-width: 1280px) {
     font-size: 0.8em;
   }
-  @media (max-width: 1250px) {
-    font-size: 0.6em;
-  }
+  
   @media (max-width: 1100px) {
     font-size: 1em;
   }
@@ -182,12 +201,13 @@ export const Letter = styled.p`
 export const Social = styled.div`
   display: flex;
   flex-direction: column;
-  padding-top: 75px;
+  justify-content: center;
   align-items: flex-end;
 
   @media (max-width: 1100px) {
     position: absolute;
-    bottom: 13%;
+    top: 50%;
+    transform: translateY(-50%);
     right: 20px;
     padding-top: 0;
   }
@@ -235,8 +255,8 @@ export const Button = styled.button`
     color: #eeeeee;
   }
 
-  @media (max-width: 1250px) {
-    font-size: 10px;
+  @media (max-width: 1385px) {
+    font-size: 13px;
   }
 
   @media (max-width: 1100px) {
@@ -247,8 +267,16 @@ export const Button = styled.button`
 export const ButtonSide = styled.div`
   position: absolute;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+
+  @media (max-width: 1100px) {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+  }
 `;
 
 export const FontIcon = styled(FontAwesomeIcon)`
@@ -257,7 +285,7 @@ export const FontIcon = styled(FontAwesomeIcon)`
   border-radius: 50%;
   padding: 10px;
   cursor: pointer;
-  @media (max-width: 1250px) {
+  @media (max-width: 1385px) {
     padding: 7px;
   }
 `;
@@ -265,7 +293,7 @@ export const FontIcon = styled(FontAwesomeIcon)`
 export const FbIcon = styled(FontIcon)`
   padding: 10px 13px;
   cursor: pointer;
-  @media (max-width: 1250px) {
+  @media (max-width: 1385px) {
     padding: 7px 10px;
   }
 `;
@@ -295,27 +323,30 @@ export const SpanIconName = styled.span`
 
 export const ImageDiv = styled.div`
   position: relative;
-  margin: 30px auto;
-  max-width: 400px;
-  height: 300px;
+  height: 325px;
+  margin-bottom: 50px;
   box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
   background: rgba(255, 255, 255, 0.1);
   overflow: hidden;
   border: 5px solid rgba(255, 255, 255, 0.5);
   align-self: center;
-  @media (max-width: 1540px) {
-    width: 350px;
-    height: 250px;
+  @media (max-width: 1600px) {
+    height: 300px;
+  }
+  @media (max-width: 1475px) {
+    height: 275px;
   }
   @media (max-width: 1250px) {
-    width: 325px;
     height: 225px;
   }
 
   @media (max-width: 1100px) {
-    width: 400px;
+    margin: 20px auto;
+    margin-bottom: 10px;
+    width: 300px;
     height: 300px;
+    order: 2;
   }
 `;
 export const Image = styled.img`

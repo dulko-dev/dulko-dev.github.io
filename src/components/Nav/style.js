@@ -214,7 +214,7 @@ export const Ul = styled.ul`
       transition-delay: 0.4s;
     `}
 
-  @media (max-width: 1300px) {
+  @media (max-width: 1385px) {
     display: flex;
     align-items: flex-start;
     left: 50%;
@@ -269,7 +269,7 @@ export const UlSocial = styled.ul`
   transition: transform 1s;
   margin-right: 100px;
 
-  @media (max-width: 1300px) {
+  @media (max-width: 1385px) {
     display: flex;
     align-items: flex-end;
     left: 50%;
@@ -290,7 +290,7 @@ export const UlSocial = styled.ul`
       transform: translateY(0);
       transition-delay: 0.4s;
 
-      @media (max-width: 1300px) {
+      @media (max-width: 1385px) {
         transform: translateY(0) translateX(-50%);
         transition-delay: 0.4s;
         transition: transform 1s;
