@@ -104,7 +104,7 @@ const Contact = () => {
   return (
     <ContactContainer>
       <ContactContent>
-        <ContactTag>
+        <ContactTag id='contactImg'>
           <Image src={contactImage} />
           <ContactTagP>Contact</ContactTagP>
         </ContactTag>

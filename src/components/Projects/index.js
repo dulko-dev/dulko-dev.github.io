@@ -62,7 +62,7 @@ const Projects = () => {
   return (
     <ProjectsContainer>
       <ProjectContent>
-        <ProjectTag>
+        <ProjectTag id='projectImg'>
           <GroupImage fix={stack} abs={bottomStack}>
             <Image src={project} className={"photoProject"} />
             <ProjectTagP className={"titleProject"}>Projects</ProjectTagP>

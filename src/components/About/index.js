@@ -124,7 +124,7 @@ const About = () => {
   return (
     <AboutContainer>
       <AboutContent>
-        <AboutTag fix={stackUpper}>
+        <AboutTag fix={stackUpper} id='contImg'>
           <Image src={myAvatar} className="photoAbout" />
           <AboutTagTitle className="titleAbout">
             <span style={{ display: "block" }}>About</span> Me

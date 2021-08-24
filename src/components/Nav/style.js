@@ -221,7 +221,7 @@ export const Ul = styled.ul`
     top: 20px;
     position: absolute;
     max-width: 500px;
-    height: 150px;
+    height: 50px;
     justify-content: center;
     transform: translateY(-160px) translateX(-50%);
     transition: transform 1s;
@@ -238,7 +238,7 @@ export const Ul = styled.ul`
 
   @media (max-width: 700px) {
     position: fixed;
-    display: block;
+    display: none;
     left: 50%;
     top: 40%;
     transform: translate(-50%, -50%);
@@ -247,9 +247,10 @@ export const Ul = styled.ul`
     ${({ horizontalDash }) =>
       horizontalDash &&
       css`
+        display: block;
         visibility: visible;
         opacity: 1;
-        transition: all 1s;
+        transition: opacity 1s;
         transition-delay: 0.4s;
       `}
   }
@@ -276,7 +277,7 @@ export const UlSocial = styled.ul`
     transform: translateX(-50%) translateY(-160px);
     position: absolute;
     max-width: 500px;
-    height: 150px;
+    height: 50px;
     justify-content: center;
     transition: transform 1s;
     margin-right: 0;

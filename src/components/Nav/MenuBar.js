@@ -25,8 +25,8 @@ const MenuBar = ({ menuOpen }) => {
 
   useEffect(() => {
     const contentHome = document.querySelector("#home");
-    const contentAbout = document.querySelector("#cont");
-    const contentProjects = document.querySelector("#project");
+    const contentAbout = document.querySelector("#contImg");
+    const contentProjects = document.querySelector("#projectImg");
 
     document.addEventListener("scroll", () => {
       if (contentHome.getBoundingClientRect().top <= 0)
@@ -68,23 +68,23 @@ const MenuBar = ({ menuOpen }) => {
       left: 0,
     });
   };
-  const handleAbout = (e) => {
-    const contentAbout = document.querySelector("#cont");
 
+  const handleAbout = (e) => {
+    const contentAbout = document.querySelector("#contImg");
     contentAbout.scrollIntoView({
       behavior: "smooth",
       block: "start",
     });
   };
   const handleProjects = (e) => {
-    const contentAbout = document.querySelector("#project");
+    const contentAbout = document.querySelector("#projectImg");
     contentAbout.scrollIntoView({
       behavior: "smooth",
       block: "start",
     });
   };
   const handleContact = (e) => {
-    const contentAbout = document.querySelector("#contact");
+    const contentAbout = document.querySelector("#contactImg");
     contentAbout.scrollIntoView({
       behavior: "smooth",
       block: "start",
