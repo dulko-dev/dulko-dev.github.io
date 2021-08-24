@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import MenuBar from "./MenuBar";
 import sun from "../../assets/sun.png";
 import night from "../../assets/night.png";
@@ -14,7 +14,7 @@ import {
   RightContent,
   ImageSun,
   ImageNight,
-  MenuButtons
+  MenuButtons,
 } from "./style";
 import logo from "../../assets/logo.svg";
 

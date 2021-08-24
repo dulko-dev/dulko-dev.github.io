@@ -50,7 +50,7 @@ export const Image = styled.img`
   display: block;
   max-width: 200px;
   @media (max-width: 980px) {
-    margin: 20px 0;
+    margin: 20px auto;
   }
 `;
 

@@ -34,7 +34,7 @@ const rubber = keyframes`
 `;
 
 export const HomeComponent = styled.div`
-  height: calc(100vh);
+  height: calc(100vh - 150px);
   width: 100%;
   &:after {
     content: "";

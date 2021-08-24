@@ -1,5 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Ul, Li, BreakLine, Society, ImageCV, LiSociety } from "./style";
+import {
+  Ul,
+  Li,
+  Society,
+  ImageCV,
+  LiSociety,
+  UlSocial,
+  TitleNavigation,
+} from "./style";
 import {
   faFacebookF,
   faLinkedinIn,
@@ -7,7 +15,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import cv from "../../assets/cv.png";
 
-const MenuBar = ({menuOpen}) => {
+const MenuBar = ({ menuOpen }) => {
   const [changeColor, setChangeColor] = useState({
     home: true,
     about: false,
@@ -84,75 +92,81 @@ const MenuBar = ({menuOpen}) => {
   };
 
   return (
-    <Ul horizontalDash={menuOpen}>
-      <Li
-        onClick={handleHome}
-        style={changeColor.home ? { color: "#0093d9" } : { color: "#ffffff" }}
-      >
-        Home
-      </Li>
-      <Li
-        onClick={handleAbout}
-        style={changeColor.about ? { color: "#0093d9" } : { color: "#ffffff" }}
-      >
-        About
-      </Li>
-      <Li
-        onClick={handleProjects}
-        style={
-          changeColor.projects ? { color: "#0093d9" } : { color: "#ffffff" }
-        }
-      >
-        Projects
-      </Li>
-      <Li
-        onClick={handleContact}
-        style={
-          changeColor.contact ? { color: "#0093d9" } : { color: "#ffffff" }
-        }
-      >
-        Contact
-      </Li>
-      <BreakLine></BreakLine>
-      <LiSociety>
-        <a
-          href="https://www.facebook.com/kamil.duliniec/"
-          target="_blank"
-          rel="noreferrer"
-          style={{ outline: "none", color: "rgb(238, 238, 238)" }}
+    <>
+      <Ul horizontalDash={menuOpen}>
+        <TitleNavigation>Navigation</TitleNavigation>
+        <Li
+          onClick={handleHome}
+          style={changeColor.home ? { color: "#0093d9" } : { color: "#ffffff" }}
         >
-          <Society icon={faFacebookF} />
-        </a>
-      </LiSociety>
-      <LiSociety>
-        <a
-          href="https://www.linkedin.com/in/kamil-duliniec/"
-          target="_blank"
-          rel="noreferrer"
-          style={{ outline: "none", color: "rgb(238, 238, 238)" }}
+          Home
+        </Li>
+        <Li
+          onClick={handleAbout}
+          style={
+            changeColor.about ? { color: "#0093d9" } : { color: "#ffffff" }
+          }
         >
-          <Society icon={faLinkedinIn} />
-        </a>
-      </LiSociety>
-      <LiSociety>
-        <a
-          href="https://github.com/dulko-dev"
-          target="_blank"
-          rel="noreferrer"
-          style={{ outline: "none", color: "rgb(238, 238, 238)" }}
+          About
+        </Li>
+        <Li
+          onClick={handleProjects}
+          style={
+            changeColor.projects ? { color: "#0093d9" } : { color: "#ffffff" }
+          }
         >
-          <Society icon={faGithubAlt} />
-        </a>
-      </LiSociety>
-      <LiSociety>
-        <a
-          href="https://drive.google.com/u/0/uc?id=1bD6Q0oryW8rrJslGpdWmmbl0uovgD6IY&export=download"
-          style={{ outline: "none" }}
+          Projects
+        </Li>
+        <Li
+          onClick={handleContact}
+          style={
+            changeColor.contact ? { color: "#0093d9" } : { color: "#ffffff" }
+          }
         >
-          <ImageCV src={cv} />
-        </a>
-      </LiSociety>
-    </Ul>
+          Contact
+        </Li>
+      </Ul>
+      <UlSocial horizontalDash={menuOpen}>
+        <LiSociety>
+          <a
+            href="https://www.facebook.com/kamil.duliniec/"
+            target="_blank"
+            rel="noreferrer"
+            style={{ outline: "none", color: "rgb(238, 238, 238)" }}
+          >
+            <Society icon={faFacebookF} />
+          </a>
+        </LiSociety>
+        <LiSociety>
+          <a
+            href="https://www.linkedin.com/in/kamil-duliniec/"
+            target="_blank"
+            rel="noreferrer"
+            style={{ outline: "none", color: "rgb(238, 238, 238)" }}
+          >
+            <Society icon={faLinkedinIn} />
+          </a>
+        </LiSociety>
+        <LiSociety>
+          <a
+            href="https://github.com/dulko-dev"
+            target="_blank"
+            rel="noreferrer"
+            style={{ outline: "none", color: "rgb(238, 238, 238)" }}
+          >
+            <Society icon={faGithubAlt} />
+          </a>
+        </LiSociety>
+        <LiSociety>
+          <a
+            href="https://drive.google.com/u/0/uc?id=1bD6Q0oryW8rrJslGpdWmmbl0uovgD6IY&export=download"
+            style={{ outline: "none" }}
+          >
+            <ImageCV src={cv} />
+          </a>
+        </LiSociety>
+      </UlSocial>
+    </>
   );
 };
 

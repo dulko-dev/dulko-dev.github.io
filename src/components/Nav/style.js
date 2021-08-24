@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import all from "gsap/all";
 
 export const NavContainer = styled.div`
   position: sticky;
@@ -22,6 +23,10 @@ export const NavLogo = styled.div`
   text-align: center;
   grid-column: 1/2;
   grid-row: 1/2;
+
+  @media (max-width: 800px) {
+    margin-left: -40px;
+  }
 `;
 
 export const ButtonMode = styled.button`
@@ -69,6 +74,10 @@ export const RightContent = styled.div`
   grid-row: 1/2;
   justify-content: space-between;
   margin-right: 50px;
+
+  @media (max-width: 800px) {
+    margin-right: 10px;
+  }
 `;
 
 export const MenuButtons = styled.div`
@@ -155,29 +164,141 @@ export const MenuBackGround = styled.div`
       z-index: 2;
       background-color: rgba(0, 0, 0, 0.75);
     `}
+
+  @media (max-width:700px) {
+    position: fixed;
+    ${({ horizontalDash }) =>
+      horizontalDash &&
+      css`
+        height: 100%;
+        transition: all 0.6s;
+        z-index: 2;
+        background-color: rgba(0, 0, 0, 0.85);
+      `}
+  }
 `;
 
 // MenuBar
+
+export const TitleNavigation = styled.h2`
+  color: #00b300;
+  font-size: 2em;
+  padding-bottom: 20px;
+  display: none;
+
+  @media (max-width: 700px) {
+    transition: display 1s;
+    transition-delay: 0.4s;
+    display: block;
+  }
+`;
 
 export const Ul = styled.ul`
   position: absolute;
   left: 0;
   top: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
+  max-width: 500px;
+  display: inline-flex;
   height: 150px;
   align-items: center;
   justify-content: center;
   transform: translateY(-160px);
-  transition: all 1s;
+  transition: transform 1s;
+  margin-left: 100px;
+
   ${({ horizontalDash }) =>
     horizontalDash &&
     css`
-      transition: all 1s;
+      transition: transform 1s;
       transform: translateY(0);
       transition-delay: 0.4s;
     `}
+
+  @media (max-width: 1300px) {
+    display: flex;
+    align-items: flex-start;
+    left: 50%;
+    top: 20px;
+    position: absolute;
+    max-width: 500px;
+    height: 150px;
+    justify-content: center;
+    transform: translateY(-160px) translateX(-50%);
+    transition: transform 1s;
+    margin-left: 0;
+
+    ${({ horizontalDash }) =>
+      horizontalDash &&
+      css`
+        transition-delay: 0.8s;
+        transition: transform 1s;
+        transform: translateY(0) translateX(-50%);
+      `}
+  }
+
+  @media (max-width: 700px) {
+    position: fixed;
+    display: block;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    opacity: 0;
+    ${({ horizontalDash }) =>
+      horizontalDash &&
+      css`
+        visibility: visible;
+        opacity: 1;
+        transition: all 1s;
+        transition-delay: 0.4s;
+      `}
+  }
+`;
+
+export const UlSocial = styled.ul`
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  max-width: 500px;
+  display: inline-flex;
+  height: 150px;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-160px);
+  transition: transform 1s;
+  margin-right: 100px;
+
+  @media (max-width: 1300px) {
+    display: flex;
+    align-items: flex-end;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%) translateY(-160px);
+    position: absolute;
+    max-width: 500px;
+    height: 150px;
+    justify-content: center;
+    transition: transform 1s;
+    margin-right: 0;
+  }
+
+  ${({ horizontalDash }) =>
+    horizontalDash &&
+    css`
+      transition: transform 1s;
+      transform: translateY(0);
+      transition-delay: 0.4s;
+
+      @media (max-width: 1300px) {
+        transform: translateY(0) translateX(-50%);
+        transition-delay: 0.4s;
+        transition: transform 1s;
+      }
+    `}
+
+  @media (max-width:700px) {
+    visibility: hidden;
+  }
 `;
 
 export const Li = styled.li`
@@ -191,6 +312,11 @@ export const Li = styled.li`
   &:hover {
     transition: opacity 0.4s ease-in-out;
     opacity: 0.6;
+  }
+  @media (max-width: 700px) {
+    padding-bottom: 20px;
+    margin-right: 0;
+    text-align: center;
   }
 `;
 
@@ -206,12 +332,6 @@ export const LiSociety = styled.li`
     transition: opacity 0.4s ease-in-out;
     opacity: 0.6;
   }
-`;
-
-export const BreakLine = styled.div`
-  height: 100%;
-  width: 5px;
-  background-color: #ffffff;
 `;
 
 export const Society = styled(FontAwesomeIcon)``;
