@@ -82,18 +82,29 @@ export const Content = styled.div`
   padding-top: 50px;
   color: rgb(238, 238, 238);
   font-size: 35px;
-  height: 450px;
+  height: 50vh;
 
-@media (max-width:1475px){
-  margin-left:90px;
-}
+  @media (max-width: 1475px) {
+    margin-left: 90px;
+  }
 
   @media (max-width: 1100px) {
-    height: 600px;
+    height: 70vh;
     display: flex;
     flex-direction: column;
     margin: 0;
     padding-top: 0;
+  }
+
+  @media (max-width: 1100px) and (max-height: 1100px) {
+    height: 100%;
+  }
+
+  @media (max-height: 500px) and (min-width: 1100px) {
+    height: 30vh;
+  }
+  @media (max-height: 390px) and (min-width: 1100px) {
+    height: 15vh;
   }
 `;
 
@@ -123,17 +134,37 @@ export const Text = styled.div`
   align-self: center;
   margin-bottom: 20px;
 
-@media (max-width:1170px){
-  margin-left:75px;
-  margin-right:20px;
-}
-
-
+  @media (max-width: 1170px) {
+    margin-left: 75px;
+    margin-right: 20px;
+  }
   @media (max-width: 1100px) {
     margin: 0 auto;
     text-align: center;
     color: #e87400;
     order: 1;
+    font-size: 55px;
+  }
+  @media (max-width: 930px) and (min-height: 1300px) {
+    font-size: 60px;
+  }
+  @media (max-width: 760px) and (min-height: 1300px) {
+    font-size: 45px;
+  }
+  @media (max-width: 600px) and (min-height: 1300px) {
+    font-size: 35px;
+  }
+  @media (max-width: 460px) and (min-height: 1300px) {
+    font-size: 25px;
+  }
+  @media (max-width: 1100px) and (min-width: 931px) and (min-height: 1300px) {
+    font-size: 70px;
+  }
+  @media (max-width: 1100px) and (max-height: 770px) {
+    font-size: 45px;
+  }
+  @media (max-height: 500px) and (min-width: 1100px) {
+    font-size: 30px;
   }
 `;
 
@@ -192,7 +223,7 @@ export const Letter = styled.p`
   @media (max-width: 1280px) {
     font-size: 0.8em;
   }
-  
+
   @media (max-width: 1100px) {
     font-size: 1em;
   }
@@ -210,6 +241,11 @@ export const Social = styled.div`
     transform: translateY(-50%);
     right: 20px;
     padding-top: 0;
+  }
+  @media (max-width:470px) and (min-height:1300px){
+    position:relative;
+    order:2;
+    flex-direction: row;
   }
 `;
 
@@ -255,12 +291,31 @@ export const Button = styled.button`
     color: #eeeeee;
   }
 
-  @media (max-width: 1385px) {
+  @media (max-width: 1100px) and (min-height: 1101px) {
+    font-size: 30px;
+  }
+  @media (max-width: 1100px) and (max-height: 770px) {
+    font-size: 10px;
+  }
+  @media (max-width: 850px) and (min-height: 1300px) {
+    display: block;
+    margin: 20px auto;
+
+    &:first-child {
+      margin-left: auto;
+      margin-top: 0;
+    }
+  }
+  @media (max-width:650px) and (min-height:1300px){
+    font-size:25px;
+  }
+
+  @media (max-width: 1385px) and (min-width: 1101px) {
     font-size: 13px;
   }
 
-  @media (max-width: 1100px) {
-    font-size: 15px;
+  @media (max-height: 500px) and (min-width: 1100px) {
+    font-size: 10px;
   }
 `;
 
@@ -268,14 +323,34 @@ export const ButtonSide = styled.div`
   position: absolute;
   bottom: 0;
   left: 0;
-
-  @media (max-width: 1100px) {
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    display: inline-block;
+  @media (max-width: 1100px) and (min-height: 0px) {
+    position: relative;
     text-align: center;
+    bottom: 0;
+    order: 3;
+    padding-top: 150px;
+  }
+
+  @media (max-width: 1101px) and (max-height: 1100px) {
+    margin-bottom: 50px;
+    padding-top: 100px;
+  }
+
+  @media (max-width: 850px) and (min-height: 1300px) {
+    padding-top: 20px;
+  }
+
+  @media (min-width: 1101px) and (min-height: 1050px) and (min-height: 900px) {
+    bottom: 70px;
+  }
+  @media (max-height: 700px) and (min-width: 1100px) {
+    bottom: -50px;
+  }
+  @media (max-height: 500px) and (min-width: 1100px) {
+    bottom: -80px;
+  }
+  @media (max-height: 390px) and (min-width: 1100px) {
+    display: none;
   }
 `;
 
@@ -285,16 +360,29 @@ export const FontIcon = styled(FontAwesomeIcon)`
   border-radius: 50%;
   padding: 10px;
   cursor: pointer;
-  @media (max-width: 1385px) {
+  @media (max-width: 1385px) and (min-width: 1101px) {
     padding: 7px;
+  }
+  @media (max-height: 500px) {
+    padding: 5px;
+  }
+
+  @media (max-width: 1100px) and (min-height: 1101px) {
+    padding: 20px 23px;
   }
 `;
 
 export const FbIcon = styled(FontIcon)`
   padding: 10px 13px;
   cursor: pointer;
-  @media (max-width: 1385px) {
+  @media (max-width: 1385px) and (min-width: 1101px) {
     padding: 7px 10px;
+  }
+  @media (max-height: 500px) {
+    padding: 4px 7px;
+  }
+  @media (max-width: 1100px) and (min-height: 1101px) {
+    padding: 20px 26px;
   }
 `;
 
@@ -331,6 +419,7 @@ export const ImageDiv = styled.div`
   overflow: hidden;
   border: 5px solid rgba(255, 255, 255, 0.5);
   align-self: center;
+
   @media (max-width: 1600px) {
     height: 300px;
   }
@@ -340,15 +429,33 @@ export const ImageDiv = styled.div`
   @media (max-width: 1250px) {
     height: 225px;
   }
-
   @media (max-width: 1100px) {
-    margin: 20px auto;
+    margin: 50px auto;
     margin-bottom: 10px;
     width: 300px;
     height: 300px;
     order: 2;
   }
+  @media (max-width: 1100px) and (min-height: 1101px) {
+    width: 400px;
+    height: 400px;
+  }
+  @media (max-height: 950px) and (max-width: 1100px) {
+    display: none;
+  }
+  @media (max-height: 810px) and (min-width: 1100px) {
+    height: 250px;
+    width: 250px;
+  }
+  @media (max-height: 500px) and (min-width: 1100px) {
+    height: 200px;
+  }
+  @media (max-width: 650px) and (min-height: 1300px) {
+    height: 250px;
+    width: 250px;
+  }
 `;
+
 export const Image = styled.img`
   opacity: 0.7;
   width: 100%;
