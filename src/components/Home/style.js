@@ -65,7 +65,7 @@ export const HomeComponent = styled.div`
       z-index: -1;
       opacity: 0.85;
       transition: all 0.5s ease-in-out;
-      background-image: url(${small});
+      /* background-image: url(${small}); */
       background-repeat: no-repeat;
       background-size: 100% 100%;
       background-position: center;
@@ -90,7 +90,7 @@ export const Content = styled.div`
   @media (min-width: 1100px) and (max-height: 500px) {
     height: 30vh;
   }
-  @media (min-width: 1100px) and (max-height: 390px) {
+  @media (min-width: 1100px) and (max-height: 450px) {
     height: 15vh;
   }
 
@@ -145,8 +145,8 @@ export const Text = styled.div`
     font-size: 30px;
   }
   @media (max-width: 1170px) {
-    margin-left: 75px;
-    margin-right: 20px;
+    margin-left: 65px;
+    margin-right: 15px;
   }
 
   // mobile
@@ -166,7 +166,7 @@ export const Text = styled.div`
   @media (max-width: 1100px) and (max-height: 830px) {
     font-size: 45px;
   }
-  @media (max-width: 600px) and (max-height: 830px) {
+  @media (max-width: 670px) and (max-height: 830px) {
     font-size: 30px;
   }
   @media (max-width: 400px) and (max-height: 830px) {
@@ -177,7 +177,7 @@ export const Text = styled.div`
   @media (max-width: 1100px) and (max-height: 900px) {
     font-size: 45px;
   }
-  @media (max-width: 600px) and (max-height: 900px) {
+  @media (max-width: 670px) and (max-height: 900px) {
     font-size: 30px;
   }
   @media (max-width: 400px) and (max-height: 900px) {
@@ -188,7 +188,7 @@ export const Text = styled.div`
   @media (max-width: 1100px) and (min-height: 901px) {
     font-size: 45px;
   }
-  @media (max-width: 600px) and (min-height: 901px) {
+  @media (max-width: 670px) and (min-height: 901px) {
     font-size: 30px;
   }
   @media (max-width: 400px) and (min-height: 901px) {
@@ -245,17 +245,17 @@ export const Letter = styled.p`
   // ---- media ---- //
 
   // desktop
-  @media (max-width: 1630px) {
+  @media (max-width: 1640px) {
     font-size: 1.1em;
   }
   @media (max-width: 1600px) {
     font-size: 1em;
   }
-  @media (max-width: 1475px) {
+  @media (max-width: 1490px) {
     font-size: 0.9em;
   }
-  @media (max-width: 1280px) {
-    font-size: 0.8em;
+  @media (max-width: 1285px) {
+    font-size: 0.75em;
   }
 
   // mobile
@@ -378,9 +378,9 @@ export const ButtonSide = styled.div`
     bottom: -50px;
   }
   @media (min-width: 1100px) and (max-height: 500px) {
-    bottom: -80px;
+    bottom: -120px;
   }
-  @media (min-width: 1100px) and (max-height: 390px) {
+  @media (min-width: 1100px) and (max-height: 380px) {
     display: none;
   }
 
@@ -396,10 +396,7 @@ export const ButtonSide = styled.div`
     margin-bottom: 50px;
     padding-top: 20px;
   }
-  @media (max-width: 850px) and (min-height: 500px) {
-    padding-top: 20px;
-  }
-  @media (max-width: 1100px) and (max-height: 450px) {
+  @media (max-width: 1100px) and (max-height: 500px) {
     display: none;
   }
 `;
@@ -413,11 +410,6 @@ export const FontIcon = styled(FontAwesomeIcon)`
 
   // ---- media ---- //
 
-  // desktop
-  @media (max-width: 1385px) and (min-width: 1101px) {
-    padding: 7px;
-  }
-
   // mobile
 
   @media (min-width: 1101px) and (max-height: 500px) {
@@ -425,7 +417,7 @@ export const FontIcon = styled(FontAwesomeIcon)`
   }
 
   @media (max-width: 1100px) and (min-height: 1101px) {
-    padding: 20px 23px;
+    padding: 20px;
   }
   @media (max-width: 1100px) {
     margin-left: 25px;
@@ -438,17 +430,15 @@ export const FbIcon = styled(FontIcon)`
 
   // ---- media ---- //
 
-  // desktop
-  @media (max-width: 1385px) and (min-width: 1101px) {
-    padding: 7px 10px;
-  }
-
   // mobile
   @media (min-width: 1101px) and (max-height: 500px) {
     padding: 4px 7px;
   }
   @media (max-width: 1100px) and (min-height: 1101px) {
-    padding: 20px 26px;
+    padding: 20px 23px;
+  }
+  @media (max-width: 1100px) {
+    margin-left: 0;
   }
 `;
 
@@ -525,22 +515,41 @@ export const ImageDiv = styled.div`
   }
 
   // < 830
-  @media (max-width: 1100px) and (max-height: 830px) {
-    width: 200px;
-    height: 200px;
+  @media (max-width: 1100px) and (max-height: 900px) and (min-height: 781px) {
+    width: 300px;
+    height: 250px;
     margin: 0 auto;
+  }
+  @media (max-width: 1100px) and (max-height: 780px) {
+    display: none;
   }
 
   // 830<x<900
-  @media (max-width: 1100px) and (max-height: 900px) {
-    width: 250px;
+  @media (max-width: 1100px) and (max-height: 1100px) and (min-height: 901px) {
+    width: 400px;
+    height: 350px;
+  }
+  @media (max-width: 670px) and (max-height: 1100px) {
+    width: 325px;
     height: 250px;
+  }
+  @media (max-width: 440px) and (max-height: 1101px) {
+    height: 200px;
+    width: 200px;
   }
 
   // > 900
   @media (max-width: 1100px) and (min-height: 1101px) {
     width: 400px;
     height: 400px;
+  }
+  @media (max-width: 670px) and (min-height: 1101px) {
+    width: 325px;
+    height: 250px;
+  }
+  @media (max-width: 440px) and (min-height: 1101px) {
+    height: 200px;
+    width: 200px;
   }
 `;
 
