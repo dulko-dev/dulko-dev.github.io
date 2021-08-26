@@ -334,23 +334,32 @@ export const Button = styled.button`
   }
 
   // mobile
-  @media (max-width: 1100px) and (min-height: 1100px) {
-    font-size: 30px;
-  }
+
+  // < 830
   @media (max-width: 1100px) and (max-height: 770px) {
     font-size: 10px;
   }
-  @media (max-width: 850px) and (min-height: 950px) {
-    display: block;
-    margin: 20px auto;
 
+  @media (max-width: 670px) {
+    display: block;
+    margin: 20px auto 0 auto;
     &:first-child {
       margin-left: auto;
       margin-top: 0;
     }
   }
-  @media (max-width: 650px) and (min-height: 950px) {
-    font-size: 25px;
+
+  // 830<x<1100
+  @media (max-width: 1100px) and (max-height: 1100px) {
+    font-size: 22px;
+  }
+
+  // > 1101
+  @media (max-width: 1100px) and (min-height: 1101px) {
+    font-size: 30px;
+  }
+  @media (max-width: 850px) and (min-height: 1101px) {
+    font-size: 22px;
   }
 `;
 
@@ -514,26 +523,24 @@ export const ImageDiv = styled.div`
     height: 300px;
     order: 2;
   }
-  @media (max-width: 1100px) and (max-height: 900px) {
-    width: 250px;
-    height: 250px;
-  }
+
+  // < 830
   @media (max-width: 1100px) and (max-height: 830px) {
     width: 200px;
     height: 200px;
     margin: 0 auto;
   }
 
+  // 830<x<900
+  @media (max-width: 1100px) and (max-height: 900px) {
+    width: 250px;
+    height: 250px;
+  }
+
+  // > 900
   @media (max-width: 1100px) and (min-height: 1101px) {
     width: 400px;
     height: 400px;
-  }
-  @media (max-width: 650px) and (min-height: 950px) {
-    height: 275px;
-    width: 275px;
-  }
-  @media (max-width: 1100px) and (max-height: 660px) {
-    display: none;
   }
 `;
 
