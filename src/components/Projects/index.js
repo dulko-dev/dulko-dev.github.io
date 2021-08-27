@@ -31,11 +31,9 @@ const Projects = () => {
   useEffect(() => {
     const aboutFixed = () => {
       let el = document.querySelector("#project");
-      let contact = document.querySelector("#contact");
-
       if (
         el.getBoundingClientRect().top <= 0 &&
-        el.getBoundingClientRect().bottom >= 500
+        el.getBoundingClientRect().bottom >= 450
       ) {
         setStack(true);
       } else {
@@ -47,10 +45,10 @@ const Projects = () => {
 
   useEffect(() => {
     let el = document.querySelector("#project");
-    let contact = document.querySelector("#contact");
-
+    
     const bottomSucks = () => {
-      if (el.getBoundingClientRect().bottom <= 500) {
+      console.log(el.getBoundingClientRect().bottom);
+      if (el.getBoundingClientRect().bottom < 450) {
         setBottomStack(true);
       } else {
         setBottomStack(false);
@@ -62,7 +60,7 @@ const Projects = () => {
   return (
     <ProjectsContainer>
       <ProjectContent>
-        <ProjectTag id='projectImg'>
+        <ProjectTag id="projectImg">
           <GroupImage fix={stack} abs={bottomStack}>
             <Image src={project} className={"photoProject"} />
             <ProjectTagP className={"titleProject"}>Projects</ProjectTagP>
@@ -79,7 +77,7 @@ const Projects = () => {
                 <EnterIcon>
                   <a href={element.git} target="_blanket">
                     <GitIcon>
-                      <FontAwesomeIcon icon={faGithub} />
+                      <FontAwesomeIcon icon={faGithub}/>
                     </GitIcon>
                   </a>
                   <a href={element.live} target="_blanket">

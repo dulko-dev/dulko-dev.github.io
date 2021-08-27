@@ -47,7 +47,7 @@ export const GroupImage = styled.div`
     abs &&
     css`
       position: absolute;
-      bottom: 158px;
+      bottom: 185px;
       align-self: center;
     `}
     @media (max-width:1000px) {
@@ -58,17 +58,33 @@ export const GroupImage = styled.div`
 export const Image = styled.img`
   margin: 0 auto;
   margin-top: 20px;
-  max-width: 500px;
-  max-height: 200px;
+  height: 175px;
+
+  @media (max-width: 1000px) {
+    height: 300px;
+    margin-top: 0;
+  }
+  @media (max-width: 500px) {
+    height: 175px;
+  }
+  @media (max-width: 250px) {
+    height: 125px;
+  }
 `;
 
 export const ProjectTagP = styled.p`
   margin-top: 10px;
-  margin-left: auto;
-  margin-right: auto;
+  font-size: 60px;
   color: ${({ theme }) => theme.title};
   @media (max-width: 1000px) {
     margin-bottom: 20px;
+    font-size: 100px;
+  }
+  @media (max-width: 500px) {
+    font-size: 70px;
+  }
+  @media (max-width: 250px) {
+    font-size: 40px;
   }
 `;
 
@@ -89,10 +105,14 @@ export const TextContainer = styled.div`
 
 export const TextTitle = styled.h2`
   text-align: center;
-  font-size: 3em;
+  font-size: 2.5em;
   height: 50px;
   padding: 10px 0;
   font-weight: 600;
+  line-height: 50px;
+  @media (max-width: 500px) {
+    font-size: 1.75em;
+  }
 `;
 
 export const Text = styled.p`
@@ -113,13 +133,20 @@ export const EnterIcon = styled.div`
   transition-delay: 0.3s;
   padding: 0 0 5px 10px;
   color: rgb(140, 140, 140);
+  @media (max-width: 280px) {
+    left: 43%;
+    padding: 0;
+  }
 `;
 
 export const SingleTech = styled(Text)`
-  bottom: -30px;
+  bottom: -40px;
   padding: 0 10px 0 0;
   color: rgb(140, 140, 140);
   transition-delay: 0s;
+  @media (max-width: 280px) {
+    display: none;
+  }
 `;
 
 export const TextContent = styled.div`
@@ -131,11 +158,11 @@ export const TextContent = styled.div`
   border-bottom: 1px solid ${({ theme }) => theme.line};
   box-sizing: border-box;
   &:hover .blockProject {
-    transform: translateY(-230px);
+    transform: translateY(-240px);
     transition: all 0.3s;
   }
   &:hover .blockTech {
-    transform: translateY(-30px);
+    transform: translateY(-40px);
     transition: all 0.3s;
     transition-delay: 0.3s;
   }
@@ -145,12 +172,12 @@ export const TextContent = styled.div`
     transition-delay: 0.6s;
   }
   &:hover .blockTech ${EnterIcon} {
-    transform: translateY(-200px);
+    transform: translateY(-205px);
     transition: all 0.3s;
     transition-delay: 0.9s;
   }
   &:hover .blockTech ${SingleTech} {
-    transform: translateY(-30px);
+    transform: translateY(-40px);
     transition: all 0.3s;
     transition-delay: 1.2s;
   }
@@ -188,6 +215,9 @@ export const TextContent = styled.div`
     margin-top: 0;
     border-top: none;
   }
+  &:last-child {
+    border-bottom: none;
+  }
 `;
 
 export const TextModule = styled.div`
@@ -195,28 +225,42 @@ export const TextModule = styled.div`
   position: absolute;
   bottom: -200px;
   right: 0;
+  border-top-left-radius: 15px;
   background-color: rgba(17, 34, 64, 0.6);
   transition: all 0.3s;
   transition-delay: 1.2s;
   z-index: 1;
+  @media (max-width: 400px) {
+    display: none;
+  }
 `;
 
 export const TextModuleTech = styled(TextModule)`
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: flex-end;
-  height: 30px;
-  bottom: -30px;
+  height: 40px;
+  bottom: -40px;
+  border-top-left-radius: 0;
   transition-delay: 0.9s;
   background-color: rgb(35, 53, 84);
 `;
 
 export const ImageProject = styled.img`
   width: 100%;
-  height: 450px;
+  height: 350px;
+
+  @media (max-width: 1000px) {
+    height: 450px;
+  }
+  @media (max-width: 500px) {
+    height: 250px;
+  }
 `;
 
 export const GitIcon = styled.div`
+  font-size: 18px;
   color: rgb(140, 140, 140);
   padding-right: 10px;
   transition: all 0.3s;
