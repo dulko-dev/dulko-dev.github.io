@@ -24,7 +24,7 @@ export const iconsFolder = [
   { id: 8, name: "firebase", img: firebase },
   { id: 9, name: "javascript", img: js },
   { id: 10, name: "react", img: react },
-  { id: 11, name: "redux", img: redux },
+  { id: 11, name: "redux toolkit", img: redux },
   { id: 12, name: "responsive web design", img: rwd },
   { id: 13, name: "gsap", img: gsap },
 ];

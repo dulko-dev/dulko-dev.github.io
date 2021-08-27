@@ -65,7 +65,7 @@ export const HomeComponent = styled.div`
       z-index: -1;
       opacity: 0.85;
       transition: all 0.5s ease-in-out;
-      /* background-image: url(${small}); */
+      background-image: url(${small});
       background-repeat: no-repeat;
       background-size: 100% 100%;
       background-position: center;

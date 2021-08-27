@@ -68,7 +68,7 @@ const About = () => {
     const bottomSucks = () => {
       let value = el.getBoundingClientRect().bottom;
       if (el.getBoundingClientRect().bottom <= window.innerHeight) {
-        photoAbout.style.opacity = titleAbout.style.opacity = value * 0.001;
+        photoAbout.style.opacity = titleAbout.style.opacity = value * 0.002;
       } else {
         photoAbout.style.opacity = titleAbout.style.opacity = "1";
       }
@@ -124,7 +124,7 @@ const About = () => {
   return (
     <AboutContainer>
       <AboutContent>
-        <AboutTag fix={stackUpper} id='contImg'>
+        <AboutTag fix={stackUpper} id="contImg">
           <Image src={myAvatar} className="photoAbout" />
           <AboutTagTitle className="titleAbout">
             <span style={{ display: "block" }}>About</span> Me
@@ -143,16 +143,8 @@ const About = () => {
             </TextTagTitle>
           </div>
           <TextTagP open={!changeSign.who}>
-            z tej strony front-end developer z Wrocławia, Swoją pasję do
-            tworzenia stron oraz aplikacji odkryłem jeszcze, gdy pracowałem jako
-            sprzedawca z 12 latnim doświadczeniem. Od tamtej pory koncentruję
-            się na nieustannym podnoszeniu swoich umiejętności i utrwalaniu ich
-            poprzez ciągłą praktykę. Jestem dobrze z organizowaną osobą, mającą
-            za każdym razem plan na siebie, lubiącą rozwiązywać zadania I
-            doprowadzać rozpoczęte sprawy do końca. Na codzień fan angielskich
-            seriali oraz premiere league, gier przygodowych typu “click and
-            point”, sudoku oraz ligi NBA. W przyszłości, również trener
-            personalny kulturystki oraz zdrowego odżywiania.
+            I'am frontend developer from Wroclaw. My adventure with programming
+            has been starting about 1.5 years ago. Currently I
           </TextTagP>
           <div
             data-aos="fade-up"
@@ -204,8 +196,8 @@ const About = () => {
           <div
             data-aos="fade-up"
             data-aos-duration="1000"
+            data-aos-offset="100"
             data-aos-once="true"
-            data-aos-offset="200"
           >
             <TextTagTitle onClick={handleTech} open={!changeSign.tech}>
               Technology

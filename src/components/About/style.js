@@ -38,6 +38,8 @@ export const AboutTag = styled.div`
       top: 0;
       left: 0;
     `}
+
+  // ---- media ---- //
   @media (max-width:1000px) {
     height: 100%;
     width: 100%;
@@ -48,9 +50,14 @@ export const AboutTag = styled.div`
 export const Image = styled.img`
   margin: 20px auto 0 auto;
   display: block;
-  max-width: 200px;
-  @media (max-width: 980px) {
-    margin: 20px auto;
+  max-width: 150px;
+
+  // ---- media ---- //
+  @media (max-width: 1000px) {
+    max-width: 200px;
+  }
+  @media (max-width: 470px) {
+    max-width: 150px;
   }
 `;
 
@@ -58,8 +65,16 @@ export const AboutTagTitle = styled.p`
   margin-top: 10px;
   color: ${({ theme }) => theme.title};
   text-align: center;
+  font-size: 60px;
+
+  // ---- media ---- //
+
   @media (max-width: 1000px) {
     margin-bottom: 20px;
+    font-size: 100px;
+  }
+  @media (max-width: 470px) {
+    font-size: 80px;
   }
 `;
 
@@ -87,28 +102,14 @@ export const TextTagP = styled.p`
   ${({ open }) =>
     open &&
     css`
-      height: 160px;
-      transition: height 1s;
-    `}
-`;
-
-export const IconContener = styled.div`
-  position: relative;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  height: 0;
-  transition: height 1s;
-  ${({ open }) =>
-    open &&
-    css`
-      height: 200px;
+      height: 180px;
       transition: height 1s;
     `}
 `;
 
 export const TextTagTitle = styled.h2`
-  font-size: 3em;
+  line-height: 1.5em;
+  font-size: 2em;
   position: relative;
   cursor: pointer;
   padding: 20px;
@@ -116,9 +117,19 @@ export const TextTagTitle = styled.h2`
   ${({ open }) =>
     open &&
     css`
-      background-color: #b2b2b2;
+      background-color: ${({ theme }) => theme.bgFrameAbout};
+      color: ${({ theme }) => theme.bgTextColor};
       transition: background-color 0.4s;
     `}
+  @media (max-width:1000px) {
+    font-size: 2.5em;
+  }
+  @media (max-width: 470px) {
+    font-size: 2em;
+  }
+  @media (max-width: 400px) {
+    font-size: 1.5em;
+  }
 `;
 
 export const PlusIcon = styled(FontAwesomeIcon)`
@@ -129,10 +140,38 @@ export const PlusIcon = styled(FontAwesomeIcon)`
   right: 10%;
   transform: translateY(-50%);
   pointer-events: none;
+
+  @media (max-width: 470px) {
+    width: 16px;
+    height: 16px;
+  }
+  @media (max-width: 400px) {
+    width: 12px;
+    height: 12px;
+  }
+  @media (max-width: 300px) {
+  display:none;
+  }
+`;
+
+export const IconContener = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 0;
+  transition: height 1s;
+  ${({ open }) =>
+    open &&
+    css`
+      height: 250px;
+      transition: height 1s;
+    `}
 `;
 
 export const IconDiv = styled.div`
-  margin: 5px 25px 0 25px;
+  margin: 5px 18px 0 18px;
   position: relative;
   transition: all 0.4s;
   transform: translateY(30px);
