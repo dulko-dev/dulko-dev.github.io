@@ -166,11 +166,11 @@ export const MenuBackGround = styled.div`
     `}
 
   @media (max-width:700px) {
-    position: fixed;
     ${({ horizontalDash }) =>
       horizontalDash &&
       css`
         height: 100%;
+        width: 100%;
         transition: all 0.6s;
         z-index: 2;
         background-color: rgba(0, 0, 0, 0.85);

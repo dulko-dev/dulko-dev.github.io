@@ -104,7 +104,7 @@ const Contact = () => {
   return (
     <ContactContainer>
       <ContactContent>
-        <ContactTag id='contactImg'>
+        <ContactTag id="contactImg">
           <Image src={contactImage} />
           <ContactTagP>Contact</ContactTagP>
         </ContactTag>
@@ -164,7 +164,7 @@ const Contact = () => {
               name="text"
               placeholder="enter your message"
             />
-            <SendButton type="submit">Wyślij</SendButton>
+            <SendButton type="submit">Send</SendButton>
           </Form>
         </TextTag>
       </ContactContent>
