@@ -59,6 +59,9 @@ export const Image = styled.img`
   @media (max-width: 470px) {
     max-width: 150px;
   }
+  @media (max-width:250px){
+    max-width:100px
+  }
 `;
 
 export const AboutTagTitle = styled.p`
@@ -75,6 +78,9 @@ export const AboutTagTitle = styled.p`
   }
   @media (max-width: 470px) {
     font-size: 80px;
+  }
+  @media (max-width: 250px) {
+    font-size: 40px;
   }
 `;
 
@@ -150,7 +156,7 @@ export const PlusIcon = styled(FontAwesomeIcon)`
     height: 12px;
   }
   @media (max-width: 300px) {
-  display:none;
+    display: none;
   }
 `;
 
@@ -196,12 +202,18 @@ export const Arrow = styled(FontAwesomeIcon)`
   position: fixed;
   cursor: pointer;
   bottom: 3%;
-  left: 2%;
+  left: 0;
+  margin-left: 30px;
   color: #0093d9;
   transition: opacity 1s;
   z-index: 1;
   opacity: 0;
   pointer-events: none;
+  transform: scale(3);
+  @media (max-width: 470px) {
+    transform: scale(2);
+    margin-left:20px;
+  }
 
   &.fade-enter,
   &.fade-enter-done {

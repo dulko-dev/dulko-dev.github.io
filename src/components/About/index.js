@@ -215,7 +215,7 @@ const About = () => {
         </TextTag>
       </AboutContent>
       <CSSTransition in={showArrow} timeout={1000} classNames="fade">
-        <Arrow icon={faArrowAltCircleUp} size="3x" onClick={handleUp} />
+        <Arrow icon={faArrowAltCircleUp}  onClick={handleUp} />
       </CSSTransition>
     </AboutContainer>
   );

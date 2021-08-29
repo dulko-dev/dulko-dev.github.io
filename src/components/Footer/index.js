@@ -6,9 +6,7 @@ const Footer = () => {
     <FooterContainer>
       <FooterText>&copy; 2021 Kamil Duliniec All rights reserved </FooterText>
       <LeftColumn></LeftColumn>
-      <RightColumn>
-      
-      </RightColumn>
+      <RightColumn></RightColumn>
     </FooterContainer>
   );
 };

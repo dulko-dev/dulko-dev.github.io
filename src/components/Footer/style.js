@@ -27,4 +27,12 @@ export const FooterText = styled.p`
   top: 50%;
   transform: translate(-50%, -50%);
   color: #ac9e51;
+  @media (max-width: 751px) {
+    font-size: 0.9em;
+    width: 100%;
+    text-align: center;
+  }
+  @media (max-width: 300px) {
+    font-size: 0.65em;
+  }
 `;
