@@ -70,11 +70,13 @@ const MenuBar = ({ menuOpen }) => {
 
   const handleAbout = (e) => {
     const contentAbout = document.querySelector("#contImg");
+    console.log(contentAbout)
     contentAbout.scrollIntoView({
       behavior: "smooth",
       block: "start",
     });
   };
+
   const handleProjects = (e) => {
     const contentAbout = document.querySelector("#projectImg");
     contentAbout.scrollIntoView({
@@ -82,6 +84,7 @@ const MenuBar = ({ menuOpen }) => {
       block: "start",
     });
   };
+
   const handleContact = (e) => {
     const contentAbout = document.querySelector("#contactImg");
     contentAbout.scrollIntoView({

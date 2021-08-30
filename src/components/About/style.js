@@ -47,6 +47,7 @@ export const AboutTag = styled.div`
   }
 `;
 
+
 export const Image = styled.img`
   margin: 20px auto 0 auto;
   display: block;

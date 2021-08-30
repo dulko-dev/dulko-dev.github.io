@@ -32,7 +32,7 @@ export const LoadingContainerLeft = styled.div`
   z-index: 4;
   top: 0;
   left: 0;
-  width: 50%;
+  width: 60%;
   height: 100%;
   ${({ left }) =>
     left &&
@@ -49,7 +49,7 @@ export const LoadingContainerRight = styled.div`
   position: fixed;
   top: 0;
   right: 0;
-  width: 50%;
+  width: 60%;
   height: 100%;
   z-index: 4;
   ${({ right }) =>
@@ -83,4 +83,13 @@ export const Loading = styled.div`
   animation-duration: 2s;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
+  @media (max-width:900px) {
+    font-size:3em;
+  }
+  @media (max-width:750px){
+    font-size:2em;
+  }
+  @media (max-width:500px){
+    font-size:1.5em;
+  }
 `;

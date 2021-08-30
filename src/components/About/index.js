@@ -38,7 +38,11 @@ const About = () => {
   useEffect(() => {
     const aboutFixed = () => {
       let el = document.querySelector("#cont");
-      if (el.getBoundingClientRect().top <= 0) {
+      console.log(el.getBoundingClientRect().bottom);
+      if (
+        el.getBoundingClientRect().top <= 0 &&
+        el.getBoundingClientRect().bottom > 0
+      ) {
         setStackUpper(true);
       } else {
         setStackUpper(false);
@@ -215,7 +219,7 @@ const About = () => {
         </TextTag>
       </AboutContent>
       <CSSTransition in={showArrow} timeout={1000} classNames="fade">
-        <Arrow icon={faArrowAltCircleUp}  onClick={handleUp} />
+        <Arrow icon={faArrowAltCircleUp} onClick={handleUp} />
       </CSSTransition>
     </AboutContainer>
   );
