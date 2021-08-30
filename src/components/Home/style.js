@@ -170,7 +170,10 @@ export const Text = styled.div`
     font-size: 30px;
   }
   @media (max-width: 400px) and (max-height: 830px) {
-    font-size: 25px;
+    font-size: 20px;
+  }
+  @media (max-width: 250px) and (max-height: 830px) {
+    font-size: 15px;
   }
 
   // 900<x<830
@@ -181,7 +184,10 @@ export const Text = styled.div`
     font-size: 30px;
   }
   @media (max-width: 400px) and (max-height: 900px) {
-    font-size: 25px;
+    font-size: 20px;
+  }
+  @media (max-width: 250px) and (max-height: 900px) {
+    font-size: 15px;
   }
 
   // > 900
@@ -192,7 +198,10 @@ export const Text = styled.div`
     font-size: 30px;
   }
   @media (max-width: 400px) and (min-height: 901px) {
-    font-size: 25px;
+    font-size: 20px;
+  }
+  @media (max-width: 250px) and (min-height: 901px) {
+    font-size: 15px;
   }
 `;
 
@@ -336,7 +345,7 @@ export const Button = styled.button`
   // mobile
 
   // < 830
-  @media (max-width: 1100px) and (max-height: 770px) {
+  @media (max-width: 670px) and (max-height: 740px) {
     font-size: 10px;
   }
 
@@ -350,8 +359,11 @@ export const Button = styled.button`
   }
 
   // 830<x<1100
-  @media (max-width: 1100px) and (max-height: 1100px) {
+  @media (max-width: 1100px) and (min-width: 669px) and (max-height: 1100px) and (min-height: 741px) {
     font-size: 22px;
+  }
+  @media (max-width: 670px) and (max-height: 1100px) {
+    font-size: 15px;
   }
 
   // > 1101
@@ -360,6 +372,9 @@ export const Button = styled.button`
   }
   @media (max-width: 850px) and (min-height: 1101px) {
     font-size: 22px;
+  }
+  @media (max-width: 670px) and (min-height: 1101px) {
+    font-size: 15px;
   }
 `;
 
@@ -396,7 +411,7 @@ export const ButtonSide = styled.div`
     margin-bottom: 50px;
     padding-top: 20px;
   }
-  @media (max-width: 1100px) and (max-height: 500px) {
+  @media (max-width: 1100px) and (max-height: 575px) {
     display: none;
   }
 `;
@@ -409,18 +424,23 @@ export const FontIcon = styled(FontAwesomeIcon)`
   cursor: pointer;
 
   // ---- media ---- //
-
-  // mobile
-
   @media (min-width: 1101px) and (max-height: 500px) {
     padding: 5px;
   }
 
-  @media (max-width: 1100px) and (min-height: 1101px) {
+  // mobile
+
+  @media (max-width: 1100px) and (min-width:301px) and (min-height: 1101px) {
     padding: 20px;
   }
   @media (max-width: 1100px) {
     margin-left: 25px;
+  }
+  @media (max-width: 1100px) and (max-height: 1100px) {
+    padding: 10px;
+  }
+  @media (max-width: 300px) and (min-height: 1101px) {
+    padding: 15px;
   }
 `;
 
@@ -429,16 +449,22 @@ export const FbIcon = styled(FontIcon)`
   cursor: pointer;
 
   // ---- media ---- //
-
-  // mobile
   @media (min-width: 1101px) and (max-height: 500px) {
     padding: 4px 7px;
   }
-  @media (max-width: 1100px) and (min-height: 1101px) {
+
+  // mobile
+  @media (max-width: 1100px) and (min-width:301px) and (min-height: 1101px) {
     padding: 20px 23px;
   }
   @media (max-width: 1100px) {
     margin-left: 0;
+  }
+  @media (max-width: 1100px) and (max-height: 1100px) {
+    padding: 10px 13px;
+  }
+  @media (max-width: 300px) and (min-height: 1101px) {
+    padding: 15px 18px;
   }
 `;
 
@@ -537,6 +563,10 @@ export const ImageDiv = styled.div`
     height: 200px;
     width: 200px;
   }
+  @media (max-width: 250px) and (max-height: 1101px) {
+    height: 150px;
+    width: 150px;
+  }
 
   // > 900
   @media (max-width: 1100px) and (min-height: 1101px) {
@@ -550,6 +580,10 @@ export const ImageDiv = styled.div`
   @media (max-width: 440px) and (min-height: 1101px) {
     height: 200px;
     width: 200px;
+  }
+  @media (max-width: 250px) and (min-height: 1101px) {
+    height: 150px;
+    width: 150px;
   }
 `;
 

@@ -23,7 +23,7 @@ width: 0%;
 
 export const AppContainer = styled.div`
   font-family: "STIX Two Text", serif;
-  width: 100%;
+  max-width: 100%;
 `;
 
 export const LoadingContainerLeft = styled.div`
@@ -67,8 +67,10 @@ export const Loading = styled.div`
   font-size: 4em;
   position: fixed;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 0;
+  width: 100%;
+  text-align: center;
+  transform: translateY(-50%);
   z-index: 5;
   text-transform: uppercase;
   background: linear-gradient(90deg, #000, #fff, #000);

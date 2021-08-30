@@ -12,6 +12,9 @@ export const LeftColumn = styled.div`
   width: 50%;
   height: 100%;
   background-color: ${({ theme }) => theme.darkBackground};
+  @media (max-width:1000px){
+    background-color: ${({theme}) => theme.lightBackground};
+  }
 `;
 export const RightColumn = styled.div`
   width: 50%;

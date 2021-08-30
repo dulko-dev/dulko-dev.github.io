@@ -212,9 +212,15 @@ export const SendButton = styled.button`
 export const SpanError = styled.p`
   color: #ff0000;
   position: absolute;
+  font-size:18px;
   top: 10px;
   left: 50%;
   transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  @media (max-width:250px){
+    font-size: 12px;
+  }
 `;
 
 export const SpanSuccess = styled(SpanError)`

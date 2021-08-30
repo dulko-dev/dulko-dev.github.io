@@ -13,7 +13,6 @@ import {
   faLinkedinIn,
   faGithubAlt,
 } from "@fortawesome/free-brands-svg-icons";
-import cv from "../../assets/cv.png";
 
 const MenuBar = ({ menuOpen }) => {
   const [changeColor, setChangeColor] = useState({
@@ -155,14 +154,6 @@ const MenuBar = ({ menuOpen }) => {
             style={{ outline: "none", color: "rgb(238, 238, 238)" }}
           >
             <Society icon={faGithubAlt} />
-          </a>
-        </LiSociety>
-        <LiSociety>
-          <a
-            href="https://drive.google.com/u/0/uc?id=1bD6Q0oryW8rrJslGpdWmmbl0uovgD6IY&export=download"
-            style={{ outline: "none" }}
-          >
-            <ImageCV src={cv} />
           </a>
         </LiSociety>
       </UlSocial>

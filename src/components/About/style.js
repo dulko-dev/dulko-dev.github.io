@@ -59,8 +59,8 @@ export const Image = styled.img`
   @media (max-width: 470px) {
     max-width: 150px;
   }
-  @media (max-width:250px){
-    max-width:100px
+  @media (max-width: 250px) {
+    max-width: 100px;
   }
 `;
 
@@ -177,11 +177,12 @@ export const IconContener = styled.div`
 `;
 
 export const IconDiv = styled.div`
-  margin: 5px 18px 0 18px;
+  margin: 0 10px;
   position: relative;
   transition: all 0.4s;
   transform: translateY(30px);
   opacity: 0;
+  font-size: 12px;
   &:hover .iconText {
     animation-name: ${textAnimation};
     animation-fill-mode: forwards;
@@ -190,6 +191,12 @@ export const IconDiv = styled.div`
   &:hover .iconImg {
     transition: all 0.4s;
     opacity: 0.1;
+  }
+  &:nth-child(6),
+  &:nth-child(8),
+  &:nth-child(9),
+  &:nth-child(12) {
+    font-size: 9px;
   }
 `;
 
@@ -212,7 +219,7 @@ export const Arrow = styled(FontAwesomeIcon)`
   transform: scale(3);
   @media (max-width: 470px) {
     transform: scale(2);
-    margin-left:20px;
+    margin-left: 20px;
   }
 
   &.fade-enter,

@@ -142,7 +142,7 @@ const Contact = () => {
               id="email"
             />
             <Label htmlFor="number">
-              Number
+              Phone
               <span style={{ fontSize: "15px", paddingLeft: "5px" }}>
                 (optional)
               </span>

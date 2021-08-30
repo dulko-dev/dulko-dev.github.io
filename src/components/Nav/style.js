@@ -1,6 +1,5 @@
 import styled, { css } from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import all from "gsap/all";
 
 export const NavContainer = styled.div`
   position: sticky;
@@ -8,34 +7,34 @@ export const NavContainer = styled.div`
   z-index: 3;
   height: 150px;
   display: grid;
-  grid-template-columns: 150px 1fr;
+  grid-template-columns: 100px 1fr;
   grid-template-rows: 1fr;
 `;
 
 export const Image = styled.img`
   -webkit-box-reflect: below -30% linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
-  width: 80px;
+  max-width: 80px;
   height: 80px;
 `;
 
 export const NavLogo = styled.div`
-  margin-left: 50px;
+  margin-left: 20px;
   text-align: center;
   grid-column: 1/2;
   grid-row: 1/2;
-
-  @media (max-width: 800px) {
-    margin-left: -40px;
-  }
 `;
 
 export const ButtonMode = styled.button`
   position: relative;
   padding: 13px 30px;
-  margin-top: 15px;
+  margin-top: 5px;
   display: block;
   border: none;
   border-radius: 20px;
+  @media (max-width: 1100px) {
+    margin-top: 10px;
+    padding: 8px 25px;
+  }
 `;
 
 export const ImageSun = styled.img`
@@ -73,10 +72,31 @@ export const RightContent = styled.div`
   grid-column: 2/3;
   grid-row: 1/2;
   justify-content: space-between;
-  margin-right: 50px;
+  margin-right: 20px;
+`;
 
-  @media (max-width: 800px) {
-    margin-right: 10px;
+export const ResumeCv = styled.button`
+  margin-top: 10px;
+  padding: 10px 18px;
+  font-family: "Montserrat", sans-serif;
+  border: 2px solid rgb(238, 238, 238);
+  font-size: 15px;
+  margin-left: -45px;
+  border-radius: 5px;
+  background-color: inherit;
+  color: #eeeeee;
+  text-transform: uppercase;
+  transition: all 1s;
+  &:hover {
+    transition: all 1s;
+    background-color: rgb(238, 238, 238);
+    color: #000000;
+  }
+
+  @media (max-width: 1100px) {
+    font-size: 10px;
+    padding: 8px 13px;
+    margin-left: -25px;
   }
 `;
 
@@ -84,27 +104,41 @@ export const MenuButtons = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: 50px;
+  @media (max-width:1100px) {
+    margin-left:30px;
+  }
 `;
 
 export const NavBurger = styled.div`
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   align-self: center;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
   transition: all 0.4s ease-in-out;
+  margin-top: 10px;
+  @media (max-width: 1100px) {
+    width: 40px;
+    height: 40px;
+  }
 `;
 
 export const Burger = styled.div`
-  width: 50px;
-  height: 6px;
+  width: 45px;
+  height: 8px;
   background-color: rgb(238, 238, 238);
   border-radius: 5px;
   transition: all 0.4s ease-in-out;
   z-index: 2;
+
+  @media (max-width: 1100px) {
+    height: 6px;
+    width: 35px;
+  }
   ${({ horizontalDash }) =>
     horizontalDash &&
     css`
@@ -116,11 +150,16 @@ export const Burger = styled.div`
   &:before {
     content: "";
     position: absolute;
-    width: 50px;
-    height: 6px;
+    width: 45px;
+    height: 8px;
     background-color: rgb(238, 238, 238);
     border-radius: 5px;
     transition: all 0.4s ease-in-out;
+
+    @media (max-width: 1100px) {
+      height: 6px;
+      width: 35px;
+    }
   }
   &:before {
     transform: translateY(-16px);
@@ -144,6 +183,7 @@ export const Burger = styled.div`
 
 export const Module = styled.div`
   position: relative;
+  text-align: center;
   width: 100%;
   z-index: 2;
   transition: all 0.4s;
@@ -198,6 +238,7 @@ export const Ul = styled.ul`
   left: 0;
   top: 0;
   max-width: 500px;
+  width: 100%;
   display: inline-flex;
   height: 150px;
   align-items: center;
@@ -261,6 +302,7 @@ export const UlSocial = styled.ul`
   right: 0;
   bottom: 0;
   max-width: 500px;
+  width: 100%;
   display: inline-flex;
   height: 150px;
   align-items: center;
@@ -278,7 +320,7 @@ export const UlSocial = styled.ul`
     position: absolute;
     max-width: 500px;
     height: 50px;
-    justify-content: center;
+    width: 100%;
     transition: transform 1s;
     margin-right: 0;
   }
@@ -336,5 +378,3 @@ export const LiSociety = styled.li`
 `;
 
 export const Society = styled(FontAwesomeIcon)``;
-
-export const ImageCV = styled.img``;
