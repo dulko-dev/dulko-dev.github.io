@@ -47,7 +47,6 @@ export const AboutTag = styled.div`
   }
 `;
 
-
 export const Image = styled.img`
   margin: 20px auto 0 auto;
   display: block;
@@ -101,6 +100,22 @@ export const TextTag = styled.div`
 `;
 
 export const TextTagP = styled.p`
+  font-size: 1.4em;
+  overflow: hidden;
+  margin: 10px;
+  height: 0;
+  transition: height 1s;
+  line-height: 1.2em;
+  text-indent: 40px;
+  ${({ open }) =>
+    open &&
+    css`
+      height: 240px;
+      transition: height 1s;
+    `}
+`;
+
+export const Strenghts = styled.ul`
   font-size: 1.4em;
   overflow: hidden;
   margin: 10px;

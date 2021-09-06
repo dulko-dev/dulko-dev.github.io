@@ -20,6 +20,7 @@ import {
   IconText,
   Arrow,
   PlusIcon,
+  Strenghts,
 } from "./style";
 import { iconsFolder } from "./icons";
 import myAvatar from "../../assets/myAvatar.png";
@@ -142,13 +143,24 @@ const About = () => {
             data-aos-once="true"
           >
             <TextTagTitle onClick={handleInfo} open={!changeSign.who}>
-              Who does he ?
+              Who I am ?
               <PlusIcon icon={changeSign.who ? faPlus : faMinus} />
             </TextTagTitle>
           </div>
           <TextTagP open={!changeSign.who}>
-            I'am frontend developer from Wroclaw. My adventure with programming
-            has been starting about 1.5 years ago. Currently I
+            Hi, my name is Kamil and I'm live in Wroclaw. For many years I had
+            been working as a sale specialist, but when I have come to a
+            conclusion that i have already achieved everything I wanted in this
+            profession. I decided to take a step forward and turn to another
+            level of my life. My adventure with programming I started above one
+            year ago. When I was creating a simple website of the company I
+            worked for, at the beginning of 2020. I totally focused on studying
+            HTML, CSS and Javscript. Further more I was attedning Coderslab
+            School where I got to know the basic technology of frontend and I
+            was developing skills. When I had graduated this school I haven't
+            rested on my laurels and I have been boosting my skills and learning
+            a new technology. I also have some basic knowledge and experience in
+            backend technologies like nodejs, express
           </TextTagP>
           <div
             data-aos="fade-up"
@@ -157,22 +169,13 @@ const About = () => {
             data-aos-once="true"
           >
             <TextTagTitle onClick={handleInfo} open={!changeSign.what}>
-              What does he like?
+              What is my strenghts?
               <PlusIcon icon={changeSign.what ? faPlus : faMinus} />
             </TextTagTitle>
           </div>
-          <TextTagP open={!changeSign.what}>
-            z tej strony front-end developer z Wrocławia, Swoją pasję do
-            tworzenia stron oraz aplikacji odkryłem jeszcze, gdy pracowałem jako
-            sprzedawca z 12 latnim doświadczeniem. Od tamtej pory koncentruję
-            się na nieustannym podnoszeniu swoich umiejętności i utrwalaniu ich
-            poprzez ciągłą praktykę. Jestem dobrze z organizowaną osobą, mającą
-            za każdym razem plan na siebie, lubiącą rozwiązywać zadania I
-            doprowadzać rozpoczęte sprawy do końca. Na codzień fan angielskich
-            seriali oraz premiere league, gier przygodowych typu “click and
-            point”, sudoku oraz ligi NBA. W przyszłości, również trener
-            personalny kulturystki oraz zdrowego odżywiania.
-          </TextTagP>
+          <Strenghts open={!changeSign.what}>
+            <li></li>
+          </Strenghts>
 
           <div
             data-aos="fade-up"
