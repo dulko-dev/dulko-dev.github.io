@@ -21,6 +21,7 @@ import {
   Arrow,
   PlusIcon,
   Strenghts,
+  StrenghtsList,
 } from "./style";
 import { iconsFolder } from "./icons";
 import myAvatar from "../../assets/myAvatar.png";
@@ -114,7 +115,7 @@ const About = () => {
       setChangeSign((prev) => ({ ...prev, what: !changeSign["what"] }));
     }
 
-    if (e.target.textContent.startsWith("Why")) {
+    if (e.target.textContent.startsWith("Facts")) {
       setChangeSign((prev) => ({ ...prev, do: !changeSign["do"] }));
     }
   };
@@ -149,18 +150,18 @@ const About = () => {
           </div>
           <TextTagP open={!changeSign.who}>
             Hi, my name is Kamil and I'm live in Wroclaw. For many years I had
-            been working as a sale specialist, but when I have come to a
-            conclusion that i have already achieved everything I wanted in this
-            profession. I decided to take a step forward and turn to another
-            level of my life. My adventure with programming I started above one
-            year ago. When I was creating a simple website of the company I
-            worked for, at the beginning of 2020. I totally focused on studying
-            HTML, CSS and Javscript. Further more I was attedning Coderslab
-            School where I got to know the basic technology of frontend and I
-            was developing skills. When I had graduated this school I haven't
-            rested on my laurels and I have been boosting my skills and learning
-            a new technology. I also have some basic knowledge and experience in
-            backend technologies like nodejs, express
+            been working as a sale specialist, but when I achieved everything I
+            wanted in this profession I decided to take a step forward. My
+            adventure with programming I started above one year ago. When I was
+            creating a simple website of the company I worked for, at the
+            beginning of 2020. I totally focused on studying HTML, CSS and
+            Javscript. Further more I was attendning Coderslab School where I
+            ordered and expanded my knowledge of frontend and I was developing
+            skills. When I had graduated this school I haven't rested on my
+            laurels and I have been boosting my skills and learning a new
+            technology like React, NextJs or Expo. I also have some basic
+            knowledge and experience in backend technology like Nodejs and
+            Express.
           </TextTagP>
           <div
             data-aos="fade-up"
@@ -174,7 +175,17 @@ const About = () => {
             </TextTagTitle>
           </div>
           <Strenghts open={!changeSign.what}>
-            <li></li>
+            <StrenghtsList>
+              I'm well organized person, who has plan for myself,
+            </StrenghtsList>
+            <StrenghtsList>
+              I'm very inquired and diligent person, who always follow an aim
+              and look for the solutions,
+            </StrenghtsList>
+            <StrenghtsList>
+              I like studying new things, which give the opportunities to new
+              challenges
+            </StrenghtsList>
           </Strenghts>
 
           <div
@@ -184,22 +195,28 @@ const About = () => {
             data-aos-once="true"
           >
             <TextTagTitle onClick={handleInfo} open={!changeSign.do}>
-              Why does he do this?
+              Facts
               <PlusIcon icon={changeSign.do ? faPlus : faMinus} />
             </TextTagTitle>
           </div>
-          <TextTagP open={!changeSign.do}>
-            z tej strony front-end developer z Wrocławia, Swoją pasję do
-            tworzenia stron oraz aplikacji odkryłem jeszcze, gdy pracowałem jako
-            sprzedawca z 12 latnim doświadczeniem. Od tamtej pory koncentruję
-            się na nieustannym podnoszeniu swoich umiejętności i utrwalaniu ich
-            poprzez ciągłą praktykę. Jestem dobrze z organizowaną osobą, mającą
-            za każdym razem plan na siebie, lubiącą rozwiązywać zadania I
-            doprowadzać rozpoczęte sprawy do końca. Na codzień fan angielskich
-            seriali oraz premiere league, gier przygodowych typu “click and
-            point”, sudoku oraz ligi NBA. W przyszłości, również trener
-            personalny kulturystki oraz zdrowego odżywiania.
-          </TextTagP>
+          <Strenghts open={!changeSign.do}>
+            <StrenghtsList>
+              Every day I work very hard to be a professional frontend developer
+            </StrenghtsList>
+            <StrenghtsList>
+              I had been training taekwondo for about 12 years. In the
+              intervening years I had achieved 1st students kup and won couple
+              of tournaments
+            </StrenghtsList>
+            <StrenghtsList>
+              I like British sense of humour, point-and-click adventure games,
+              sudoku and NBA
+            </StrenghtsList>
+            <StrenghtsList>Favourite TV series: Big Bang Theory</StrenghtsList>
+            <StrenghtsList>
+              Favourite football team: Manchester United F.C.
+            </StrenghtsList>
+          </Strenghts>
           <div
             data-aos="fade-up"
             data-aos-duration="1000"

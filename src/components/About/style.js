@@ -100,9 +100,10 @@ export const TextTag = styled.div`
 `;
 
 export const TextTagP = styled.p`
-  font-size: 1.4em;
-  overflow: hidden;
-  margin: 10px;
+  font-size: 1.3em;
+  overflow: auto;
+  padding: 0 10px;
+  margin: 10px 0;
   height: 0;
   transition: height 1s;
   line-height: 1.2em;
@@ -113,20 +114,44 @@ export const TextTagP = styled.p`
       height: 240px;
       transition: height 1s;
     `}
+  @media (max-width:1000px) {
+    font-size: 1.4em;
+  }
+  @media (max-width: 470px) {
+    font-size: 1.2em;
+  }
+  @media (max-width: 470px) {
+    font-size: 1em;
+  }
 `;
+export const StrenghtsList = styled.li`
+  line-height: 1.2em;
+  padding-bottom:5px;
+  margin-left:30px;
+  `;
 
 export const Strenghts = styled.ul`
-  font-size: 1.4em;
+  font-size: 1.3em;
   overflow: hidden;
-  margin: 10px;
+  padding: 0 10px;
+  list-style-type: disc;
+  list-style-position: inside;
+  
+  margin: 10px 0;
   height: 0;
   transition: height 1s;
   ${({ open }) =>
     open &&
     css`
-      height: 180px;
+      height: 150px;
       transition: height 1s;
     `}
+  /* ${StrenghtsList}:before {
+    content: "✓";
+    font-weight: 600;
+    margin-right:20px;
+    font-size:25px;
+  } */
 `;
 
 export const TextTagTitle = styled.h2`
