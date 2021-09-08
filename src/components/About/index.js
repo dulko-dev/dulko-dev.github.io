@@ -111,7 +111,7 @@ const About = () => {
       setChangeSign((prev) => ({ ...prev, who: !changeSign["who"] }));
     }
 
-    if (e.target.textContent.startsWith("What")) {
+    if (e.target.textContent.startsWith("My")) {
       setChangeSign((prev) => ({ ...prev, what: !changeSign["what"] }));
     }
 
@@ -155,13 +155,12 @@ const About = () => {
             adventure with programming I started above one year ago. When I was
             creating a simple website of the company I worked for, at the
             beginning of 2020. I totally focused on studying HTML, CSS and
-            Javscript. Further more I was attendning Coderslab School where I
-            ordered and expanded my knowledge of frontend and I was developing
-            skills. When I had graduated this school I haven't rested on my
-            laurels and I have been boosting my skills and learning a new
-            technology like React, NextJs or Expo. I also have some basic
-            knowledge and experience in backend technology like Nodejs and
-            Express.
+            Javscript. Further more I was attending Coderslab School where I
+            ordered and expanded my knowledge of frontend. When I had graduated
+            this school I haven't rested on my laurels and I have been boosting
+            my skills and learning a new technology like React, NextJs or Expo.
+            I also have some basic knowledge and experience in backend
+            technology like Nodejs and Express.
           </TextTagP>
           <div
             data-aos="fade-up"
@@ -170,7 +169,7 @@ const About = () => {
             data-aos-once="true"
           >
             <TextTagTitle onClick={handleInfo} open={!changeSign.what}>
-              What is my strenghts?
+              My strenghts?
               <PlusIcon icon={changeSign.what ? faPlus : faMinus} />
             </TextTagTitle>
           </div>
@@ -180,11 +179,14 @@ const About = () => {
             </StrenghtsList>
             <StrenghtsList>
               I'm very inquired and diligent person, who always follow an aim
-              and look for the solutions,
+              and look for the solution.
             </StrenghtsList>
             <StrenghtsList>
               I like studying new things, which give the opportunities to new
-              challenges
+              challenges and I try use it in following project.
+            </StrenghtsList>
+            <StrenghtsList>
+              I like share my knowledge with colleague and show some resolution.
             </StrenghtsList>
           </Strenghts>
 
@@ -201,20 +203,20 @@ const About = () => {
           </div>
           <Strenghts open={!changeSign.do}>
             <StrenghtsList>
-              Every day I work very hard to be a professional frontend developer
+              Every day I work very hard to be a professional frontend
+              developer,
             </StrenghtsList>
             <StrenghtsList>
-              I had been training taekwondo for about 12 years. In the
-              intervening years I had achieved 1st students kup and won couple
-              of tournaments
+              I had been training taekwondo for about 12 years. At this time I
+              had achieved 1st students kup and won couple of tournaments,
             </StrenghtsList>
             <StrenghtsList>
               I like British sense of humour, point-and-click adventure games,
-              sudoku and NBA
+              sudoku and watch NBA,
             </StrenghtsList>
-            <StrenghtsList>Favourite TV series: Big Bang Theory</StrenghtsList>
+            <StrenghtsList>Favourite TV series: Big Bang Theory,</StrenghtsList>
             <StrenghtsList>
-              Favourite football team: Manchester United F.C.
+              Favourite football team: Manchester United.
             </StrenghtsList>
           </Strenghts>
           <div

@@ -101,57 +101,75 @@ export const TextTag = styled.div`
 
 export const TextTagP = styled.p`
   font-size: 1.3em;
-  overflow: auto;
-  padding: 0 10px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 0 15px;
+  text-align: justify;
   margin: 10px 0;
   height: 0;
   transition: height 1s;
   line-height: 1.2em;
   text-indent: 40px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
   ${({ open }) =>
     open &&
     css`
-      height: 240px;
+      height: 220px;
       transition: height 1s;
     `}
+
   @media (max-width:1000px) {
-    font-size: 1.4em;
+    font-size: 1.35em;
   }
   @media (max-width: 470px) {
     font-size: 1.2em;
   }
-  @media (max-width: 470px) {
+  @media (max-width: 400px) {
     font-size: 1em;
+    text-align: left;
   }
 `;
 export const StrenghtsList = styled.li`
   line-height: 1.2em;
-  padding-bottom:5px;
-  margin-left:30px;
-  `;
+  padding-bottom: 5px;
+  margin-left: 20px;
+`;
 
 export const Strenghts = styled.ul`
   font-size: 1.3em;
-  overflow: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow-y: scroll;
+  overflow-x: hidden;
   padding: 0 10px;
   list-style-type: disc;
-  list-style-position: inside;
-  
+  list-style-position: outside;
   margin: 10px 0;
   height: 0;
   transition: height 1s;
+  &::-webkit-scrollbar {
+    display: none;
+  }
   ${({ open }) =>
     open &&
     css`
-      height: 150px;
+      height: 180px;
       transition: height 1s;
     `}
-  /* ${StrenghtsList}:before {
-    content: "✓";
-    font-weight: 600;
-    margin-right:20px;
-    font-size:25px;
-  } */
+  @media (max-width:1000px) {
+    font-size: 1.35em;
+  }
+  @media (max-width: 470px) {
+    font-size: 1.2em;
+  }
+  @media (max-width: 400px) {
+    font-size: 1em;
+    text-align: left;
+  }
 `;
 
 export const TextTagTitle = styled.h2`
