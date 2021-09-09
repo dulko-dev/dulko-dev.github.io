@@ -67,8 +67,11 @@ export const Image = styled.img`
   @media (max-width: 500px) {
     height: 175px;
   }
-  @media (max-width: 250px) {
+  @media (max-width: 270px) {
     height: 125px;
+  }
+  @media (max-width:200px){
+    height: 90px;
   }
 `;
 

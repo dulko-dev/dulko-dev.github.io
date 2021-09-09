@@ -100,18 +100,18 @@ export const TextTag = styled.div`
 `;
 
 export const TextTagP = styled.p`
+  text-align: justify;
   font-size: 1.3em;
+  line-height: 1.2em;
+  text-indent: 40px;
+  padding: 0 15px;
+  margin: 10px 0;
   scrollbar-width: none;
   -ms-overflow-style: none;
   overflow-y: scroll;
   overflow-x: hidden;
-  padding: 0 15px;
-  text-align: justify;
-  margin: 10px 0;
   height: 0;
   transition: height 1s;
-  line-height: 1.2em;
-  text-indent: 40px;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -135,7 +135,7 @@ export const TextTagP = styled.p`
 `;
 export const StrenghtsList = styled.li`
   line-height: 1.2em;
-  padding-bottom: 5px;
+  padding-bottom: 15px;
   margin-left: 20px;
 `;
 
@@ -151,13 +151,14 @@ export const Strenghts = styled.ul`
   margin: 10px 0;
   height: 0;
   transition: height 1s;
+  text-align: justify;
   &::-webkit-scrollbar {
     display: none;
   }
   ${({ open }) =>
     open &&
     css`
-      height: 180px;
+      height: 200px;
       transition: height 1s;
     `}
   @media (max-width:1000px) {
@@ -222,21 +223,44 @@ export const PlusIcon = styled(FontAwesomeIcon)`
 export const IconContener = styled.div`
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  text-align: justify;
   flex-wrap: wrap;
   height: 0;
   transition: height 1s;
+  padding: 10px 20px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    display: none;
+  }
   ${({ open }) =>
     open &&
     css`
-      height: 250px;
+      height: 168px;
       transition: height 1s;
     `}
+  @media (max-width:1000px) {
+    margin-left: 5px;
+  }
+  @media (max-width: 300px) {
+    justify-content: center;
+  }
 `;
 
+export const IconImage = styled.img`
+  width: 64px;
+  height: 64px;
+  @media (max-width: 470px) {
+    width: 48px;
+    height: 48px;
+  }
+`;
 export const IconDiv = styled.div`
-  margin: 0 10px;
+  margin: 10px;
   position: relative;
   transition: all 0.4s;
   transform: translateY(30px);
@@ -251,17 +275,33 @@ export const IconDiv = styled.div`
     transition: all 0.4s;
     opacity: 0.1;
   }
-  &:nth-child(6),
-  &:nth-child(8),
+  &:nth-child(3),
   &:nth-child(9),
-  &:nth-child(12) {
+  &:nth-child(10),
+  &:nth-child(12),
+  &:nth-child(14),
+  &:nth-child(15) {
     font-size: 9px;
   }
-`;
-
-export const IconImage = styled.img`
-  width: 64px;
-  height: 64px;
+  &:nth-child(13) {
+    font-size: 10px;
+  }
+  &:nth-child(13) ${IconImage} {
+    width: 148px;
+    height: 64px;
+  }
+  @media (max-width: 470px) {
+    margin: 10px 8px;
+    &:hover .iconImg {
+      transition: all 0.4s;
+      opacity: 1;
+      transform: scale(1.2);
+    }
+    &:nth-child(13) ${IconImage} {
+      width: 112px;
+      height: 48px;
+    }
+  }
 `;
 
 export const Arrow = styled(FontAwesomeIcon)`
@@ -300,4 +340,7 @@ export const IconText = styled.p`
   font-weight: 600;
   text-transform: uppercase;
   text-align: center;
+  @media (max-width: 470px) {
+    display: none;
+  }
 `;

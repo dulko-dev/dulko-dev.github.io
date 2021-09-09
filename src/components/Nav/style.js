@@ -9,6 +9,10 @@ export const NavContainer = styled.div`
   display: grid;
   grid-template-columns: 100px 1fr;
   grid-template-rows: 1fr;
+  @media (max-width:200px){
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 export const Image = styled.img`
@@ -22,6 +26,9 @@ export const NavLogo = styled.div`
   text-align: center;
   grid-column: 1/2;
   grid-row: 1/2;
+  @media (max-width:200px){
+    display: none;
+  }
 `;
 
 export const ButtonMode = styled.button`
@@ -34,6 +41,9 @@ export const ButtonMode = styled.button`
   @media (max-width: 1100px) {
     margin-top: 10px;
     padding: 8px 25px;
+  }
+  @media (max-width: 200px) {
+    display: none;
   }
 `;
 
@@ -92,11 +102,13 @@ export const ResumeCv = styled.button`
     background-color: rgb(238, 238, 238);
     color: #000000;
   }
-
   @media (max-width: 1100px) {
     font-size: 10px;
     padding: 8px 13px;
     margin-left: -25px;
+  }
+  @media (max-width: 200px) {
+    display: none;
   }
 `;
 

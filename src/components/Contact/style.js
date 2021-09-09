@@ -51,6 +51,9 @@ export const Image = styled.img`
   @media (max-width: 250px) {
     height: 125px;
   }
+  @media (max-width:200px){
+    height: 90px;
+  }
 `;
 export const ContactTagP = styled.p`
   margin-top: 10px;

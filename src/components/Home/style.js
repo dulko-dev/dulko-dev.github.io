@@ -349,7 +349,16 @@ export const Button = styled.button`
     font-size: 10px;
   }
 
-  @media (max-width: 670px) {
+  @media (max-width: 670px) and (min-width:201px) {
+    display: block;
+    margin: 20px auto 0 auto;
+    &:first-child {
+      margin-left: auto;
+      margin-top: 0;
+    }
+  }
+  @media (max-width: 200px) {
+    font-size: 8px;
     display: block;
     margin: 20px auto 0 auto;
     &:first-child {
@@ -362,7 +371,7 @@ export const Button = styled.button`
   @media (max-width: 1100px) and (min-width: 669px) and (max-height: 1100px) and (min-height: 741px) {
     font-size: 22px;
   }
-  @media (max-width: 670px) and (max-height: 1100px) {
+  @media (max-width: 670px) and (min-width:201px) and (max-height: 1100px) {
     font-size: 15px;
   }
 
@@ -430,7 +439,7 @@ export const FontIcon = styled(FontAwesomeIcon)`
 
   // mobile
 
-  @media (max-width: 1100px) and (min-width:301px) and (min-height: 1101px) {
+  @media (max-width: 1100px) and (min-width: 301px) and (min-height: 1101px) {
     padding: 20px;
   }
   @media (max-width: 1100px) {
@@ -454,7 +463,7 @@ export const FbIcon = styled(FontIcon)`
   }
 
   // mobile
-  @media (max-width: 1100px) and (min-width:301px) and (min-height: 1101px) {
+  @media (max-width: 1100px) and (min-width: 301px) and (min-height: 1101px) {
     padding: 20px 23px;
   }
   @media (max-width: 1100px) {
@@ -477,6 +486,9 @@ export const SocialIcon = styled.div`
   @media (max-width: 1100px) {
     flex-direction: column;
     align-items: flex-end;
+  }
+  @media (max-width: 200px) {
+    display: none;
   }
 `;
 
@@ -547,6 +559,9 @@ export const ImageDiv = styled.div`
     margin: 0 auto;
   }
   @media (max-width: 1100px) and (max-height: 780px) {
+    display: none;
+  }
+  @media (max-width: 200px) and (min-height: 0) {
     display: none;
   }
 

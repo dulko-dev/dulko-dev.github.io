@@ -32,8 +32,8 @@ const About = () => {
   const [icon, setIcon] = useState(false);
   const [changeSign, setChangeSign] = useState({
     who: true,
-    what: true,
-    do: true,
+    strenghts: true,
+    facts: true,
     tech: true,
   });
 
@@ -107,21 +107,24 @@ const About = () => {
   };
 
   const handleInfo = (e) => {
-    if (e.target.textContent.startsWith("Who")) {
+    if (e.target.textContent.startsWith("I")) {
       setChangeSign((prev) => ({ ...prev, who: !changeSign["who"] }));
     }
 
-    if (e.target.textContent.startsWith("My")) {
-      setChangeSign((prev) => ({ ...prev, what: !changeSign["what"] }));
+    if (e.target.textContent.startsWith("Strenghts")) {
+      setChangeSign((prev) => ({
+        ...prev,
+        strenghts: !changeSign["strenghts"],
+      }));
     }
 
     if (e.target.textContent.startsWith("Facts")) {
-      setChangeSign((prev) => ({ ...prev, do: !changeSign["do"] }));
+      setChangeSign((prev) => ({ ...prev, facts: !changeSign["facts"] }));
     }
   };
 
   const handleTech = (e) => {
-    if (e.target.textContent.includes("Technology")) {
+    if (e.target.textContent.includes("Skills")) {
       setChangeSign((prev) => ({ ...prev, tech: !changeSign["tech"] }));
     }
     setIcon(true);
@@ -144,7 +147,7 @@ const About = () => {
             data-aos-once="true"
           >
             <TextTagTitle onClick={handleInfo} open={!changeSign.who}>
-              Who I am ?
+              I am...
               <PlusIcon icon={changeSign.who ? faPlus : faMinus} />
             </TextTagTitle>
           </div>
@@ -168,12 +171,12 @@ const About = () => {
             data-aos-offset="200"
             data-aos-once="true"
           >
-            <TextTagTitle onClick={handleInfo} open={!changeSign.what}>
-              My strenghts?
-              <PlusIcon icon={changeSign.what ? faPlus : faMinus} />
+            <TextTagTitle onClick={handleInfo} open={!changeSign.strenghts}>
+              Strenghts
+              <PlusIcon icon={changeSign.strenghts ? faPlus : faMinus} />
             </TextTagTitle>
           </div>
-          <Strenghts open={!changeSign.what}>
+          <Strenghts open={!changeSign.strenghts}>
             <StrenghtsList>
               I'm well organized person, who has plan for myself,
             </StrenghtsList>
@@ -196,12 +199,12 @@ const About = () => {
             data-aos-offset="200"
             data-aos-once="true"
           >
-            <TextTagTitle onClick={handleInfo} open={!changeSign.do}>
+            <TextTagTitle onClick={handleInfo} open={!changeSign.facts}>
               Facts
-              <PlusIcon icon={changeSign.do ? faPlus : faMinus} />
+              <PlusIcon icon={changeSign.facts ? faPlus : faMinus} />
             </TextTagTitle>
           </div>
-          <Strenghts open={!changeSign.do}>
+          <Strenghts open={!changeSign.facts}>
             <StrenghtsList>
               Every day I work very hard to be a professional frontend
               developer,
@@ -226,7 +229,7 @@ const About = () => {
             data-aos-once="true"
           >
             <TextTagTitle onClick={handleTech} open={!changeSign.tech}>
-              Technology
+              Skills
               <PlusIcon icon={changeSign.tech ? faPlus : faMinus} />
             </TextTagTitle>
           </div>
