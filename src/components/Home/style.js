@@ -277,7 +277,7 @@ export const Social = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 
   // ---- media ---- //
 
@@ -432,6 +432,7 @@ export const FontIcon = styled(FontAwesomeIcon)`
   padding: 10px;
   cursor: pointer;
 
+
   // ---- media ---- //
   @media (min-width: 1101px) and (max-height: 500px) {
     padding: 5px;
@@ -494,7 +495,7 @@ export const SocialIcon = styled.div`
 
 export const SpanIconName = styled.span`
   font-size: 10px;
-  color: #39b54a;
+  color: #fb7d00;
   margin-right: 5px;
   visibility: hidden;
   opacity: 0;

@@ -9,7 +9,7 @@ export const NavContainer = styled.div`
   display: grid;
   grid-template-columns: 100px 1fr;
   grid-template-rows: 1fr;
-  @media (max-width:200px){
+  @media (max-width: 200px) {
     display: flex;
     justify-content: center;
   }
@@ -26,7 +26,7 @@ export const NavLogo = styled.div`
   text-align: center;
   grid-column: 1/2;
   grid-row: 1/2;
-  @media (max-width:200px){
+  @media (max-width: 200px) {
     display: none;
   }
 `;
@@ -86,22 +86,34 @@ export const RightContent = styled.div`
 `;
 
 export const ResumeCv = styled.button`
-  margin-top: 10px;
-  padding: 10px 18px;
+  position: relative;
+  width: 100px;
+  height: 30px;
   font-family: "Montserrat", sans-serif;
   border: 2px solid rgb(238, 238, 238);
-  font-size: 15px;
+  font-size: 13px;
   margin-left: -45px;
   border-radius: 5px;
   background-color: inherit;
   color: #eeeeee;
   text-transform: uppercase;
-  transition: all 1s;
+  transition: all 0.6s;
+  margin-top: 5px;
   &:hover {
-    transition: all 1s;
+    transition: all 0.6s;
     background-color: rgb(238, 238, 238);
     color: #000000;
   }
+  & #spanDow {
+    display: none;
+  }
+  &:hover #spanDow {
+    display: block;
+  }
+  &:hover #spanRes {
+    display: none;
+  }
+
   @media (max-width: 1100px) {
     font-size: 10px;
     padding: 8px 13px;
@@ -117,8 +129,8 @@ export const MenuButtons = styled.div`
   flex-direction: column;
   align-items: center;
   margin-left: 50px;
-  @media (max-width:1100px) {
-    margin-left:30px;
+  @media (max-width: 1100px) {
+    margin-left: 30px;
   }
 `;
 

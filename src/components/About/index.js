@@ -107,7 +107,7 @@ const About = () => {
   };
 
   const handleInfo = (e) => {
-    if (e.target.textContent.startsWith("I")) {
+    if (e.target.textContent.startsWith("About")) {
       setChangeSign((prev) => ({ ...prev, who: !changeSign["who"] }));
     }
 
@@ -147,22 +147,21 @@ const About = () => {
             data-aos-once="true"
           >
             <TextTagTitle onClick={handleInfo} open={!changeSign.who}>
-              I am...
+              About Me
               <PlusIcon icon={changeSign.who ? faPlus : faMinus} />
             </TextTagTitle>
           </div>
           <TextTagP open={!changeSign.who}>
-            Hi, my name is Kamil and I'm live in Wroclaw. For many years I had
+            Hi, my name is Kamil and I live in Wroclaw. For many years I had
             been working as a sale specialist, but when I achieved everything I
-            wanted in this profession I decided to take a step forward. My
-            adventure with programming I started above one year ago. When I was
-            creating a simple website of the company I worked for, at the
-            beginning of 2020. I totally focused on studying HTML, CSS and
-            Javscript. Further more I was attending Coderslab School where I
-            ordered and expanded my knowledge of frontend. When I had graduated
-            this school I haven't rested on my laurels and I have been boosting
-            my skills and learning a new technology like React, NextJs or Expo.
-            I also have some basic knowledge and experience in backend
+            wanted in this profession I decided to take a step forward. I have
+            started my adventure with programming, since February 2020. When I
+            created a simple website of the company I worked for. I totally
+            focused on studying HTML, CSS and Javscript. Further more I have
+            graduated Coderslab School where I ordered and expanded my knowledge
+            of frontend. After it I haven't rested on my laurels and I have been
+            boosting my skills and learning a new technology like Reactjs, NextJs
+            or Expo. I also have some basic knowledge and experience in backend
             technology like Nodejs and Express.
           </TextTagP>
           <div
@@ -186,10 +185,10 @@ const About = () => {
             </StrenghtsList>
             <StrenghtsList>
               I like studying new things, which give the opportunities to new
-              challenges and I try use it in following project.
+              challenges and I try to use it in following project.
             </StrenghtsList>
             <StrenghtsList>
-              I like share my knowledge with colleague and show some resolution.
+              I always try be a helpful and with pleasure to share my knowledge
             </StrenghtsList>
           </Strenghts>
 
@@ -210,8 +209,8 @@ const About = () => {
               developer,
             </StrenghtsList>
             <StrenghtsList>
-              I had been training taekwondo for about 12 years. At this time I
-              had achieved 1st students kup and won couple of tournaments,
+              I used to train Taekwondo for about 12 years. At this time I had
+              achieved 1st students kup and won couple of tournaments,
             </StrenghtsList>
             <StrenghtsList>
               I like British sense of humour, point-and-click adventure games,

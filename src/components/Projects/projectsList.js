@@ -9,7 +9,7 @@ export const projectsList = [
     id: 1,
     title: "React Dashboard",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam si amitti vita beata potest, beata esse non potest. Potius ergo illa dicantur: turpe esse, viri non esse debilitari dolore, frangi, succumbere. Duo Reges: constructio interrete. Estne, quaeso, inquam, sitienti in bibendo voluptas? Sed ad bona praeterita redeamus. Hic ambiguo ludimur. Ex rebus enim timiditas, non ex vocabulis nascitur. Itaque mihi non satis videmini considerare quod iter sit naturae quaeque progressio. Nos commodius agimus",
+      "Create your own profile or login by default data and get access to few functionality tools, such as: \n ✔️ to-do-list - you can set your goals, check, edit or delete,\n ☁️ weather forecast - find weather for intersts cities,\n 🗺️ news and sports results - check most popular daily articles or result in prime football leagues or basketball + watch highlights,\n 📺 description of movies, serials and acting professions - search data of interesting film or cast,\n 🔢 financial and healthy calculator - calculate and save result in financial calculator or check that your healhy is in good condition\n Note: Mobile version is in progress.",
     img: dashboard,
     git: "https://github.com/dulko-dev/react_dashboard",
     live: "https://dulko-dashboard.netlify.app/",
@@ -19,7 +19,7 @@ export const projectsList = [
     id: 2,
     title: "React MiniGames",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam si amitti vita beata potest, beata esse non potest. Potius ergo illa dicantur: turpe esse, viri non esse debilitari dolore, frangi, succumbere. Duo Reges: constructio interrete. Estne, quaeso, inquam, sitienti in bibendo voluptas? Sed ad bona praeterita redeamus. Hic ambiguo ludimur. Ex rebus enim timiditas, non ex vocabulis nascitur. Itaque mihi non satis videmini considerare quod iter sit naturae quaeque progressio. Nos commodius agimus",
+      "You can play in 3 browser games create in React, such as:\n ➡️ rock - paper - scissors - lizard - spock,\n ➡️ memory game,\n ➡️ quiz\n Note: This is full responsivity version",
     img: miniGames,
     git: "https://github.com/dulko-dev/react_miniGames",
     live: "https://dulko-react-minigames.netlify.app/",
@@ -29,7 +29,7 @@ export const projectsList = [
     id: 3,
     title: "React Flags",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam si amitti vita beata potest, beata esse non potest. Potius ergo illa dicantur: turpe esse, viri non esse debilitari dolore, frangi, succumbere. Duo Reges: constructio interrete. Estne, quaeso, inquam, sitienti in bibendo voluptas? Sed ad bona praeterita redeamus. Hic ambiguo ludimur. Ex rebus enim timiditas, non ex vocabulis nascitur. Itaque mihi non satis videmini considerare quod iter sit naturae quaeque progressio. Nos commodius agimus",
+      "You are looking at simple page where user can find information about country. We can find it by searching input or selecting options to find region you are interested in.\n App has dark and light mode.\n Note: This is full responsivity version",
     img: flags,
     git: "https://github.com/dulko-dev/react_rest_flag",
     live: "https://dulko-countries.netlify.app/",
@@ -39,7 +39,7 @@ export const projectsList = [
     id: 4,
     title: "Next NBA",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam si amitti vita beata potest, beata esse non potest. Potius ergo illa dicantur: turpe esse, viri non esse debilitari dolore, frangi, succumbere. Duo Reges: constructio interrete. Estne, quaeso, inquam, sitienti in bibendo voluptas? Sed ad bona praeterita redeamus. Hic ambiguo ludimur. Ex rebus enim timiditas, non ex vocabulis nascitur. Itaque mihi non satis videmini considerare quod iter sit naturae quaeque progressio. Nos commodius agimus",
+      "This is the NBA page, where you can find information, such as:\n 🏀 short history about teams,\n 🏀 research players and played games.\n 🏀 you can contact with me by email\n Note: This is the desktop version",
     img: nba,
     git: "https://github.com/dulko-dev/nba_next_api",
     live: "https://dulko-nba-next.vercel.app/",
@@ -49,7 +49,7 @@ export const projectsList = [
     id: 5,
     title: "Landing Page",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam si amitti vita beata potest, beata esse non potest. Potius ergo illa dicantur: turpe esse, viri non esse debilitari dolore, frangi, succumbere. Duo Reges: constructio interrete. Estne, quaeso, inquam, sitienti in bibendo voluptas? Sed ad bona praeterita redeamus. Hic ambiguo ludimur. Ex rebus enim timiditas, non ex vocabulis nascitur. Itaque mihi non satis videmini considerare quod iter sit naturae quaeque progressio. Nos commodius agimus",
+      "Simple landing page where I focused on styles and animations\n Note: Mobile version is in progress.",
     img: landscape,
     git: "https://github.com/dulko-dev/landing_page",
     live: "https://dulko-landing-page.netlify.app/",

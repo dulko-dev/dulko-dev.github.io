@@ -52,7 +52,10 @@ const Nav = ({ toggleMode, mode, sunrise, sunset }) => {
               href="https://drive.google.com/u/0/uc?id=1bD6Q0oryW8rrJslGpdWmmbl0uovgD6IY&export=download"
               style={{ outline: "none" }}
             >
-              <ResumeCv type="button">Resume</ResumeCv>
+              <ResumeCv type="button">
+                <span id="spanRes">Resume</span>
+                <span id="spanDow">Download</span>
+              </ResumeCv>
             </a>
           </MenuButtons>
         </RightContent>

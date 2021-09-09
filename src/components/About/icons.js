@@ -25,7 +25,7 @@ export const iconsFolder = [
   { id: 4, name: "react", img: react },
   { id: 5, name: "expo", img: expo },
   { id: 6, name: "nextjs", img: next },
-  { id: 7, name: "express", img: express },
+  { id: 7, name: "expressjs", img: express },
   { id: 8, name: "sass", img: sass },
   { id: 9, name: "styled components", img: styledComp },
   { id: 10, name: "bootstrap", img: bootstrap },

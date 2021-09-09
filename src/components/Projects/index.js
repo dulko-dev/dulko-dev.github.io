@@ -17,6 +17,7 @@ import {
   EnterIcon,
   SingleTech,
   GroupImage,
+  SpanText,
 } from "./style";
 
 import project from "../../assets/projects.png";
@@ -45,7 +46,7 @@ const Projects = () => {
 
   useEffect(() => {
     let el = document.querySelector("#project");
-    
+
     const bottomSucks = () => {
       console.log(el.getBoundingClientRect().bottom);
       if (el.getBoundingClientRect().bottom < 450) {
@@ -64,6 +65,14 @@ const Projects = () => {
           <GroupImage fix={stack} abs={bottomStack}>
             <Image src={project} className={"photoProject"} />
             <ProjectTagP className={"titleProject"}>Projects</ProjectTagP>
+            <a
+              href="https://github.com/dulko-dev?tab=repositories"
+              target="_blank"
+              rel="noreferrer"
+              style={{ outline: "none", textDecoration: "none" }}
+            >
+              <ProjectTagP>Click for more projects...</ProjectTagP>
+            </a>
           </GroupImage>
         </ProjectTag>
         <TextContainer id="project">
@@ -71,13 +80,17 @@ const Projects = () => {
             <TextContent key={element.id}>
               <TextTitle>{element.title}</TextTitle>
               <TextModule className={"blockProject"}>
-                <Text>{element.description}</Text>
+                <Text>
+                  {element.description.split("\n").map((el, index) => (
+                    <SpanText key={index}>{el}</SpanText>
+                  ))}
+                </Text>
               </TextModule>
               <TextModuleTech className={"blockTech"}>
                 <EnterIcon>
                   <a href={element.git} target="_blanket">
                     <GitIcon>
-                      <FontAwesomeIcon icon={faGithub}/>
+                      <FontAwesomeIcon icon={faGithub} />
                     </GitIcon>
                   </a>
                   <a href={element.live} target="_blanket">

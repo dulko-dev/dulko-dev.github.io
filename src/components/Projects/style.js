@@ -1,4 +1,16 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
+
+const pulseIcon = keyframes`
+ 0% {
+    box-shadow: 0 0 0 0 rgba(140, 140, 140, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(140, 140, 140, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(140, 140, 140, 0);
+  }
+`;
 
 export const ProjectsContainer = styled.div`
   position: relative;
@@ -47,7 +59,7 @@ export const GroupImage = styled.div`
     abs &&
     css`
       position: absolute;
-      bottom: 185px;
+      bottom: 150px;
       align-self: center;
     `}
     @media (max-width:1000px) {
@@ -70,7 +82,7 @@ export const Image = styled.img`
   @media (max-width: 270px) {
     height: 125px;
   }
-  @media (max-width:200px){
+  @media (max-width: 200px) {
     height: 90px;
   }
 `;
@@ -88,6 +100,27 @@ export const ProjectTagP = styled.p`
   }
   @media (max-width: 250px) {
     font-size: 40px;
+  }
+  transition: all 1s;
+
+  &:last-child {
+    font-size: 25px;
+    position: relative;
+  }
+  &:last-child:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: ${({ theme }) => theme.title};
+    transform: scale(0);
+    transition: all .4s;
+  }
+  &:hover:last-child:after {
+    transform: scale(1);
+    transition: all .4s;
   }
 `;
 
@@ -118,13 +151,24 @@ export const TextTitle = styled.h2`
   }
 `;
 
+export const SpanText = styled.span`
+  display: block;
+  padding-bottom: 10px;
+`;
+
 export const Text = styled.p`
   transition: all 0.3s;
   transition-delay: 0.6s;
   position: relative;
   padding: 15px;
-  bottom: -200px;
+  bottom: -330px;
   color: rgb(238, 238, 238);
+  font-size: 1em;
+  line-height: 1.2em;
+  & ${SpanText}:last-child {
+    text-decoration: underline;
+    text-decoration-color: #ff0000;
+  }
 `;
 
 export const EnterIcon = styled.div`
@@ -161,7 +205,7 @@ export const TextContent = styled.div`
   border-bottom: 1px solid ${({ theme }) => theme.line};
   box-sizing: border-box;
   &:hover .blockProject {
-    transform: translateY(-240px);
+    transform: translateY(-350px);
     transition: all 0.3s;
   }
   &:hover .blockTech {
@@ -170,7 +214,7 @@ export const TextContent = styled.div`
     transition-delay: 0.3s;
   }
   &:hover .blockProject ${Text} {
-    transform: translateY(-200px);
+    transform: translateY(-320px);
     transition: all 0.3s;
     transition-delay: 0.6s;
   }
@@ -224,15 +268,21 @@ export const TextContent = styled.div`
 `;
 
 export const TextModule = styled.div`
-  max-width: 500px;
+  width: 500px;
   position: absolute;
-  bottom: -200px;
+  bottom: -320px;
   right: 0;
   border-top-left-radius: 15px;
   background-color: rgba(17, 34, 64, 0.6);
   transition: all 0.3s;
   transition-delay: 1.2s;
   z-index: 1;
+  @media (max-width: 500px) {
+    left: 5px;
+    width: 100%;
+    max-width: 500px;
+    font-size:0.8em;
+  }
   @media (max-width: 400px) {
     display: none;
   }
@@ -240,7 +290,6 @@ export const TextModule = styled.div`
 
 export const TextModuleTech = styled(TextModule)`
   display: flex;
-  width: 100%;
   align-items: center;
   justify-content: flex-end;
   height: 40px;
@@ -248,6 +297,9 @@ export const TextModuleTech = styled(TextModule)`
   border-top-left-radius: 0;
   transition-delay: 0.9s;
   background-color: rgb(35, 53, 84);
+  @media (max-width: 500px) {
+    width: 100%;
+  }
 `;
 
 export const ImageProject = styled.img`
@@ -265,8 +317,13 @@ export const ImageProject = styled.img`
 export const GitIcon = styled.div`
   font-size: 18px;
   color: rgb(140, 140, 140);
-  padding-right: 10px;
+  margin-right: 15px;
   transition: all 0.3s;
+  border: 0px solid rgb(140, 140, 140);
+  border-radius: 50%;
+  animation-name: ${pulseIcon};
+  animation-duration: 1.7s;
+  animation-iteration-count: infinite;
   &:hover {
     color: rgb(238, 238, 238);
     transition: all 0.3s;
