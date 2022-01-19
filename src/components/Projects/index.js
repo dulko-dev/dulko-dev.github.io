@@ -48,7 +48,7 @@ const Projects = () => {
     let el = document.querySelector("#project");
 
     const bottomSucks = () => {
-      console.log(el.getBoundingClientRect().bottom);
+      
       if (el.getBoundingClientRect().bottom < 450) {
         setBottomStack(true);
       } else {

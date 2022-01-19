@@ -40,7 +40,6 @@ const About = () => {
   useEffect(() => {
     const aboutFixed = () => {
       let el = document.querySelector("#cont");
-      console.log(el.getBoundingClientRect().bottom);
       if (
         el.getBoundingClientRect().top <= 0 &&
         el.getBoundingClientRect().bottom > 0
