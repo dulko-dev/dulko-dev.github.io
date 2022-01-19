@@ -3,7 +3,6 @@ import {
   Ul,
   Li,
   Society,
-  ImageCV,
   LiSociety,
   UlSocial,
   TitleNavigation,
@@ -86,7 +85,6 @@ const MenuBar = ({ menuOpen }) => {
 
   const handleContact = (e) => {
     const contentAbout = document.querySelector("#contactImg");
-    console.log('contact ' + contentAbout);
     contentAbout.scrollIntoView({
       behavior: "smooth",
       block: "start",

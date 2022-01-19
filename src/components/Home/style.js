@@ -56,6 +56,9 @@ export const HomeComponent = styled.div`
 
   @media (max-width: 1100px) {
     width: 100%;
+    height: calc(100vh - 150px);
+    height: -moz-calc(100vh - 150px);
+    height: -webkit-calc(100vh - 150px);
     &:after {
       content: "";
       position: absolute;
