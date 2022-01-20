@@ -52,6 +52,10 @@ export const HomeComponent = styled.div`
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: center;
+
+    @media (max-height: 300px) {
+      height: 400px;
+    }
   }
 
   @media (max-width: 1100px) {
@@ -73,6 +77,10 @@ export const HomeComponent = styled.div`
       background-repeat: no-repeat;
       background-size: 100% 100%;
       background-position: center;
+
+      @media (max-height: 300px) {
+        height: 400px;
+      }
     }
   }
 `;
@@ -87,7 +95,6 @@ export const Content = styled.div`
   color: rgb(238, 238, 238);
   font-size: 35px;
   height: 50vh;
-
   // ---- media ---- //
 
   // desktop
@@ -96,6 +103,10 @@ export const Content = styled.div`
   }
   @media (min-width: 1100px) and (max-height: 450px) {
     height: 15vh;
+  }
+
+  @media (max-height: 350px) {
+    height: 300px;
   }
 
   // mobile

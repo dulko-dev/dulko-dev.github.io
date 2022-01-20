@@ -134,6 +134,10 @@ export const MenuButtons = styled.div`
   }
 `;
 
+export const ButtonAnchor = styled.a`
+  outline: none;
+`;
+
 export const NavBurger = styled.div`
   position: relative;
   display: flex;

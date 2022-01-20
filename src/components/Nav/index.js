@@ -16,6 +16,7 @@ import {
   ImageNight,
   MenuButtons,
   ResumeCv,
+  ButtonAnchor,
 } from "./style";
 import logo from "../../assets/logo.svg";
 
@@ -48,15 +49,12 @@ const Nav = ({ toggleMode, mode, sunrise, sunset }) => {
                 <ImageNight src={night} nightImg={sunset} />
               )}
             </ButtonMode>
-            <a
-              href="https://drive.google.com/u/0/uc?id=1bD6Q0oryW8rrJslGpdWmmbl0uovgD6IY&export=download"
-              style={{ outline: "none" }}
-            >
+            <ButtonAnchor href="https://drive.google.com/file/d/1KCCkdkWnprSsAMpULT56Z37PEho8m7ze/view">
               <ResumeCv type="button">
                 <span id="spanRes">Resume</span>
-                <span id="spanDow">Download</span>
+                <span id="spanDow">Watch</span>
               </ResumeCv>
-            </a>
+            </ButtonAnchor>
           </MenuButtons>
         </RightContent>
       </NavContainer>
@@ -66,3 +64,4 @@ const Nav = ({ toggleMode, mode, sunrise, sunset }) => {
 };
 
 export default Nav;
+

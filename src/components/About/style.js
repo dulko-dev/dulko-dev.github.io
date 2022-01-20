@@ -276,17 +276,17 @@ export const IconDiv = styled.div`
     opacity: 0.1;
   }
   &:nth-child(3),
+  &:nth-child(8),
   &:nth-child(9),
-  &:nth-child(10),
-  &:nth-child(12),
-  &:nth-child(14),
-  &:nth-child(15) {
+  &:nth-child(11),
+  &:nth-child(13),
+  &:nth-child(14) {
     font-size: 9px;
   }
-  &:nth-child(13) {
+  &:nth-child(12) {
     font-size: 10px;
   }
-  &:nth-child(13) ${IconImage} {
+  &:nth-child(12) ${IconImage} {
     width: 148px;
     height: 64px;
   }
