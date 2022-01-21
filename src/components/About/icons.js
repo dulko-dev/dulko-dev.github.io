@@ -14,7 +14,7 @@ import gsap from "../../assets/icons/gsap.png";
 import bootstrap from "../../assets/icons/bootstrap.png";
 import gitIcon from "../../assets/icons/git-icon.png";
 import vsc from "../../assets/icons/vsc.png";
-import express from "../../assets/icons/express.png";
+import nodejs from "../../assets/icons/nodejs.png";
 import mongoDB from "../../assets/icons/mongoDB.png";
 import layout from "../../assets/icons/layout.png";
 import parcel from "../../assets/icons/parcel.png";
@@ -25,7 +25,7 @@ export const iconsFolder = [
   { id: 3, name: "javascript", img: js },
   { id: 4, name: "react", img: react },
   { id: 5, name: "expo", img: expo },
-  { id: 6, name: "expressjs", img: express },
+  { id: 6, name: "nodejs", img: nodejs },
   { id: 7, name: "sass", img: sass },
   { id: 8, name: "styled components", img: styledComp },
   { id: 9, name: "bootstrap", img: bootstrap },

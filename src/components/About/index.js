@@ -215,7 +215,7 @@ const About = () => {
               I like British sense of humour, point-and-click adventure games,
               sudoku and NBA,
             </StrenghtsList>
-            <StrenghtsList>Favourite TV series: Big Bang Theory,</StrenghtsList>
+            <StrenghtsList>Favourite TV series: Big Bang Theory and How I Met Your Mother,</StrenghtsList>
             <StrenghtsList>
               Favourite football team: Manchester United.
             </StrenghtsList>

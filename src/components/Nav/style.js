@@ -277,7 +277,6 @@ export const Ul = styled.ul`
   ${({ horizontalDash }) =>
     horizontalDash &&
     css`
-  
       top:0;
       transition-delay: 0.4s;
       transition: top 1s;
@@ -287,23 +286,22 @@ export const Ul = styled.ul`
     display: flex;
     align-items: flex-start;
     left: 50%;
-    top: 20px;
+    top: -140px;
     position: absolute;
     max-width: 500px;
     height: 50px;
     justify-content: center;
-    transform: translateY(-160px) translateX(-50%);
-    -webkit-transform: translateY(-160px) translateX(-50%);
-    transition: transform 1s;
+    transform: translateY(0) translateX(-50%);
+    -webkit-transform: translateY(0) translateX(-50%);
+    transition: top 1s;
     margin-left: 0;
 
     ${({ horizontalDash }) =>
       horizontalDash &&
       css`
-        transform: translateY(0) translateX(-50%);
-        -webkit-transform: translateY(0) translateX(-50%);
-        transition: transform 1s;
-        transition-delay: 0.8s;
+        top:20px;
+        transition: top 1s;
+        transition-delay: 0.5s;
       `}
   }
 
@@ -344,14 +342,14 @@ export const UlSocial = styled.ul`
     display: flex;
     align-items: flex-end;
     left: 50%;
-    bottom: 20px;
-    transform: translateX(-50%) translateY(-160px);
-    -webkit-transform: translateX(-50%) translateY(-160px);
+    bottom: 160px;
+    transform: translateX(-50%) translateY(0);
+    -webkit-transform: translateX(-50%) translateY(0);
     position: absolute;
     max-width: 500px;
     height: 50px;
     width: 100%;
-    transition: transform 1s;
+    transition: bottom 1s;
     margin-right: 0;
   }
 
@@ -363,10 +361,9 @@ export const UlSocial = styled.ul`
       transition: bottom 1s;
 
       @media (max-width: 1385px) {
-        transform: translateY(0) translateX(-50%);
-        -webkit-transform: translateY(0) translateX(-50%);
+        bottom: 20px;
         transition-delay: 0.4s;
-        transition: transform 1s;
+        transition: bottom 1s;
       }
     `}
 
