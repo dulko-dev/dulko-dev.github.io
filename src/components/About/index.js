@@ -40,7 +40,6 @@ const About = () => {
   useEffect(() => {
     const aboutFixed = () => {
       let el = document.querySelector("#cont");
-      console.log(el.getBoundingClientRect().bottom);
       if (
         el.getBoundingClientRect().top <= 0 &&
         el.getBoundingClientRect().bottom > 0
@@ -124,7 +123,7 @@ const About = () => {
   };
 
   const handleTech = (e) => {
-    if (e.target.textContent.includes("Skills")) {
+    if (e.target.textContent.includes("Stacks")) {
       setChangeSign((prev) => ({ ...prev, tech: !changeSign["tech"] }));
     }
     setIcon(true);
@@ -157,12 +156,12 @@ const About = () => {
             wanted in this profession I decided to take a step forward. I have
             started my adventure with programming, since February 2020. When I
             created a simple website of the company I worked for. I totally
-            focused on studying HTML, CSS and Javscript. Further more I have
+            focused on studying HTML, CSS and Javscript. Furthermore I have
             graduated Coderslab School where I ordered and expanded my knowledge
             of frontend. After it I haven't rested on my laurels and I have been
-            boosting my skills and learning a new technology like Reactjs, NextJs
-            or Expo. I also have some basic knowledge and experience in backend
-            technology like Nodejs and Express.
+            boosting my skills and learning a new technology in frontend as well
+            as backend. Nowadays I try build applications base on MERN stack and
+            get know the basic in Java.
           </TextTagP>
           <div
             data-aos="fade-up"
@@ -205,7 +204,7 @@ const About = () => {
           </div>
           <Strenghts open={!changeSign.facts}>
             <StrenghtsList>
-              Every day I work very hard to be a professional frontend
+              Every day I work hard to be a professional frontend
               developer,
             </StrenghtsList>
             <StrenghtsList>
@@ -214,9 +213,9 @@ const About = () => {
             </StrenghtsList>
             <StrenghtsList>
               I like British sense of humour, point-and-click adventure games,
-              sudoku and watch NBA,
+              sudoku and NBA,
             </StrenghtsList>
-            <StrenghtsList>Favourite TV series: Big Bang Theory,</StrenghtsList>
+            <StrenghtsList>Favourite TV series: Big Bang Theory and How I Met Your Mother,</StrenghtsList>
             <StrenghtsList>
               Favourite football team: Manchester United.
             </StrenghtsList>
@@ -228,7 +227,7 @@ const About = () => {
             data-aos-once="true"
           >
             <TextTagTitle onClick={handleTech} open={!changeSign.tech}>
-              Skills
+              Stacks
               <PlusIcon icon={changeSign.tech ? faPlus : faMinus} />
             </TextTagTitle>
           </div>

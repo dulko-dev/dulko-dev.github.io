@@ -134,6 +134,10 @@ export const MenuButtons = styled.div`
   }
 `;
 
+export const ButtonAnchor = styled.a`
+  outline: none;
+`;
+
 export const NavBurger = styled.div`
   position: relative;
   display: flex;
@@ -210,7 +214,7 @@ export const Module = styled.div`
   text-align: center;
   width: 100%;
   z-index: 2;
-  transition: all 0.4s;
+  transition: all .4s;
 `;
 
 export const MenuBackGround = styled.div`
@@ -223,8 +227,8 @@ export const MenuBackGround = styled.div`
   ${({ horizontalDash }) =>
     horizontalDash &&
     css`
-      transition: all 0.4s;
       transform: translateY(0);
+      transition: all 0.4s;
       z-index: 2;
       background-color: rgba(0, 0, 0, 0.75);
     `}
@@ -260,44 +264,44 @@ export const TitleNavigation = styled.h2`
 export const Ul = styled.ul`
   position: absolute;
   left: 0;
-  top: 0;
+  top: -160px;
   max-width: 500px;
   width: 100%;
   display: inline-flex;
   height: 150px;
   align-items: center;
   justify-content: center;
-  transform: translateY(-160px);
-  transition: transform 1s;
+  transition: top 1s;
   margin-left: 100px;
 
   ${({ horizontalDash }) =>
     horizontalDash &&
     css`
-      transition: transform 1s;
-      transform: translateY(0);
+      top:0;
       transition-delay: 0.4s;
+      transition: top 1s;
     `}
 
   @media (max-width: 1385px) {
     display: flex;
     align-items: flex-start;
     left: 50%;
-    top: 20px;
+    top: -140px;
     position: absolute;
     max-width: 500px;
     height: 50px;
     justify-content: center;
-    transform: translateY(-160px) translateX(-50%);
-    transition: transform 1s;
+    transform: translateY(0) translateX(-50%);
+    -webkit-transform: translateY(0) translateX(-50%);
+    transition: top 1s;
     margin-left: 0;
 
     ${({ horizontalDash }) =>
       horizontalDash &&
       css`
-        transition-delay: 0.8s;
-        transition: transform 1s;
-        transform: translateY(0) translateX(-50%);
+        top:20px;
+        transition: top 1s;
+        transition-delay: 0.5s;
       `}
   }
 
@@ -324,42 +328,42 @@ export const Ul = styled.ul`
 export const UlSocial = styled.ul`
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: 160px;
   max-width: 500px;
   width: 100%;
   display: inline-flex;
   height: 150px;
   align-items: center;
   justify-content: center;
-  transform: translateY(-160px);
-  transition: transform 1s;
+  transition: bottom 1s;
   margin-right: 100px;
 
   @media (max-width: 1385px) {
     display: flex;
     align-items: flex-end;
     left: 50%;
-    bottom: 20px;
-    transform: translateX(-50%) translateY(-160px);
+    bottom: 160px;
+    transform: translateX(-50%) translateY(0);
+    -webkit-transform: translateX(-50%) translateY(0);
     position: absolute;
     max-width: 500px;
     height: 50px;
     width: 100%;
-    transition: transform 1s;
+    transition: bottom 1s;
     margin-right: 0;
   }
 
   ${({ horizontalDash }) =>
     horizontalDash &&
     css`
-      transition: transform 1s;
-      transform: translateY(0);
+      bottom:0;
       transition-delay: 0.4s;
+      transition: bottom 1s;
 
       @media (max-width: 1385px) {
-        transform: translateY(0) translateX(-50%);
+        bottom: 20px;
         transition-delay: 0.4s;
-        transition: transform 1s;
+        transition: bottom 1s;
       }
     `}
 

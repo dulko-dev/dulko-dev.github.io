@@ -35,6 +35,8 @@ const rubber = keyframes`
 
 export const HomeComponent = styled.div`
   height: calc(100vh - 150px);
+  height: -moz-calc(100vh - 150px);
+  height: -webkit-calc(100vh - 150px);
   width: 100%;
   &:after {
     content: "";
@@ -50,11 +52,17 @@ export const HomeComponent = styled.div`
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: center;
+
+    @media (max-height: 300px) {
+      height: 400px;
+    }
   }
 
   @media (max-width: 1100px) {
-    height: calc(100vh - 150px);
     width: 100%;
+    height: calc(100vh - 150px);
+    height: -moz-calc(100vh - 150px);
+    height: -webkit-calc(100vh - 150px);
     &:after {
       content: "";
       position: absolute;
@@ -69,6 +77,10 @@ export const HomeComponent = styled.div`
       background-repeat: no-repeat;
       background-size: 100% 100%;
       background-position: center;
+
+      @media (max-height: 300px) {
+        height: 400px;
+      }
     }
   }
 `;
@@ -83,7 +95,6 @@ export const Content = styled.div`
   color: rgb(238, 238, 238);
   font-size: 35px;
   height: 50vh;
-
   // ---- media ---- //
 
   // desktop
@@ -92,6 +103,10 @@ export const Content = styled.div`
   }
   @media (min-width: 1100px) and (max-height: 450px) {
     height: 15vh;
+  }
+
+  @media (max-height: 350px) {
+    height: 300px;
   }
 
   // mobile
@@ -297,7 +312,7 @@ export const Button = styled.button`
   display: inline-block;
   margin-left: 20px;
   padding: 10px 20px;
-  border: 2px solid rgb(238, 238, 238);
+  border: 2px solid #eeeeee;
   background-color: inherit;
   color: #eeeeee;
   text-transform: uppercase;
@@ -349,7 +364,7 @@ export const Button = styled.button`
     font-size: 10px;
   }
 
-  @media (max-width: 670px) and (min-width:201px) {
+  @media (max-width: 670px) and (min-width: 201px) {
     display: block;
     margin: 20px auto 0 auto;
     &:first-child {
@@ -371,7 +386,7 @@ export const Button = styled.button`
   @media (max-width: 1100px) and (min-width: 669px) and (max-height: 1100px) and (min-height: 741px) {
     font-size: 22px;
   }
-  @media (max-width: 670px) and (min-width:201px) and (max-height: 1100px) {
+  @media (max-width: 670px) and (min-width: 201px) and (max-height: 1100px) {
     font-size: 15px;
   }
 
@@ -431,7 +446,6 @@ export const FontIcon = styled(FontAwesomeIcon)`
   border-radius: 50%;
   padding: 10px;
   cursor: pointer;
-
 
   // ---- media ---- //
   @media (min-width: 1101px) and (max-height: 500px) {

@@ -34,24 +34,21 @@ const Home = () => {
   });
 
   const [changeBar, setChangeBar] = useState(0);
-  const [moveLetter, setMoveLetter] = useState(false);
-
   const imageRef = useRef();
   const progressRef = useRef();
   const barRef = useRef();
 
-  const vanillaOptions = {
-    scale: 1.1,
-    speed: 400,
-    transition: true,
-    max: 15,
-    glare: true,
-    "max-glare": 0.7,
-  };
-
   useEffect(() => {
+    const vanillaOptions = {
+      scale: 1.1,
+      speed: 400,
+      transition: true,
+      max: 15,
+      glare: true,
+      "max-glare": 0.7,
+    };
     VanillaTilt.init(imageRef.current, vanillaOptions);
-  }, [vanillaOptions]);
+  }, []);
 
   useEffect(() => {
     const progressBar = () => {
@@ -124,10 +121,7 @@ const Home = () => {
 
   const showLetter = (e) => {
     e.target.classList.add("letter");
-    setMoveLetter(true);
-
     window.addEventListener("animationend", (e) => {
-      setMoveLetter(false);
       e.target.classList.remove("letter");
     });
   };
@@ -218,4 +212,3 @@ export default Home;
 /* <div>Icons made by <a href="https://icon54.com/" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> */
 // Photo by <a href="https://unsplash.com/@byadoniaa?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Pars Sahin</a> on <a href="https://unsplash.com/s/photos/space?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 // Photo by <a href="https://unsplash.com/@lucabravo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Luca Bravo</a> on <a href="https://unsplash.com/s/photos/night?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
