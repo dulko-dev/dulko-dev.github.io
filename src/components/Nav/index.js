@@ -49,7 +49,7 @@ const Nav = ({ toggleMode, mode, sunrise, sunset }) => {
                 <ImageNight src={night} nightImg={sunset} />
               )}
             </ButtonMode>
-            <ButtonAnchor href="https://drive.google.com/file/d/1KCCkdkWnprSsAMpULT56Z37PEho8m7ze/view">
+            <ButtonAnchor href="https://dulko-dev.pl/portfolio.pdf" target="_blank" rel="noopener noreferrer" >
               <ResumeCv type="button">
                 <span id="spanRes">Resume</span>
                 <span id="spanDow">Watch</span>

@@ -18,6 +18,7 @@ import nodejs from "../../assets/icons/nodejs.png";
 import mongoDB from "../../assets/icons/mongoDB.png";
 import layout from "../../assets/icons/layout.png";
 import parcel from "../../assets/icons/parcel.png";
+import cypress from "../../assets/icons/cy.png";
 
 export const iconsFolder = [
   { id: 1, name: "html5", img: html5 },
@@ -37,7 +38,8 @@ export const iconsFolder = [
   { id: 15, name: "redux toolkit", img: redux },
   { id: 16, name: "parcel", img: parcel },
   { id: 17, name: "webpack", img: webpack },
-  { id: 18, name: "github", img: github },
-  { id: 19, name: "git", img: gitIcon },
-  { id: 20, name: "VSC", img: vsc },
+  { id: 18, name: "cypress", img: cypress },
+  { id: 19, name: "github", img: github },
+  { id: 20, name: "git", img: gitIcon },
+  { id: 21, name: "VSC", img: vsc },
 ];
