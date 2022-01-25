@@ -1,4 +1,5 @@
 import styled, { css, keyframes } from "styled-components";
+import under from "../../assets/under.png";
 
 const pulseIcon = keyframes`
  0% {
@@ -116,11 +117,11 @@ export const ProjectTagP = styled.p`
     width: 100%;
     background-color: ${({ theme }) => theme.title};
     transform: scale(0);
-    transition: all .4s;
+    transition: all 0.4s;
   }
   &:hover:last-child:after {
     transform: scale(1);
-    transition: all .4s;
+    transition: all 0.4s;
   }
 `;
 
@@ -196,6 +197,18 @@ export const SingleTech = styled(Text)`
   }
 `;
 
+export const ImageProject = styled.img`
+  width: 100%;
+  height: 350px;
+
+  @media (max-width: 1000px) {
+    height: 450px;
+  }
+  @media (max-width: 500px) {
+    height: 250px;
+  }
+`;
+
 export const TextContent = styled.div`
   overflow: hidden;
   position: relative;
@@ -258,12 +271,42 @@ export const TextContent = styled.div`
       opacity: 0;
     }
   }
+
   &:first-child {
     margin-top: 0;
     border-top: none;
   }
   &:last-child {
     border-bottom: none;
+    pointer-events: none;
+    &:hover .blockProject,
+    &:hover .blockTech,
+    &:hover
+      .blockProject
+      ${Text},&:hover
+      .blockTech
+      ${EnterIcon},&:hover
+      .blockTech
+      ${SingleTech} {
+      transform: none;
+    }
+  }
+
+  &:last-child ${ImageProject} {
+    opacity: 0.3;
+  }
+
+  &:last-child:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url(${under});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 `;
 
@@ -281,7 +324,7 @@ export const TextModule = styled.div`
     left: 5px;
     width: 100%;
     max-width: 500px;
-    font-size:0.8em;
+    font-size: 0.8em;
   }
   @media (max-width: 400px) {
     display: none;
@@ -299,18 +342,6 @@ export const TextModuleTech = styled(TextModule)`
   background-color: rgb(35, 53, 84);
   @media (max-width: 500px) {
     width: 100%;
-  }
-`;
-
-export const ImageProject = styled.img`
-  width: 100%;
-  height: 350px;
-
-  @media (max-width: 1000px) {
-    height: 450px;
-  }
-  @media (max-width: 500px) {
-    height: 250px;
   }
 `;
 
