@@ -123,7 +123,7 @@ const About = () => {
   };
 
   const handleTech = (e) => {
-    if (e.target.textContent.includes("Stacks")) {
+    if (e.target.textContent.includes("Stack")) {
       setChangeSign((prev) => ({ ...prev, tech: !changeSign["tech"] }));
     }
     setIcon(true);
@@ -151,17 +151,14 @@ const About = () => {
             </TextTagTitle>
           </div>
           <TextTagP open={!changeSign.who}>
-            Hi, my name is Kamil and I live in Wroclaw. For many years I had
-            been working as a sale specialist, but when I achieved everything I
-            wanted in this profession I decided to take a step forward. I have
-            started my adventure with programming, since February 2020. When I
-            created a simple website of the company I worked for. I totally
-            focused on studying HTML, CSS and Javscript. Furthermore I have
-            graduated Coderslab School where I ordered and expanded my knowledge
-            of frontend. After it I haven't rested on my laurels and I have been
-            boosting my skills and learning a new technology in frontend as well
-            as backend. Nowadays I try build applications base on MERN stack and
-            get know the basic in Java.
+            Hi, my name is Kamil and I live in Wroclaw. I have started my
+            adventure with programming since February 2020. When I received a
+            books written by Jon Duckett and I started learning some basics of
+            html, css and javascript. Two years ago I gratuated from Coderslab
+            School where I ordered and expanded my knowledge of frontend. After
+            it I have been improving my skills and learning the new technology.
+            This is definitely my passion where I don't count how much time I
+            have been spending with code.
           </TextTagP>
           <div
             data-aos="fade-up"
@@ -204,8 +201,7 @@ const About = () => {
           </div>
           <Strenghts open={!changeSign.facts}>
             <StrenghtsList>
-              Every day I work hard to be a professional frontend
-              developer,
+              Every day I work hard to be a professional frontend developer,
             </StrenghtsList>
             <StrenghtsList>
               I used to train Taekwondo for about 12 years. At this time I had
@@ -215,7 +211,9 @@ const About = () => {
               I like British sense of humour, point-and-click adventure games,
               sudoku and NBA,
             </StrenghtsList>
-            <StrenghtsList>Favourite TV series: Big Bang Theory and How I Met Your Mother,</StrenghtsList>
+            <StrenghtsList>
+              Favourite TV series: Big Bang Theory and How I Met Your Mother,
+            </StrenghtsList>
             <StrenghtsList>
               Favourite football team: Manchester United.
             </StrenghtsList>
@@ -227,7 +225,7 @@ const About = () => {
             data-aos-once="true"
           >
             <TextTagTitle onClick={handleTech} open={!changeSign.tech}>
-              Stacks
+              Stack
               <PlusIcon icon={changeSign.tech ? faPlus : faMinus} />
             </TextTagTitle>
           </div>

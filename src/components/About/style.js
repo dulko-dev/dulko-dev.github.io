@@ -118,7 +118,7 @@ export const TextTagP = styled.p`
   ${({ open }) =>
     open &&
     css`
-      height: 220px;
+      height: 180px;
       transition: height 1s;
     `}
 
@@ -276,17 +276,17 @@ export const IconDiv = styled.div`
     opacity: 0.1;
   }
   &:nth-child(3),
-  &:nth-child(8),
+  &:nth-child(7),
   &:nth-child(9),
+  /* &:nth-child(11), */
   &:nth-child(11),
-  &:nth-child(13),
-  &:nth-child(14) {
+  &:nth-child(12) {
     font-size: 9px;
   }
-  &:nth-child(12) {
+  &:nth-child(10) {
     font-size: 10px;
   }
-  &:nth-child(12) ${IconImage} {
+  &:nth-child(10) ${IconImage} {
     width: 148px;
     height: 64px;
   }

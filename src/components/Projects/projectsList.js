@@ -3,7 +3,7 @@ import fourApp from "../../assets/four-app.png";
 import miniGames from "../../assets/MiniGames.png";
 import flags from "../../assets/flag.png";
 import nba from "../../assets/nba.png";
-import landscape from "../../assets/landscape.png";
+
 
 export const projectsList = [
   {

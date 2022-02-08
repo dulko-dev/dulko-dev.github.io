@@ -11,10 +11,8 @@ import react from "../../assets/icons/react.png";
 import redux from "../../assets/icons/redux.png";
 import rwd from "../../assets/icons/rwd.png";
 import gsap from "../../assets/icons/gsap.png";
-import bootstrap from "../../assets/icons/bootstrap.png";
 import gitIcon from "../../assets/icons/git-icon.png";
 import vsc from "../../assets/icons/vsc.png";
-import nodejs from "../../assets/icons/nodejs.png";
 import mongoDB from "../../assets/icons/mongoDB.png";
 import layout from "../../assets/icons/layout.png";
 import parcel from "../../assets/icons/parcel.png";
@@ -26,20 +24,18 @@ export const iconsFolder = [
   { id: 3, name: "javascript", img: js },
   { id: 4, name: "react", img: react },
   { id: 5, name: "expo", img: expo },
-  { id: 6, name: "nodejs", img: nodejs },
-  { id: 7, name: "sass", img: sass },
-  { id: 8, name: "styled components", img: styledComp },
-  { id: 9, name: "bootstrap", img: bootstrap },
-  { id: 10, name: "gsap", img: gsap },
-  { id: 11, name: "responsive web design", img: rwd },
-  { id: 12, name: "flexbox and grid layout", img: layout },
-  { id: 13, name: "firebase", img: firebase },
-  { id: 14, name: "mongoDB", img: mongoDB },
-  { id: 15, name: "redux toolkit", img: redux },
-  { id: 16, name: "parcel", img: parcel },
-  { id: 17, name: "webpack", img: webpack },
-  { id: 18, name: "cypress", img: cypress },
-  { id: 19, name: "github", img: github },
-  { id: 20, name: "git", img: gitIcon },
-  { id: 21, name: "VSC", img: vsc },
+  { id: 6, name: "sass", img: sass },
+  { id: 7, name: "styled components", img: styledComp },
+  { id: 8, name: "gsap", img: gsap },
+  { id: 9, name: "responsive web design", img: rwd },
+  { id: 10, name: "flexbox and grid layout", img: layout },
+  { id: 11, name: "firebase", img: firebase },
+  { id: 12, name: "mongoDB", img: mongoDB },
+  { id: 13, name: "redux toolkit", img: redux },
+  { id: 14, name: "parcel", img: parcel },
+  { id: 15, name: "webpack", img: webpack },
+  { id: 16, name: "cypress", img: cypress },
+  { id: 17, name: "github", img: github },
+  { id: 18, name: "git", img: gitIcon },
+  { id: 19, name: "VSC", img: vsc },
 ];
