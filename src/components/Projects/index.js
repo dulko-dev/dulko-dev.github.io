@@ -63,7 +63,7 @@ const Projects = () => {
       <ProjectContent>
         <ProjectTag id="projectImg">
           <GroupImage fix={stack} abs={bottomStack}>
-            <Image src={project} className={"photoProject"} />
+            <Image src={project} className={"photoProject"} alt='cartoon computer with technology' />
             <ProjectTagP className={"titleProject"}>Projects</ProjectTagP>
             <a
               href="https://github.com/dulko-dev?tab=repositories"
@@ -103,7 +103,7 @@ const Projects = () => {
                   <SingleTech key={index}>{tech}</SingleTech>
                 ))}
               </TextModuleTech>
-              <ImageProject src={element.img} />
+              <ImageProject src={element.img} alt={element.title} />
             </TextContent>
           ))}
         </TextContainer>

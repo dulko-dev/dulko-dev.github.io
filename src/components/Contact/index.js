@@ -105,7 +105,7 @@ const Contact = () => {
     <ContactContainer>
       <ContactContent>
         <ContactTag>
-          <Image src={contactImage} />
+          <Image src={contactImage} alt='avatar sitting at the desk' />
           <ContactTagP>Contact</ContactTagP>
         </ContactTag>
         <TextTag id="contact">

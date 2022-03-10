@@ -31,7 +31,7 @@ const Nav = ({ toggleMode, mode, sunrise, sunset }) => {
       <NavContainer>
         <NavLogo>
           <a href="/#" style={{ outline: "none" }}>
-            <Image src={logo} />
+            <Image src={logo} alt='logo' />
           </a>
         </NavLogo>
         <RightContent>
@@ -44,9 +44,9 @@ const Nav = ({ toggleMode, mode, sunrise, sunset }) => {
             </NavBurger>
             <ButtonMode onClick={toggleMode}>
               {mode === "dark" ? (
-                <ImageSun src={sun} day={sunrise} />
+                <ImageSun src={sun} day={sunrise} alt='sun' />
               ) : (
-                <ImageNight src={night} nightImg={sunset} />
+                <ImageNight src={night} nightImg={sunset} alt='night' />
               )}
             </ButtonMode>
             <ButtonAnchor

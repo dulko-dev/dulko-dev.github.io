@@ -136,7 +136,7 @@ const Home = () => {
           ></Progress>
         </ProgressBar>
         <ImageDiv ref={imageRef}>
-          <Image src={myPhoto} />
+          <Image src={myPhoto} alt='me with dog' />
         </ImageDiv>
         <Text>
           <TitleText>&lt;h1&gt;</TitleText>

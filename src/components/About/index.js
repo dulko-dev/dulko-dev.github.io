@@ -133,7 +133,7 @@ const About = () => {
     <AboutContainer>
       <AboutContent>
         <AboutTag fix={stackUpper} id="contImg">
-          <Image src={myAvatar} className="photoAbout" />
+          <Image src={myAvatar} className="photoAbout" alt='animated avatar' />
           <AboutTagTitle className="titleAbout">
             <span style={{ display: "block" }}>About</span> Me
           </AboutTagTitle>
@@ -232,7 +232,11 @@ const About = () => {
           <IconContener open={!changeSign.tech}>
             {iconsFolder.map((icon) => (
               <IconDiv key={icon.id} className="textTag">
-                <IconImage src={icon.img} className={"iconImg"} />
+                <IconImage
+                  src={icon.img}
+                  className={"iconImg"}
+                  alt={icon.name}
+                />
                 <IconText className={"iconText"}>{icon.name}</IconText>
               </IconDiv>
             ))}
